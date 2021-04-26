@@ -1,0 +1,9 @@
+C:\Users\PC\Desktop\TransportoNuoma\TransportoNuoma\bin\Debug\TransportoNuoma.exe.config
+C:\Users\PC\Desktop\TransportoNuoma\TransportoNuoma\bin\Debug\TransportoNuoma.exe
+C:\Users\PC\Desktop\TransportoNuoma\TransportoNuoma\bin\Debug\TransportoNuoma.pdb
+C:\Users\PC\Desktop\TransportoNuoma\TransportoNuoma\obj\Debug\TransportoNuoma.csprojAssemblyReference.cache
+C:\Users\PC\Desktop\TransportoNuoma\TransportoNuoma\obj\Debug\TransportoNuoma.Form1.resources
+C:\Users\PC\Desktop\TransportoNuoma\TransportoNuoma\obj\Debug\TransportoNuoma.Properties.Resources.resources
+C:\Users\PC\Desktop\TransportoNuoma\TransportoNuoma\obj\Debug\TransportoNuoma.csproj.GenerateResource.cache
+C:\Users\PC\Desktop\TransportoNuoma\TransportoNuoma\obj\Debug\TransportoNuoma.exe
+C:\Users\PC\Desktop\TransportoNuoma\TransportoNuoma\obj\Debug\TransportoNuoma.pdb
