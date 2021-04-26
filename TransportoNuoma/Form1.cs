@@ -30,18 +30,27 @@ namespace TransportoNuoma
 
         private void loginButton_Click(object sender, EventArgs e)
         {
+            
             int count = 0;
             try
             {
+                //establishes new connection to the database
                 con = new SqlConnection(connectionString);
                 con.Open();
+                //creates an sql command to the connected database
                 SqlCommand cmd1 = con.CreateCommand();
+                //definies the command type
                 cmd1.CommandType = CommandType.Text;
+                //selects everything from client table where email and password is same as those written in login textboxes
                 cmd1.CommandText = " select * from klientas where email = '" + loginEmail.Text + "' and slaptazodis = '" + loginPassword.Text + "'";
+                //executes the command
                 cmd1.ExecuteNonQuery();
-                DataTable dt1 = new DataTable();
+                //creates new datatable
+                DataTable dt1 = new DataTable();               
                 SqlDataAdapter da1 = new SqlDataAdapter(cmd1);
+                //fill the datatable with datarows from the database
                 da1.Fill(dt1);
+                //sets count to one if theres a data row with email and password specified in the login textboxes
                 count = Convert.ToInt32(dt1.Rows.Count.ToString());
                 if (count == 0)
                 {
@@ -49,7 +58,7 @@ namespace TransportoNuoma
                 }
             
                 else { MessageBox.Show("OK"); }
-            //MessageBox.Show("OK");
+            
                 con.Close();
             }catch(Exception ex) { MessageBox.Show(ex.Message); }         
             
