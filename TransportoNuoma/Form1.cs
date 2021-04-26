@@ -26,7 +26,7 @@ namespace TransportoNuoma
         }
 
         string connectionString = "server=34.91.29.158;user id=root;persistsecurityinfo=True;database=lsongulija;allowuservariables=True";
-        SqlConnection con;
+        MySqlConnection con;
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -75,7 +75,6 @@ namespace TransportoNuoma
             {
                 //create student object out of textbox values
                 Klientas klientas = new Klientas();
-                klientas.id = 16;
                 klientas.vardas = vardasRegister.Text;
                 klientas.pavarde = pavardeRegister.Text;
                 klientas.kodas = int.Parse(kodasRegister.Text);

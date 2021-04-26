@@ -73,8 +73,7 @@ namespace TransportoNuoma.Repositories
                 }
                 dataReader.Close();//close data reader when it finishes work
 
-                MySqlCommand cmd1 = new MySqlCommand("Insert into klientas (Kliento_nr,Vardas,Pavarde,Asmens_Kodas,email,slaptazodis) VALUES(@Kliento_nr,@Vardas,@Pavarde,@Asmens_Kodas,@email,@slaptazodis)", cnn);
-                cmd1.Parameters.AddWithValue("@Kliento_nr", klientas.id);
+                MySqlCommand cmd1 = new MySqlCommand("Insert into klientas (Vardas,Pavarde,Asmens_Kodas,email,slaptazodis) VALUES(@Vardas,@Pavarde,@Asmens_Kodas,@email,@slaptazodis)", cnn);
                 cmd1.Parameters.AddWithValue("@Vardas", klientas.vardas);
                 cmd1.Parameters.AddWithValue("@Pavarde", klientas.pavarde);
                 cmd1.Parameters.AddWithValue("@Asmens_Kodas", klientas.kodas);
