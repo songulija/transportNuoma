@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\PC\Desktop\TransportoNuoma\TransportoNuoma\bin\Debug\TransportoNuoma.exe.config
 C:\Users\PC\Desktop\TransportoNuoma\TransportoNuoma\bin\Debug\TransportoNuoma.exe
 C:\Users\PC\Desktop\TransportoNuoma\TransportoNuoma\bin\Debug\TransportoNuoma.pdb
@@ -7,3 +8,15 @@ C:\Users\PC\Desktop\TransportoNuoma\TransportoNuoma\obj\Debug\TransportoNuoma.Pr
 C:\Users\PC\Desktop\TransportoNuoma\TransportoNuoma\obj\Debug\TransportoNuoma.csproj.GenerateResource.cache
 C:\Users\PC\Desktop\TransportoNuoma\TransportoNuoma\obj\Debug\TransportoNuoma.exe
 C:\Users\PC\Desktop\TransportoNuoma\TransportoNuoma\obj\Debug\TransportoNuoma.pdb
+=======
+C:\Users\Arme6\Documents\GitHub\transportNuoma\TransportoNuoma\bin\Debug\TransportoNuoma.exe.config
+C:\Users\Arme6\Documents\GitHub\transportNuoma\TransportoNuoma\bin\Debug\TransportoNuoma.exe
+C:\Users\Arme6\Documents\GitHub\transportNuoma\TransportoNuoma\bin\Debug\TransportoNuoma.pdb
+C:\Users\Arme6\Documents\GitHub\transportNuoma\TransportoNuoma\obj\Debug\TransportoNuoma.csprojAssemblyReference.cache
+C:\Users\Arme6\Documents\GitHub\transportNuoma\TransportoNuoma\obj\Debug\TransportoNuoma.Form1.resources
+C:\Users\Arme6\Documents\GitHub\transportNuoma\TransportoNuoma\obj\Debug\TransportoNuoma.Properties.Resources.resources
+C:\Users\Arme6\Documents\GitHub\transportNuoma\TransportoNuoma\obj\Debug\TransportoNuoma.csproj.GenerateResource.cache
+C:\Users\Arme6\Documents\GitHub\transportNuoma\TransportoNuoma\obj\Debug\TransportoNuoma.csproj.CoreCompileInputs.cache
+C:\Users\Arme6\Documents\GitHub\transportNuoma\TransportoNuoma\obj\Debug\TransportoNuoma.exe
+C:\Users\Arme6\Documents\GitHub\transportNuoma\TransportoNuoma\obj\Debug\TransportoNuoma.pdb
+>>>>>>> 2cc371ecc6a31a616591d60ea77232676104bc17
