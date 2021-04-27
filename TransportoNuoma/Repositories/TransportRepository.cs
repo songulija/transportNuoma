@@ -67,12 +67,13 @@ namespace TransportoNuoma.Repositories
                     }
                     dataReader.Close();//close data reader when it finishes work
 
-                    MySqlCommand cmd1 = new MySqlCommand("Insert into transportas (Trans_nr,Tipas,Spalva,Gamybos_Metai,Kaina,QrKodas) VALUES(@Trans_nr,@Tipas,@Spalva,@Gamybos_Metai,@Kaina,@QrKodas)", cnn);
+                    MySqlCommand cmd1 = new MySqlCommand("Insert into transportas (Trans_nr,Tipas,Spalva,Gamybos_Metai,Kaina,MarkesId,QrKodas) VALUES(@Trans_nr,@Tipas,@Spalva,@Gamybos_Metai,@Kaina,@MarkesId,@QrKodas)", cnn);
                     cmd1.Parameters.AddWithValue("@Trans_nr", transportas.transporto_Nr);
                     cmd1.Parameters.AddWithValue("@Tipas", transportas.tipas);
                     cmd1.Parameters.AddWithValue("@Spalva", transportas.spalva);
                     cmd1.Parameters.AddWithValue("@Gamybos_Metai", transportas.gamybos_Metai);
                     cmd1.Parameters.AddWithValue("@Kaina", transportas.kaina);
+                    cmd1.Parameters.AddWithValue("@MarkesId", transportas.markes_Id);
                     cmd1.Parameters.AddWithValue("@QrKodas", transportas.QRCode);
                     cmd1.ExecuteNonQuery();
                     cnn.Close();
