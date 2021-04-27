@@ -7,14 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TransportoNuoma.Classes;
 
 namespace TransportoNuoma
 {
     public partial class MainForm : Form
     {
-        public MainForm()
+        Klientas klientas;
+        public MainForm(Klientas klientas)
         {
             InitializeComponent();
+            this.klientas = klientas;
         }
     }
 }

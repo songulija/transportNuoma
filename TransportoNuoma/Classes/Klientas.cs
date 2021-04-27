@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TransportoNuoma.Classes
 {
-    class Klientas
+    public class Klientas
     {
         public int klientoNr { get; set; }
         public string vardas { get; set; }

@@ -37,14 +37,14 @@ namespace TransportoNuoma
                     Console.WriteLine(loggedKlientas.email);
                     if(loggedKlientas.isAdmin == 1)
                     {
-                        MainFormAdmin mainFormAdmin = new MainFormAdmin();
+                        MainFormAdmin mainFormAdmin = new MainFormAdmin(loggedKlientas);
                         this.Hide();
                         mainFormAdmin.ShowDialog();
                         this.Close();
                     }
                     else
                     {
-                        MainForm mainForm = new MainForm();
+                        MainForm mainForm = new MainForm(loggedKlientas);
                         this.Hide();
                         mainForm.ShowDialog();
                         this.Close();
@@ -80,7 +80,7 @@ namespace TransportoNuoma
                     Klientas registerClient = usersRepository.RegisterClient(klientas);
                     if (registerClient.vardas != null && registerClient.vardas != "")
                     {
-                        MessageBox.Show("Register");
+                        MessageBox.Show("Registerer");
                     }
                 }
 
