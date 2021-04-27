@@ -15,5 +15,6 @@ namespace TransportoNuoma.Classes
         public DateTime nuomosPabLaik { get; set; }
         public int transporto_Id { get; set; }
         public int kliento_Nr { get; set; }
+        public int rezId { get; set; }
     }
 }
