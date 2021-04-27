@@ -121,7 +121,7 @@ namespace TransportoNuoma.Repositories
                     string Email = reader["Email"].ToString();
                     int isAdmin = int.Parse(reader["isAdmin"].ToString());
 
-                    //create Student object
+                    //create client object
 
                     klientas.klientoNr = Kliento_nr;
                     klientas.vardas = Vardas;
