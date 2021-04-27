@@ -73,14 +73,13 @@ namespace TransportoNuoma.Repositories
                 }
                 dataReader.Close();//close data reader when it finishes work
 
-                MySqlCommand cmd1 = new MySqlCommand("Insert into klientas (Kliento_nr,Vardas,Pavarde,Asmens_Kodas,email,slaptazodis) VALUES(@Kliento_nr,@Vardas,@Pavarde,@Asmens_Kodas,@email,@slaptazodis)", cnn);
-                cmd1.Parameters.AddWithValue("@Kliento_nr", klientas.id);
+                MySqlCommand cmd1 = new MySqlCommand("Insert into klientas (Vardas,Pavarde,Asmens_Kodas,email,slaptazodis,isAdmin) VALUES(@Vardas,@Pavarde,@Asmens_Kodas,@email,@slaptazodis,@isAdmin)", cnn);
                 cmd1.Parameters.AddWithValue("@Vardas", klientas.vardas);
                 cmd1.Parameters.AddWithValue("@Pavarde", klientas.pavarde);
                 cmd1.Parameters.AddWithValue("@Asmens_Kodas", klientas.kodas);
                 cmd1.Parameters.AddWithValue("@email", klientas.email);
-                cmd1.Parameters.AddWithValue("@slaptazodis", klientas.pavarde);
-
+                cmd1.Parameters.AddWithValue("@slaptazodis", klientas.slaptazodis);
+                cmd1.Parameters.AddWithValue("@isAdmin", klientas.isAdmin);
                 cmd1.ExecuteNonQuery();
                 cnn.Close();
 
@@ -92,7 +91,60 @@ namespace TransportoNuoma.Repositories
             return klientas;//return 
         }
 
-        
+
+
+
+
+
+
+        public Klientas LoginKlientas(string email, string slaptazodis)
+        {
+            Klientas klientas = new Klientas();
+            try
+            {
+
+                //STUDENT
+                cnn = new MySqlConnection(connectionString);
+                MySqlCommand cmd = new MySqlCommand("Select Kliento_nr,Vardas,Pavarde,Email,isAdmin FROM klientas where Email=@Email AND Slaptazodis=@Slaptazodis", cnn);
+                //parametrised Sql Command, have to provide values that we wrote
+                cmd.Parameters.AddWithValue("@Email", email);
+                cmd.Parameters.AddWithValue("@Slaptazodis", slaptazodis);
+
+                cnn.Open();
+                MySqlDataReader reader = cmd.ExecuteReader();//we want to read rows that we get with this command
+                while (reader.Read())//while reader can read, while there is information/rows of data
+                {
+                    //get all values from row
+                    int Kliento_nr = int.Parse(reader["Kliento_nr"].ToString());
+                    string Vardas = reader["Vardas"].ToString();
+                    string Pavarde = reader["Pavarde"].ToString();
+                    string Email = reader["Email"].ToString();
+                    int isAdmin = int.Parse(reader["isAdmin"].ToString());
+
+                    //create Student object
+
+                    klientas.klientoNr = Kliento_nr;
+                    klientas.vardas = Vardas;
+                    klientas.pavarde = Pavarde;
+                    klientas.email = Email;
+                    klientas.isAdmin = isAdmin;
+
+                }
+
+                cnn.Close();
+                
+                return klientas;
+
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine(exc);
+                return null;
+            }
+
+        }
+
+
 
 
     }

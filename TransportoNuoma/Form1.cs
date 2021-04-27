@@ -27,27 +27,25 @@ namespace TransportoNuoma
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            string selectString =
-            "SELECT Email, Slaptazodis " +
-            "FROM klientas " +
-            "WHERE Email = '" + loginEmail.Text + "' AND Slaptazodis = '" + loginPassword.Text + "'";
-
-            MySqlCommand mySqlCommand = new MySqlCommand(selectString, con);
-            con.Open();
-            String strResult = String.Empty;
-            strResult = (String)mySqlCommand.ExecuteScalar();
-            con.Close();
-
-            if (strResult.Length == 0)
+            if(loginEmail.Text != null && loginEmail.Text!="" && loginPassword.Text != null && loginPassword.Text != "")
             {
-                MessageBox.Show("Incorrect email or password");
-            //could redirect to register page or forget email/pass page
-}
-            else
-            {
-                MessageBox.Show("You are logged in");
-                // open post loggin form
+                Klientas loggedKlientas = usersRepository.LoginKlientas(loginEmail.Text, loginPassword.Text);
+
+                if (loggedKlientas.email != null && loggedKlientas.email!="")
+                {
+                    MessageBox.Show("You are logged in");
+                    Console.WriteLine(loggedKlientas.email);
+
+                    //could redirect to register page or forget email/pass page
+                }
+                else
+                {
+                    MessageBox.Show("Incorrect email or password");
+                    // open post loggin form
+                }
+
             }
+ 
 
         }
 
@@ -59,12 +57,12 @@ namespace TransportoNuoma
                 {
                     //create student object out of textbox values
                     Klientas klientas = new Klientas();
-                    klientas.id = 16;
                     klientas.vardas = vardasRegister.Text;
                     klientas.pavarde = pavardeRegister.Text;
                     klientas.kodas = int.Parse(kodasRegister.Text);
                     klientas.email = registerEmail.Text;
                     klientas.slaptazodis = registerPassword.Text;
+                    klientas.isAdmin = 0;
                     Klientas registerClient = usersRepository.RegisterClient(klientas);
                     if (registerClient.vardas != null && registerClient.vardas != "")
                     {
@@ -79,6 +77,9 @@ namespace TransportoNuoma
             }
             
         }
+
+
+        
 
         private void getClients_Click(object sender, EventArgs e)
         {
