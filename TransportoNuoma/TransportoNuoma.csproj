@@ -47,8 +47,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Apmokejimas.cs" />
+    <Compile Include="Classes\GalimiNusizengimai.cs" />
     <Compile Include="Classes\GalimiTestai.cs" />
     <Compile Include="Classes\Klientas.cs" />
+    <Compile Include="Classes\KlientoLokacija.cs" />
+    <Compile Include="Classes\Lokacija.cs" />
+    <Compile Include="Classes\Nuoma.cs" />
+    <Compile Include="Classes\Nusizengimai.cs" />
+    <Compile Include="Classes\Pakrovimas.cs" />
+    <Compile Include="Classes\Transportas.cs" />
+    <Compile Include="Classes\TransportoGrazinimas.cs" />
+    <Compile Include="Classes\TransportoMarke.cs" />
+    <Compile Include="Classes\TransportoTestai.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -232,7 +232,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(797, 508);
+            this.ClientSize = new System.Drawing.Size(766, 517);
             this.Controls.Add(this.repeatPassword);
             this.Controls.Add(this.getClients);
             this.Controls.Add(this.kodasRegister);
