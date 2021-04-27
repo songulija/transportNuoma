@@ -16,8 +16,9 @@ namespace TransportoNuoma.Repositories
 
 
 
-            public void displayTransportas()
+            public DataTable displayTransportas()
             {
+                DataTable dta = new DataTable();
                 try
                 {
                     cnn = new MySqlConnection(connectionString);//assign connection. The variable cnn, which is of type SqlConnection is used to establish the connection to the database.
@@ -27,9 +28,10 @@ namespace TransportoNuoma.Repositories
 
                     cmd.ExecuteNonQuery();
 
-                    DataTable dta = new DataTable();
+                    
                     MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                     adapter.Fill(dta);
+
                 }
                 catch (Exception err)
                 {
@@ -37,8 +39,7 @@ namespace TransportoNuoma.Repositories
                 }
 
                 cnn.Close();
-                Console.WriteLine("Connection Closed. Press any key to exit...");
-                Console.Read();
+                return dta;
             }
 
             //REGISTER STUDENT

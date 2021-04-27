@@ -14,7 +14,7 @@ namespace TransportoNuoma.Classes
         public string spalva { get; set; }
         public DateTime gamybos_Metai { get; set; }
         public int kaina { get; set; }
-        public char QRCode { get; set; }
+        public string QRCode { get; set; }
         public int markes_Id { get; set; }
 
     }
