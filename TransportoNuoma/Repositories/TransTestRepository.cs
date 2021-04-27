@@ -9,21 +9,21 @@ using TransportoNuoma.Classes;
 
 namespace TransportoNuoma.Repositories
 {
-    class Markes
+    class TransTestRepository
     {
         string connectionString = "server=34.91.29.158;user id=root;persistsecurityinfo=True;port=3306;database=lsongulija;password=123456";
         MySqlConnection cnn;
 
 
 
-        public void displayMarkes()
+        public void displayTransTest()
         {
             try
             {
                 cnn = new MySqlConnection(connectionString);//assign connection. The variable cnn, which is of type SqlConnection is used to establish the connection to the database.
                 cnn.Open();//open connection. we use the Open method of the cnn variable to open a connection to the database.
 
-                MySqlCommand cmd = new MySqlCommand("Select * from tmarke", cnn);//select all from newTestTable
+                MySqlCommand cmd = new MySqlCommand("Select * from trans_test", cnn);//select all from newTestTable
 
                 cmd.ExecuteNonQuery();
 
@@ -42,7 +42,7 @@ namespace TransportoNuoma.Repositories
         }
 
         //REGISTER STUDENT
-        public TransportoMarke InsertMarke(TransportoMarke marke)//provide transportas object when calling this function
+        public TransportoTestai InsertMarke(TransportoTestai transTestai)//provide transportas object when calling this function
         {
             try
             {
@@ -52,23 +52,9 @@ namespace TransportoNuoma.Repositories
                 cnn = new MySqlConnection(connectionString);
                 cnn.Open();//open database
 
-                //check if user exist
-                MySqlCommand cmd = new MySqlCommand("Select * from tmarke where Markes_pav=@Markes_pav", cnn);//to check if username exist we have to select all items with username
-                cmd.Parameters.AddWithValue("@Trans_nr", marke.markes_Pav);
-                MySqlDataReader dataReader = cmd.ExecuteReader();
-                if ((dataReader.Read() == true))
-                {
-                    Console.WriteLine("Transport with that Marke already exists");
-                    return null;
-                }
-                else
-                {
-                    Console.WriteLine("Transport Marke is free so you can register");
-                }
-                dataReader.Close();//close data reader when it finishes work
-
-                MySqlCommand cmd1 = new MySqlCommand("Insert into tmarke (Markes_pav) VALUES(@Markes_pav)", cnn);
-                cmd1.Parameters.AddWithValue("@Markes_pav", marke.markes_Pav);
+                MySqlCommand cmd1 = new MySqlCommand("Insert into trans_test (Test_data,Trans_Id) VALUES(@Test_data,@Trans_Id)", cnn);
+                cmd1.Parameters.AddWithValue("@Test_data", transTestai.test_Data);
+                cmd1.Parameters.AddWithValue("@Trans_Id", transTestai.trans_Id);
                 cmd1.ExecuteNonQuery();
                 cnn.Close();
 
@@ -77,11 +63,11 @@ namespace TransportoNuoma.Repositories
             {
                 Console.WriteLine(exc);
             }
-            return marke;//return 
+            return transTestai;//return 
         }
 
 
-        public void UpdateMarke(TransportoMarke marke)
+        public void UpdateTransTest(TransportoTestai transTestai)
         {
             try
             {
@@ -90,9 +76,10 @@ namespace TransportoNuoma.Repositories
                 cnn.Open();//open database
 
                 //check if user exist
-                MySqlCommand cmd = new MySqlCommand("Update tmarke SET Markes_pav=@Markes_pav WHERE MarkesId=@MarkesId", cnn);//to check if username exist we have to select all items with username
-                cmd.Parameters.AddWithValue("@Markes_pav", marke.markes_Pav);
-                cmd.Parameters.AddWithValue("@MarkesId", marke.markes_Id);
+                MySqlCommand cmd = new MySqlCommand("Update trans_test SET Test_data=@Test_data, Trans_Id=@Trans_Id  WHERE TestId=@TestId", cnn);//to check if username exist we have to select all items with username
+                cmd.Parameters.AddWithValue("@Test_data", transTestai.test_Data);
+                cmd.Parameters.AddWithValue("@Trans_Id", transTestai.trans_Id);
+                cmd.Parameters.AddWithValue("@TestId", transTestai.test_Id);
                 cnn.Open();
                 cmd.ExecuteNonQuery();
                 cnn.Close();
