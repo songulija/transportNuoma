@@ -35,13 +35,27 @@ namespace TransportoNuoma
                 {
                     MessageBox.Show("You are logged in");
                     Console.WriteLine(loggedKlientas.email);
-
-                    //could redirect to register page or forget email/pass page
+                    if(loggedKlientas.isAdmin == 1)
+                    {
+                        MainFormAdmin mainFormAdmin = new MainFormAdmin();
+                        this.Hide();
+                        mainFormAdmin.ShowDialog();
+                        this.Close();
+                    }
+                    else
+                    {
+                        MainForm mainForm = new MainForm();
+                        this.Hide();
+                        mainForm.ShowDialog();
+                        this.Close();
+                    }
+                    
                 }
                 else
                 {
                     MessageBox.Show("Incorrect email or password");
-                    // open post loggin form
+                    //could redirect to register page or forget email/pass page
+                   
                 }
 
             }
