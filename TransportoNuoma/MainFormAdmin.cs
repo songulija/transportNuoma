@@ -38,29 +38,44 @@ namespace TransportoNuoma
         }
         private void AddTransportShow_Click(object sender, EventArgs e)
         {
-            addUpdatePanel.Visible = true;
-            addUpdateButton.Text = "Add";
+            addPanel.Visible = true;
+            updatePanel.Visible = false;
+
             CleanTransport();
         }
 
         private void updateTransShow_Click(object sender, EventArgs e)
         {
-            addUpdatePanel.Visible = true;
-            addUpdateButton.Text = "Update";
+            updatePanel.Visible = true;
+            addPanel.Visible = false;
+
             CleanTransport();
         }
 
+        private void updateButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Transportas transportas = new Transportas();
+                transportas.kaina = int.Parse(UpdateTransKaina.Text);
+                transportas.transporto_Nr = updateTransNr.Text;
+                transportas.spalva = updateTransSpalva.Text;
+                transportas.transporto_Id = int.Parse(UpdateTransTransId.Text);
 
+                transportRepos.UpdateTransportas(transportas);
+                
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            MessageBox.Show("Succesfully updated");
+        }
         private void addUpdateButton_Click(object sender, EventArgs e)
         {
             try
             {
-                if (addUpdateButton.Text == "Update")
-                {
 
-                }
-                else if (addUpdateButton.Text == "Add")
-                {
                     Transportas transportas = new Transportas();
                     transportas.transporto_Nr = transNr.Text;
                     transportas.tipas = transTipas.Text;
@@ -75,7 +90,7 @@ namespace TransportoNuoma
                     {
                         MessageBox.Show("Succesfully inserted");
                     }
-                }
+                
             }catch(Exception ex)
             {
                 Console.WriteLine(ex);
@@ -95,6 +110,6 @@ namespace TransportoNuoma
             
         }
 
-        
+       
     }
 }
