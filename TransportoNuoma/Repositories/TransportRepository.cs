@@ -97,6 +97,13 @@ namespace TransportoNuoma.Repositories
 
                 //check if user exist
                 MySqlCommand cmd = new MySqlCommand("Update transportas SET Trans_nr=@Trans_nr, Spalva=@Spalva, Kaina=@Kaina WHERE Trans_Id=@Trans_Id", cnn);//to check if username exist we have to select all items with username
+                cmd.Parameters.AddWithValue("@Trans_nr", transportas.transporto_Nr);
+                cmd.Parameters.AddWithValue("@Spalva", transportas.spalva);
+                cmd.Parameters.AddWithValue("@Kaina", transportas.kaina);
+                cmd.Parameters.AddWithValue("@Trans_Id", transportas.transporto_Id);
+                cnn.Open();
+                cmd.ExecuteNonQuery();
+                cnn.Close();
             }
             catch(Exception ex)
             {
