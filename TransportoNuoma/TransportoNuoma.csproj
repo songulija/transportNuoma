@@ -48,6 +48,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Apmokejimas.cs" />
+    <Compile Include="Classes\Draudimas.cs" />
+    <Compile Include="Classes\DraudimoTiekejai.cs" />
     <Compile Include="Classes\GalimiNusizengimai.cs" />
     <Compile Include="Classes\GalimiTestai.cs" />
     <Compile Include="Classes\Klientas.cs" />
@@ -56,6 +58,7 @@
     <Compile Include="Classes\Nuoma.cs" />
     <Compile Include="Classes\Nusizengimai.cs" />
     <Compile Include="Classes\Pakrovimas.cs" />
+    <Compile Include="Classes\Rezervacija.cs" />
     <Compile Include="Classes\Transportas.cs" />
     <Compile Include="Classes\TransportoGrazinimas.cs" />
     <Compile Include="Classes\TransportoMarke.cs" />
