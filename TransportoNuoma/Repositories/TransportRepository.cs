@@ -85,6 +85,24 @@ namespace TransportoNuoma.Repositories
                 return transportas;//return 
             }
 
+
+        public void UpdateTransportas(Transportas transportas)
+        {
+            try
+            {
+                //setting new SqlConnection, providing connectionString
+                cnn = new MySqlConnection(connectionString);
+                cnn.Open();//open database
+
+                //check if user exist
+                MySqlCommand cmd = new MySqlCommand("Update transportas SET Trans_nr=@Trans_nr, Spalva=@Spalva, Kaina=@Kaina WHERE Trans_Id=@Trans_Id", cnn);//to check if username exist we have to select all items with username
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+        }
+
         
     }
 }
