@@ -33,7 +33,7 @@ namespace TransportoNuoma
 
                 if (loggedKlientas.email != null && loggedKlientas.email!="")
                 {
-                    MessageBox.Show("You are logged in");
+                   
                     Console.WriteLine(loggedKlientas.email);
                     if(loggedKlientas.isAdmin == 1)
                     {
