@@ -9,7 +9,7 @@ using TransportoNuoma.Classes;
 
 namespace TransportoNuoma.Repositories
 {
-    class NuomaRepository
+    class PakrovimasRepository
     {
 
         string connectionString = "server=34.91.29.158;user id=root;persistsecurityinfo=True;port=3306;database=lsongulija;password=123456";
@@ -24,7 +24,7 @@ namespace TransportoNuoma.Repositories
                 cnn = new MySqlConnection(connectionString);//assign connection. The variable cnn, which is of type SqlConnection is used to establish the connection to the database.
                 cnn.Open();//open connection. we use the Open method of the cnn variable to open a connection to the database.
 
-                MySqlCommand cmd = new MySqlCommand("Select * from nuoma", cnn);//select all from newTestTable
+                MySqlCommand cmd = new MySqlCommand("Select * from pakrovimas", cnn);//select all from newTestTable
 
                 cmd.ExecuteNonQuery();
 
@@ -43,57 +43,70 @@ namespace TransportoNuoma.Repositories
         }
 
         //REGISTER STUDENT
-        public Nuoma InsertNuoma(Nuoma nuoma)//provide transportas object when calling this function
+        public Pakrovimas InsertRezervacija(Pakrovimas pakrovimas)//provide transportas object when calling this function
         {
             try
             {
-                bool rezYra = false;
+                bool transYra = false;
 
                 //setting new SqlConnection, providing connectionString
                 cnn = new MySqlConnection(connectionString);
                 cnn.Open();//open database
 
                 //check if rezervacija exist
-                MySqlCommand cmd = new MySqlCommand("Select * from rezervacija where rezId=@rezId", cnn);
-                cmd.Parameters.AddWithValue("@rezId", nuoma.rezId);
+                MySqlCommand cmd = new MySqlCommand("Select * from transportas where Trans_Id=@Trans_Id", cnn);//to check if username exist we have to select all items with username
+                cmd.Parameters.AddWithValue("@Trans_Id", pakrovimas.transporto_Id);
+
                 MySqlDataReader dataReader = cmd.ExecuteReader();//sends SQLCommand.CommandText to the SQLCommand.Connection and builds SqlDataReader
                 if ((dataReader.Read() == true))
                 {
-                    rezYra = true;
+                    transYra = true;
                 }
                 else
                 {
-                    Console.WriteLine("Transport is free so you can register");
                     return null;
                 }
                 dataReader.Close();//close data reader when it finishes work
-
-                if(rezYra == true)
+                if (transYra == true)
                 {
-                    Console.WriteLine("Transport with that Number already exists");
-                    MySqlCommand cmd1 = new MySqlCommand("Insert into nuoma (NuomosPrData,NuomosPradLaik,NuomosPabLaik,NuomosPabData,Trans_Id,Kliento_nr,rezId) VALUES(@NuomosPrData,@NuomosPradLaik,@NuomosPabLaik,@NuomosPabData,@Trans_Id,@Kliento_nr,@rezId)", cnn);
-                    cmd1.Parameters.AddWithValue("@NuomosPrData", nuoma.nuomosPrData);
-                    cmd1.Parameters.AddWithValue("@NuomosPradLaik", nuoma.nuomosPradLaik);
-                    cmd1.Parameters.AddWithValue("@NuomosPabLaik", nuoma.nuomosPabLaik);
-                    cmd1.Parameters.AddWithValue("@NuomosPabData", nuoma.nuomosPabData);
-                    cmd1.Parameters.AddWithValue("@Trans_Id", nuoma.transporto_Id);
-                    cmd1.Parameters.AddWithValue("@Kliento_nr", nuoma.kliento_Nr);
-                    cmd1.Parameters.AddWithValue("@rezId", nuoma.rezId);
+                    MySqlCommand cmd1 = new MySqlCommand("Insert into pakrovimas (PakrovimoDydis,Trans_Id) VALUES(@PakrovimoDydis,@Trans_Id)", cnn);
+                    cmd1.Parameters.AddWithValue("@PakrovimoDydis", pakrovimas.pakrovimo_Dydis);
+                    cmd1.Parameters.AddWithValue("@Trans_Id", pakrovimas.transporto_Id);
                     cmd1.ExecuteNonQuery();
                 }
 
                 cnn.Close();
-
             }
             catch (Exception exc)
             {
                 Console.WriteLine(exc);
             }
-            return nuoma;//return 
+            return pakrovimas;//return 
         }
 
 
-        
+        public void UpdateRezervacija(Pakrovimas pakrovimas)
+        {
+            try
+            {
+                //setting new SqlConnection, providing connectionString
+                cnn = new MySqlConnection(connectionString);
+                cnn.Open();//open database
+
+                //check if user exist
+                MySqlCommand cmd = new MySqlCommand("Update pakrovimas SET PakrovimoDydis=@PakrovimoDydis, Trans_Id=@Trans_Id WHERE pakrovimoNr=@pakrovimoNr", cnn);//to check if username exist we have to select all items with username
+                cmd.Parameters.AddWithValue("@PakrovimoDydis", pakrovimas.pakrovimo_Dydis);
+                cmd.Parameters.AddWithValue("@Trans_Id", pakrovimas.transporto_Id);
+                cmd.Parameters.AddWithValue("@pakrovimoNr", pakrovimas.pakrovimo_Nr);
+                cnn.Open();
+                cmd.ExecuteNonQuery();
+                cnn.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+        }
 
     }
 }
