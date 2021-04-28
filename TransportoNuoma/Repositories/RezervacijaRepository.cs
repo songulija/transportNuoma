@@ -53,10 +53,9 @@ namespace TransportoNuoma.Repositories
                 cnn.Open();//open database
 
                 //check if rezervacija exist
-                MySqlCommand cmd = new MySqlCommand("Select * from rezervacija where Trans_Id=@Trans_Id AND rezData=@rezData AND rezPrad=@rezPrad", cnn);//to check if username exist we have to select all items with username
+                MySqlCommand cmd = new MySqlCommand("Select * from rezervacija where Trans_Id=@Trans_Id", cnn);//to check if username exist we have to select all items with username
                 cmd.Parameters.AddWithValue("@Trans_Id", rezervacija.Transporto_Id);
-                cmd.Parameters.AddWithValue("@rezData", rezervacija.rezervacijos_Data);
-                cmd.Parameters.AddWithValue("@rezPrad", rezervacija.rezervacijosPrad);
+                
                 MySqlDataReader dataReader = cmd.ExecuteReader();//sends SQLCommand.CommandText to the SQLCommand.Connection and builds SqlDataReader
                 if ((dataReader.Read() == true))
                 {
@@ -87,7 +86,19 @@ namespace TransportoNuoma.Repositories
             return rezervacija;//return 
         }
 
-
+        public void addNewRezervacija(Klientas klientas, Transportas transportas, Lokacija lokacija)
+        {
+            Rezervacija rezervacija = new Rezervacija();
+            
+            rezervacija.kliento_Id = klientas.klientoNr;
+            rezervacija.lokacijos_Id = lokacija.lokacijos_Id;
+            rezervacija.Transporto_Id = transportas.transporto_Id;
+            rezervacija.rezervacijos_Data = DateTime.Today;
+            rezervacija.rezervacijosPrad = DateTime.Today;
+            rezervacija.rezervacijosPab = DateTime.Today.AddSeconds(900);
+            InsertRezervacija(rezervacija);
+        }
+        
         public void UpdateRezervacija(Rezervacija rezervacija)
         {
             try

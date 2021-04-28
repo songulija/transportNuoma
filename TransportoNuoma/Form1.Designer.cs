@@ -87,13 +87,16 @@
             this.loginEmail.Name = "loginEmail";
             this.loginEmail.Size = new System.Drawing.Size(172, 20);
             this.loginEmail.TabIndex = 3;
+            this.loginEmail.Text = "romasgmail";
             // 
             // loginPassword
             // 
             this.loginPassword.Location = new System.Drawing.Point(108, 190);
             this.loginPassword.Name = "loginPassword";
+            this.loginPassword.PasswordChar = '*';
             this.loginPassword.Size = new System.Drawing.Size(172, 20);
             this.loginPassword.TabIndex = 5;
+            this.loginPassword.Text = "romass";
             // 
             // label3
             // 

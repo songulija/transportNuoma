@@ -41,15 +41,7 @@ namespace TransportoNuoma.Repositories
             Console.WriteLine("Connection Closed. Press any key to exit...");
             Console.Read();
         }
-        /**
-         *  public int kliento_Lok_Id { get; set; }
-        public string salis { get; set; }
-        public string miestas { get; set; }
-        public double koorindatesX { get; set; }
-        public double koorindatesY { get; set; }
-        public int kliento_Nr { get; set; }
-         * 
-         */
+        
         public KlientoLokacija GetKlientoLokacija(Klientas klientas)
         {
             try
@@ -82,7 +74,7 @@ namespace TransportoNuoma.Repositories
                 dataReader.Close();
                 cnn.Close();
                 return klientoLokacija;
-                e
+                
             }
             catch(Exception ex)
             {
@@ -91,32 +83,7 @@ namespace TransportoNuoma.Repositories
             }
 
         }
-        /**
-         * MySqlDataReader reader = cmd.ExecuteReader();//we want to read rows that we get with this command
-                while (reader.Read())//while reader can read, while there is information/rows of data
-                {
-                    //get all values from row
-                    int Kliento_nr = int.Parse(reader["Kliento_nr"].ToString());
-                    string Vardas = reader["Vardas"].ToString();
-                    string Pavarde = reader["Pavarde"].ToString();
-                    string Email = reader["Email"].ToString();
-                    int isAdmin = int.Parse(reader["isAdmin"].ToString());
-
-                    //create client object
-
-                    klientas.klientoNr = Kliento_nr;
-                    klientas.vardas = Vardas;
-                    klientas.pavarde = Pavarde;
-                    klientas.email = Email;
-                    klientas.isAdmin = isAdmin;
-
-                }
-
-                cnn.Close();
-                
-                return klientas;
-         * 
-         */
+        
         //REGISTER Client
         public KlientoLokacija InsertKlientoLokacija(KlientoLokacija klientoLokacija)//provide transportas object when calling this function
         {

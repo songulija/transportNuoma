@@ -44,11 +44,9 @@ namespace TransportoNuoma.Repositories
 
         public Lokacija getTransportoLokacija(Transportas transportas)
         {
-           
+            Lokacija lokacija = new Lokacija();
             try
             {
-                Lokacija lokacija = new Lokacija();
-
                 cnn = new MySqlConnection(connectionString);//assign connection. The variable cnn, which is of type SqlConnection is used to establish the connection to the database.
                 cnn.Open();//open connection. we use the Open method of the cnn variable to open a connection to the database.
 
@@ -64,22 +62,23 @@ namespace TransportoNuoma.Repositories
                     double koordinatesY = double.Parse(dataReader["KoordinatesY"].ToString());
                     int transporto_Id = int.Parse(dataReader["Trans_Id"].ToString());
 
-                    lokacija.transporto_Id = lokacijos_Id;
+                    lokacija.transporto_Id = transporto_Id;
                     lokacija.salis = salis;
                     lokacija.miestas = miestas;
                     lokacija.koordinatesX = koordinatesX;
                     lokacija.koordinatesY = koordinatesY;
                     lokacija.transporto_Id = transporto_Id;
+                    lokacija.lokacijos_Id = lokacijos_Id;
                     
                 }
                 dataReader.Close();
                 cnn.Close();
-                return lokacija;
+                
 
             }
             catch (Exception e) { Console.WriteLine(e.Message); }
 
-            return null;
+            return lokacija;
         }
         //REGISTER STUDENT
         public Lokacija InsertLokacija(Lokacija lokacija)//provide transportas object when calling this function
