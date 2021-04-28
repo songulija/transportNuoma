@@ -59,6 +59,7 @@
             this.gmap.Size = new System.Drawing.Size(738, 548);
             this.gmap.TabIndex = 0;
             this.gmap.Zoom = 0D;
+            this.gmap.OnMarkerClick += new GMap.NET.WindowsForms.MarkerClick(this.gmap_OnMarkerClick);
             // 
             // MainForm
             // 

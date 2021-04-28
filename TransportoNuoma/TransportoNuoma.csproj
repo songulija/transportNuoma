@@ -120,8 +120,13 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\ApmokejimasRepository.cs" />
+    <Compile Include="Repositories\DraudimasRepository.cs" />
+    <Compile Include="Repositories\DraudimoTiekRepository.cs" />
     <Compile Include="Repositories\GalimiNusizengimaiRepository.cs" />
     <Compile Include="Repositories\GalimiTestaiRepository.cs" />
+    <Compile Include="Repositories\KlientoLokacijaRepository.cs" />
+    <Compile Include="Repositories\LokacijaRepository.cs" />
     <Compile Include="Repositories\Markes.cs" />
     <Compile Include="Repositories\NuomaRepository.cs" />
     <Compile Include="Repositories\NusizengimaiRepository.cs" />

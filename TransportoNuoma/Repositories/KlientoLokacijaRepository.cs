@@ -41,8 +41,71 @@ namespace TransportoNuoma.Repositories
             Console.WriteLine("Connection Closed. Press any key to exit...");
             Console.Read();
         }
+        /**
+         *  public int kliento_Lok_Id { get; set; }
+        public string salis { get; set; }
+        public string miestas { get; set; }
+        public double koorindatesX { get; set; }
+        public double koorindatesY { get; set; }
+        public int kliento_Nr { get; set; }
+         * 
+         */
+        public KlientoLokacija GetKlientoLokacija(Klientas klientas)
+        {
+            KlientoLokacija klientoLokacija = new KlientoLokacija();
 
-        //REGISTER STUDENT
+            cnn = new MySqlConnection(connectionString);//assign connection. The variable cnn, which is of type SqlConnection is used to establish the connection to the database.
+            cnn.Open();//open connection. we use the Open method of the cnn variable to open a connection to the database.
+
+            MySqlCommand cmd = new MySqlCommand("Select * from kliento_lokacija where Kliento_Nr=@Kliento_Nr", cnn);//select all from newTestTable
+            cmd.Parameters.AddWithValue("@Kliento_Nr", klientas.klientoNr);
+            MySqlDataReader dataReader = cmd.ExecuteReader();
+            if ((dataReader.Read() == true))
+            {
+                int kliento_Lok_Id = int.Parse(dataReader["KlientoLokId"].ToString());
+                string salis = dataReader["Salis"].ToString();
+                string miestas = dataReader["Miestas"].ToString();
+                double koorindatesX = double.Parse(dataReader["KoordinatesX"].ToString());
+                double koorindatesY = double.Parse(dataReader["KoordinatesY"].ToString());
+                int kliento_Nr = int.Parse(dataReader["Kliento_nr"].ToString());
+
+                klientoLokacija.kliento_Lok_Id = kliento_Lok_Id;
+                klientoLokacija.salis = salis;
+                klientoLokacija.miestas = miestas;
+                klientoLokacija.koorindatesX = koorindatesX;
+                klientoLokacija.koorindatesY = koorindatesY;
+                klientoLokacija.kliento_Nr = kliento_Nr; 
+            }
+
+            return klientoLokacija;
+        }
+        /**
+         * MySqlDataReader reader = cmd.ExecuteReader();//we want to read rows that we get with this command
+                while (reader.Read())//while reader can read, while there is information/rows of data
+                {
+                    //get all values from row
+                    int Kliento_nr = int.Parse(reader["Kliento_nr"].ToString());
+                    string Vardas = reader["Vardas"].ToString();
+                    string Pavarde = reader["Pavarde"].ToString();
+                    string Email = reader["Email"].ToString();
+                    int isAdmin = int.Parse(reader["isAdmin"].ToString());
+
+                    //create client object
+
+                    klientas.klientoNr = Kliento_nr;
+                    klientas.vardas = Vardas;
+                    klientas.pavarde = Pavarde;
+                    klientas.email = Email;
+                    klientas.isAdmin = isAdmin;
+
+                }
+
+                cnn.Close();
+                
+                return klientas;
+         * 
+         */
+        //REGISTER Client
         public KlientoLokacija InsertKlientoLokacija(KlientoLokacija klientoLokacija)//provide transportas object when calling this function
         {
             try
@@ -86,7 +149,7 @@ namespace TransportoNuoma.Repositories
             }
             return klientoLokacija;//return 
         }
-
+        
 
         public void UpdateKlientoLokacija(KlientoLokacija klientoLokacija)
         {
