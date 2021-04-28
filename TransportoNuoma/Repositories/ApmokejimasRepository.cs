@@ -88,7 +88,7 @@ namespace TransportoNuoma.Repositories
                 Console.WriteLine(exc);
             }
             return apmokejimas;//return 
-        }
+        } 
 
 
         public void UpdateApmokejimas(Apmokejimas apmokejimas)
