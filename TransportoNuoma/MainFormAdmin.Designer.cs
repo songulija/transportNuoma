@@ -395,7 +395,7 @@
             this.panel1.Controls.Add(this.label24);
             this.panel1.Location = new System.Drawing.Point(400, 28);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(382, 631);
+            this.panel1.Size = new System.Drawing.Size(267, 631);
             this.panel1.TabIndex = 18;
             // 
             // updateMarkePanel
