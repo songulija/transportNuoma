@@ -16,12 +16,14 @@ namespace TransportoNuoma
     {
         Klientas klientas;
         TransportRepository transportRepos;
+        Markes markesRepository;
        
         public MainFormAdmin(Klientas klientas)
         {
             InitializeComponent();
             this.klientas = klientas;
             transportRepos = new TransportRepository();
+            markesRepository = new Markes();
         }
 
         private void getTransport_Click(object sender, EventArgs e)
@@ -110,6 +112,68 @@ namespace TransportoNuoma
             
         }
 
-       
+        private void addShowMarke_Click(object sender, EventArgs e)
+        {
+            updateMarkePanel.Visible = false;
+            addMarkePanel.Visible = true;
+        }
+
+        private void updateShowMarke_Click(object sender, EventArgs e)
+        {
+            addMarkePanel.Visible = false;
+            updateMarkePanel.Visible = true;
+        }
+
+        private void getMarke_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DataTable dta = markesRepository.displayMarkes();
+                dataGridView2.DataSource = dta;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void addMarke_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                TransportoMarke tm = new TransportoMarke();
+                tm.markes_Pav = addMarkesPav.Text;
+                TransportoMarke insertedMarke = markesRepository.InsertMarke(tm);
+
+                if(insertedMarke.markes_Pav!=null && insertedMarke.markes_Pav != "")
+                {
+                    MessageBox.Show("Marke succesfully inserted");
+                }
+                else
+                {
+                    MessageBox.Show("Something went wrong");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void updateMarke_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                TransportoMarke tm = new TransportoMarke();
+                tm.markes_Id = int.Parse(updateMarkesId.Text);
+                tm.markes_Pav = updateMarkesPav.Text;
+                markesRepository.UpdateMarke(tm);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

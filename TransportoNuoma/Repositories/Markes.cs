@@ -16,8 +16,9 @@ namespace TransportoNuoma.Repositories
 
 
 
-        public void displayMarkes()
+        public DataTable displayMarkes()
         {
+            DataTable dta = new DataTable();
             try
             {
                 cnn = new MySqlConnection(connectionString);//assign connection. The variable cnn, which is of type SqlConnection is used to establish the connection to the database.
@@ -26,8 +27,7 @@ namespace TransportoNuoma.Repositories
                 MySqlCommand cmd = new MySqlCommand("Select * from tmarke", cnn);//select all from newTestTable
 
                 cmd.ExecuteNonQuery();
-
-                DataTable dta = new DataTable();
+                
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                 adapter.Fill(dta);
             }
@@ -37,8 +37,7 @@ namespace TransportoNuoma.Repositories
             }
 
             cnn.Close();
-            Console.WriteLine("Connection Closed. Press any key to exit...");
-            Console.Read();
+            return dta;
         }
 
         //REGISTER STUDENT
@@ -54,7 +53,7 @@ namespace TransportoNuoma.Repositories
 
                 //check if user exist
                 MySqlCommand cmd = new MySqlCommand("Select * from tmarke where Markes_pav=@Markes_pav", cnn);//to check if username exist we have to select all items with username
-                cmd.Parameters.AddWithValue("@Trans_nr", marke.markes_Pav);
+                cmd.Parameters.AddWithValue("@Markes_pav", marke.markes_Pav);
                 MySqlDataReader dataReader = cmd.ExecuteReader();
                 if ((dataReader.Read() == true))
                 {
@@ -87,7 +86,6 @@ namespace TransportoNuoma.Repositories
             {
                 //setting new SqlConnection, providing connectionString
                 cnn = new MySqlConnection(connectionString);
-                cnn.Open();//open database
 
                 //check if user exist
                 MySqlCommand cmd = new MySqlCommand("Update tmarke SET Markes_pav=@Markes_pav WHERE MarkesId=@MarkesId", cnn);//to check if username exist we have to select all items with username
