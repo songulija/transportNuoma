@@ -29,6 +29,16 @@
         private void InitializeComponent()
         {
             this.TransportPanel = new System.Windows.Forms.Panel();
+            this.updatePanel = new System.Windows.Forms.Panel();
+            this.UpdateTransTransId = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.updateButton = new System.Windows.Forms.Button();
+            this.UpdateTransKaina = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.updateTransSpalva = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.updateTransNr = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
             this.addPanel = new System.Windows.Forms.Panel();
             this.addUpdateButton = new System.Windows.Forms.Button();
             this.transQrKodas = new System.Windows.Forms.TextBox();
@@ -50,20 +60,30 @@
             this.getTransport = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.updatePanel = new System.Windows.Forms.Panel();
-            this.UpdateTransTransId = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.updateButton = new System.Windows.Forms.Button();
-            this.UpdateTransKaina = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.updateTransSpalva = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.updateTransNr = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.updateMarkePanel = new System.Windows.Forms.Panel();
+            this.updateMarke = new System.Windows.Forms.Button();
+            this.updateMarkesPav = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.addMarkePanel = new System.Windows.Forms.Panel();
+            this.addMarke = new System.Windows.Forms.Button();
+            this.addMarkesPav = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.updateShowMarke = new System.Windows.Forms.Button();
+            this.addShowMarke = new System.Windows.Forms.Button();
+            this.getMarke = new System.Windows.Forms.Button();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.label24 = new System.Windows.Forms.Label();
+            this.updateMarkesId = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.TransportPanel.SuspendLayout();
+            this.updatePanel.SuspendLayout();
             this.addPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.updatePanel.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.updateMarkePanel.SuspendLayout();
+            this.addMarkePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // TransportPanel
@@ -79,6 +99,97 @@
             this.TransportPanel.Name = "TransportPanel";
             this.TransportPanel.Size = new System.Drawing.Size(382, 631);
             this.TransportPanel.TabIndex = 0;
+            // 
+            // updatePanel
+            // 
+            this.updatePanel.Controls.Add(this.UpdateTransTransId);
+            this.updatePanel.Controls.Add(this.label9);
+            this.updatePanel.Controls.Add(this.updateButton);
+            this.updatePanel.Controls.Add(this.UpdateTransKaina);
+            this.updatePanel.Controls.Add(this.label12);
+            this.updatePanel.Controls.Add(this.updateTransSpalva);
+            this.updatePanel.Controls.Add(this.label14);
+            this.updatePanel.Controls.Add(this.updateTransNr);
+            this.updatePanel.Controls.Add(this.label16);
+            this.updatePanel.Location = new System.Drawing.Point(204, 248);
+            this.updatePanel.Name = "updatePanel";
+            this.updatePanel.Size = new System.Drawing.Size(178, 363);
+            this.updatePanel.TabIndex = 17;
+            this.updatePanel.Visible = false;
+            // 
+            // UpdateTransTransId
+            // 
+            this.UpdateTransTransId.Location = new System.Drawing.Point(20, 147);
+            this.UpdateTransTransId.Name = "UpdateTransTransId";
+            this.UpdateTransTransId.Size = new System.Drawing.Size(126, 20);
+            this.UpdateTransTransId.TabIndex = 16;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(17, 130);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(43, 13);
+            this.label9.TabIndex = 15;
+            this.label9.Text = "TransId";
+            // 
+            // updateButton
+            // 
+            this.updateButton.Location = new System.Drawing.Point(20, 187);
+            this.updateButton.Name = "updateButton";
+            this.updateButton.Size = new System.Drawing.Size(126, 33);
+            this.updateButton.TabIndex = 14;
+            this.updateButton.Text = "Update";
+            this.updateButton.UseVisualStyleBackColor = true;
+            this.updateButton.Click += new System.EventHandler(this.updateButton_Click);
+            // 
+            // UpdateTransKaina
+            // 
+            this.UpdateTransKaina.Location = new System.Drawing.Point(20, 107);
+            this.UpdateTransKaina.Name = "UpdateTransKaina";
+            this.UpdateTransKaina.Size = new System.Drawing.Size(126, 20);
+            this.UpdateTransKaina.TabIndex = 9;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(17, 90);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(34, 13);
+            this.label12.TabIndex = 8;
+            this.label12.Text = "Kaina";
+            // 
+            // updateTransSpalva
+            // 
+            this.updateTransSpalva.Location = new System.Drawing.Point(20, 66);
+            this.updateTransSpalva.Name = "updateTransSpalva";
+            this.updateTransSpalva.Size = new System.Drawing.Size(126, 20);
+            this.updateTransSpalva.TabIndex = 5;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(17, 49);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(40, 13);
+            this.label14.TabIndex = 4;
+            this.label14.Text = "Spalva";
+            // 
+            // updateTransNr
+            // 
+            this.updateTransNr.Location = new System.Drawing.Point(20, 26);
+            this.updateTransNr.Name = "updateTransNr";
+            this.updateTransNr.Size = new System.Drawing.Size(126, 20);
+            this.updateTransNr.TabIndex = 1;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(17, 9);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(49, 13);
+            this.label16.TabIndex = 0;
+            this.label16.Text = "Trans_nr";
             // 
             // addPanel
             // 
@@ -273,112 +384,183 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Transport";
             // 
-            // updatePanel
+            // panel1
             // 
-            this.updatePanel.Controls.Add(this.UpdateTransTransId);
-            this.updatePanel.Controls.Add(this.label9);
-            this.updatePanel.Controls.Add(this.updateButton);
-            this.updatePanel.Controls.Add(this.UpdateTransKaina);
-            this.updatePanel.Controls.Add(this.label12);
-            this.updatePanel.Controls.Add(this.updateTransSpalva);
-            this.updatePanel.Controls.Add(this.label14);
-            this.updatePanel.Controls.Add(this.updateTransNr);
-            this.updatePanel.Controls.Add(this.label16);
-            this.updatePanel.Location = new System.Drawing.Point(204, 248);
-            this.updatePanel.Name = "updatePanel";
-            this.updatePanel.Size = new System.Drawing.Size(178, 363);
-            this.updatePanel.TabIndex = 17;
-            this.updatePanel.Visible = false;
+            this.panel1.Controls.Add(this.updateMarkePanel);
+            this.panel1.Controls.Add(this.addMarkePanel);
+            this.panel1.Controls.Add(this.updateShowMarke);
+            this.panel1.Controls.Add(this.addShowMarke);
+            this.panel1.Controls.Add(this.getMarke);
+            this.panel1.Controls.Add(this.dataGridView2);
+            this.panel1.Controls.Add(this.label24);
+            this.panel1.Location = new System.Drawing.Point(400, 28);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(267, 631);
+            this.panel1.TabIndex = 18;
             // 
-            // UpdateTransTransId
+            // updateMarkePanel
             // 
-            this.UpdateTransTransId.Location = new System.Drawing.Point(20, 147);
-            this.UpdateTransTransId.Name = "UpdateTransTransId";
-            this.UpdateTransTransId.Size = new System.Drawing.Size(126, 20);
-            this.UpdateTransTransId.TabIndex = 16;
+            this.updateMarkePanel.Controls.Add(this.updateMarkesId);
+            this.updateMarkePanel.Controls.Add(this.label10);
+            this.updateMarkePanel.Controls.Add(this.updateMarke);
+            this.updateMarkePanel.Controls.Add(this.updateMarkesPav);
+            this.updateMarkePanel.Controls.Add(this.label15);
+            this.updateMarkePanel.Location = new System.Drawing.Point(18, 413);
+            this.updateMarkePanel.Name = "updateMarkePanel";
+            this.updateMarkePanel.Size = new System.Drawing.Size(178, 148);
+            this.updateMarkePanel.TabIndex = 17;
+            this.updateMarkePanel.Visible = false;
             // 
-            // label9
+            // updateMarke
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(17, 130);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(43, 13);
-            this.label9.TabIndex = 15;
-            this.label9.Text = "TransId";
+            this.updateMarke.Location = new System.Drawing.Point(20, 95);
+            this.updateMarke.Name = "updateMarke";
+            this.updateMarke.Size = new System.Drawing.Size(126, 33);
+            this.updateMarke.TabIndex = 14;
+            this.updateMarke.Text = "Update";
+            this.updateMarke.UseVisualStyleBackColor = true;
+            this.updateMarke.Click += new System.EventHandler(this.updateMarke_Click);
             // 
-            // updateButton
+            // updateMarkesPav
             // 
-            this.updateButton.Location = new System.Drawing.Point(20, 187);
-            this.updateButton.Name = "updateButton";
-            this.updateButton.Size = new System.Drawing.Size(126, 33);
-            this.updateButton.TabIndex = 14;
-            this.updateButton.Text = "Update";
-            this.updateButton.UseVisualStyleBackColor = true;
-            this.updateButton.Click += new System.EventHandler(this.updateButton_Click);
+            this.updateMarkesPav.Location = new System.Drawing.Point(20, 26);
+            this.updateMarkesPav.Name = "updateMarkesPav";
+            this.updateMarkesPav.Size = new System.Drawing.Size(126, 20);
+            this.updateMarkesPav.TabIndex = 1;
             // 
-            // UpdateTransKaina
+            // label15
             // 
-            this.UpdateTransKaina.Location = new System.Drawing.Point(20, 107);
-            this.UpdateTransKaina.Name = "UpdateTransKaina";
-            this.UpdateTransKaina.Size = new System.Drawing.Size(126, 20);
-            this.UpdateTransKaina.TabIndex = 9;
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(17, 9);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(104, 13);
+            this.label15.TabIndex = 0;
+            this.label15.Text = "Markes pavadinimas";
             // 
-            // label12
+            // addMarkePanel
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(17, 90);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(34, 13);
-            this.label12.TabIndex = 8;
-            this.label12.Text = "Kaina";
+            this.addMarkePanel.Controls.Add(this.addMarke);
+            this.addMarkePanel.Controls.Add(this.addMarkesPav);
+            this.addMarkePanel.Controls.Add(this.label23);
+            this.addMarkePanel.Location = new System.Drawing.Point(18, 297);
+            this.addMarkePanel.Name = "addMarkePanel";
+            this.addMarkePanel.Size = new System.Drawing.Size(178, 110);
+            this.addMarkePanel.TabIndex = 5;
+            this.addMarkePanel.Visible = false;
             // 
-            // updateTransSpalva
+            // addMarke
             // 
-            this.updateTransSpalva.Location = new System.Drawing.Point(20, 66);
-            this.updateTransSpalva.Name = "updateTransSpalva";
-            this.updateTransSpalva.Size = new System.Drawing.Size(126, 20);
-            this.updateTransSpalva.TabIndex = 5;
+            this.addMarke.Location = new System.Drawing.Point(20, 58);
+            this.addMarke.Name = "addMarke";
+            this.addMarke.Size = new System.Drawing.Size(126, 33);
+            this.addMarke.TabIndex = 14;
+            this.addMarke.Text = "Add";
+            this.addMarke.UseVisualStyleBackColor = true;
+            this.addMarke.Click += new System.EventHandler(this.addMarke_Click);
             // 
-            // label14
+            // addMarkesPav
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(17, 49);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(40, 13);
-            this.label14.TabIndex = 4;
-            this.label14.Text = "Spalva";
+            this.addMarkesPav.Location = new System.Drawing.Point(20, 26);
+            this.addMarkesPav.Name = "addMarkesPav";
+            this.addMarkesPav.Size = new System.Drawing.Size(126, 20);
+            this.addMarkesPav.TabIndex = 1;
             // 
-            // updateTransNr
+            // label23
             // 
-            this.updateTransNr.Location = new System.Drawing.Point(20, 26);
-            this.updateTransNr.Name = "updateTransNr";
-            this.updateTransNr.Size = new System.Drawing.Size(126, 20);
-            this.updateTransNr.TabIndex = 1;
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(17, 9);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(104, 13);
+            this.label23.TabIndex = 0;
+            this.label23.Text = "Markes pavadinimas";
             // 
-            // label16
+            // updateShowMarke
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(17, 9);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(49, 13);
-            this.label16.TabIndex = 0;
-            this.label16.Text = "Trans_nr";
+            this.updateShowMarke.Location = new System.Drawing.Point(18, 253);
+            this.updateShowMarke.Name = "updateShowMarke";
+            this.updateShowMarke.Size = new System.Drawing.Size(236, 23);
+            this.updateShowMarke.TabIndex = 4;
+            this.updateShowMarke.Text = "Update Marke";
+            this.updateShowMarke.UseVisualStyleBackColor = true;
+            this.updateShowMarke.Click += new System.EventHandler(this.updateShowMarke_Click);
+            // 
+            // addShowMarke
+            // 
+            this.addShowMarke.Location = new System.Drawing.Point(134, 219);
+            this.addShowMarke.Name = "addShowMarke";
+            this.addShowMarke.Size = new System.Drawing.Size(120, 23);
+            this.addShowMarke.TabIndex = 3;
+            this.addShowMarke.Text = "Add Marke";
+            this.addShowMarke.UseVisualStyleBackColor = true;
+            this.addShowMarke.Click += new System.EventHandler(this.addShowMarke_Click);
+            // 
+            // getMarke
+            // 
+            this.getMarke.Location = new System.Drawing.Point(18, 220);
+            this.getMarke.Name = "getMarke";
+            this.getMarke.Size = new System.Drawing.Size(110, 23);
+            this.getMarke.TabIndex = 2;
+            this.getMarke.Text = "Get Marke";
+            this.getMarke.UseVisualStyleBackColor = true;
+            this.getMarke.Click += new System.EventHandler(this.getMarke_Click);
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(18, 42);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(236, 171);
+            this.dataGridView2.TabIndex = 1;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(14, 15);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(62, 24);
+            this.label24.TabIndex = 0;
+            this.label24.Text = "Marke";
+            // 
+            // updateMarkesId
+            // 
+            this.updateMarkesId.Location = new System.Drawing.Point(20, 66);
+            this.updateMarkesId.Name = "updateMarkesId";
+            this.updateMarkesId.Size = new System.Drawing.Size(126, 20);
+            this.updateMarkesId.TabIndex = 16;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(17, 49);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(54, 13);
+            this.label10.TabIndex = 15;
+            this.label10.Text = "Markes Id";
             // 
             // MainFormAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1297, 655);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.TransportPanel);
             this.Name = "MainFormAdmin";
             this.Text = "Admin Window";
             this.TransportPanel.ResumeLayout(false);
             this.TransportPanel.PerformLayout();
+            this.updatePanel.ResumeLayout(false);
+            this.updatePanel.PerformLayout();
             this.addPanel.ResumeLayout(false);
             this.addPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.updatePanel.ResumeLayout(false);
-            this.updatePanel.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.updateMarkePanel.ResumeLayout(false);
+            this.updateMarkePanel.PerformLayout();
+            this.addMarkePanel.ResumeLayout(false);
+            this.addMarkePanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -417,5 +599,21 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox updateTransNr;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel updateMarkePanel;
+        private System.Windows.Forms.Button updateMarke;
+        private System.Windows.Forms.TextBox updateMarkesPav;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Panel addMarkePanel;
+        private System.Windows.Forms.Button addMarke;
+        private System.Windows.Forms.TextBox addMarkesPav;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Button updateShowMarke;
+        private System.Windows.Forms.Button addShowMarke;
+        private System.Windows.Forms.Button getMarke;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.TextBox updateMarkesId;
+        private System.Windows.Forms.Label label10;
     }
 }
