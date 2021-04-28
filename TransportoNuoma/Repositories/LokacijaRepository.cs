@@ -41,6 +41,46 @@ namespace TransportoNuoma.Repositories
             Console.Read();
         }
 
+
+        public Lokacija getTransportoLokacija(Transportas transportas)
+        {
+           
+            try
+            {
+                Lokacija lokacija = new Lokacija();
+
+                cnn = new MySqlConnection(connectionString);//assign connection. The variable cnn, which is of type SqlConnection is used to establish the connection to the database.
+                cnn.Open();//open connection. we use the Open method of the cnn variable to open a connection to the database.
+
+                MySqlCommand cmd = new MySqlCommand("Select * from lokacija where Trans_Id=@Trans_Id", cnn);//select all from newTestTable
+                cmd.Parameters.AddWithValue("@Trans_Id", transportas.transporto_Id);
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+                if ((dataReader.Read() == true))
+                {
+                    int lokacijos_Id = int.Parse(dataReader["lokacijosId"].ToString());
+                    string salis = dataReader["Salis"].ToString();
+                    string miestas = dataReader["Miestas"].ToString();
+                    double koordinatesX = double.Parse(dataReader["KoordinatesX"].ToString());
+                    double koordinatesY = double.Parse(dataReader["KoordinatesY"].ToString());
+                    int transporto_Id = int.Parse(dataReader["Trans_Id"].ToString());
+
+                    lokacija.transporto_Id = lokacijos_Id;
+                    lokacija.salis = salis;
+                    lokacija.miestas = miestas;
+                    lokacija.koordinatesX = koordinatesX;
+                    lokacija.koordinatesY = koordinatesY;
+                    lokacija.transporto_Id = transporto_Id;
+                    
+                }
+                dataReader.Close();
+                cnn.Close();
+                return lokacija;
+
+            }
+            catch (Exception e) { Console.WriteLine(e.Message); }
+
+            return null;
+        }
         //REGISTER STUDENT
         public Lokacija InsertLokacija(Lokacija lokacija)//provide transportas object when calling this function
         {

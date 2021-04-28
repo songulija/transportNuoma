@@ -52,32 +52,44 @@ namespace TransportoNuoma.Repositories
          */
         public KlientoLokacija GetKlientoLokacija(Klientas klientas)
         {
-            KlientoLokacija klientoLokacija = new KlientoLokacija();
-
-            cnn = new MySqlConnection(connectionString);//assign connection. The variable cnn, which is of type SqlConnection is used to establish the connection to the database.
-            cnn.Open();//open connection. we use the Open method of the cnn variable to open a connection to the database.
-
-            MySqlCommand cmd = new MySqlCommand("Select * from kliento_lokacija where Kliento_Nr=@Kliento_Nr", cnn);//select all from newTestTable
-            cmd.Parameters.AddWithValue("@Kliento_Nr", klientas.klientoNr);
-            MySqlDataReader dataReader = cmd.ExecuteReader();
-            if ((dataReader.Read() == true))
+            try
             {
-                int kliento_Lok_Id = int.Parse(dataReader["KlientoLokId"].ToString());
-                string salis = dataReader["Salis"].ToString();
-                string miestas = dataReader["Miestas"].ToString();
-                double koorindatesX = double.Parse(dataReader["KoordinatesX"].ToString());
-                double koorindatesY = double.Parse(dataReader["KoordinatesY"].ToString());
-                int kliento_Nr = int.Parse(dataReader["Kliento_nr"].ToString());
+                
+                KlientoLokacija klientoLokacija = new KlientoLokacija();
 
-                klientoLokacija.kliento_Lok_Id = kliento_Lok_Id;
-                klientoLokacija.salis = salis;
-                klientoLokacija.miestas = miestas;
-                klientoLokacija.koorindatesX = koorindatesX;
-                klientoLokacija.koorindatesY = koorindatesY;
-                klientoLokacija.kliento_Nr = kliento_Nr; 
+                cnn = new MySqlConnection(connectionString);//assign connection. The variable cnn, which is of type SqlConnection is used to establish the connection to the database.
+                cnn.Open();//open connection. we use the Open method of the cnn variable to open a connection to the database.
+
+                MySqlCommand cmd = new MySqlCommand("Select * from kliento_lokacija where Kliento_Nr=@Kliento_Nr", cnn);//select all from newTestTable
+                cmd.Parameters.AddWithValue("@Kliento_Nr", klientas.klientoNr);
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+                if ((dataReader.Read() == true))
+                {
+                    int kliento_Lok_Id = int.Parse(dataReader["KlientoLokId"].ToString());
+                    string salis = dataReader["Salis"].ToString();
+                    string miestas = dataReader["Miestas"].ToString();
+                    double koorindatesX = double.Parse(dataReader["KoordinatesX"].ToString());
+                    double koorindatesY = double.Parse(dataReader["KoordinatesY"].ToString());
+                    int kliento_Nr = int.Parse(dataReader["Kliento_nr"].ToString());
+
+                    klientoLokacija.kliento_Lok_Id = kliento_Lok_Id;
+                    klientoLokacija.salis = salis;
+                    klientoLokacija.miestas = miestas;
+                    klientoLokacija.koorindatesX = koorindatesX;
+                    klientoLokacija.koorindatesY = koorindatesY;
+                    klientoLokacija.kliento_Nr = kliento_Nr;
+                }
+                dataReader.Close();
+                cnn.Close();
+                return klientoLokacija;
+                e
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
             }
 
-            return klientoLokacija;
         }
         /**
          * MySqlDataReader reader = cmd.ExecuteReader();//we want to read rows that we get with this command

@@ -19,6 +19,7 @@ namespace TransportoNuoma
     public partial class MainForm : Form
     {
         Klientas klientas;
+        KlientoLokacija klientoLokacija;
         List<GMapMarker> gMapOverlayslist = new List<GMapMarker>();
         KlientoLokacijaRepository klientoLokacijaRepository;
         LokacijaRepository lokacijaRepository;
@@ -28,7 +29,8 @@ namespace TransportoNuoma
         {
             InitializeComponent();
             this.klientas = klientas;
-
+            klientoLokacijaRepository = new KlientoLokacijaRepository();
+            Console.WriteLine(klientas.klientoNr);
             createClientMarker();
             loadMap();
         }
@@ -59,11 +61,11 @@ namespace TransportoNuoma
 
         public void createClientMarker()
         {
-
-
+            klientoLokacija = klientoLokacijaRepository.GetKlientoLokacija(klientas);
+            
             GMapOverlay markers = new GMapOverlay("markers");
             GMapMarker marker = new GMarkerGoogle(
-                new PointLatLng(54.679341, 25.279297),
+               new PointLatLng(klientoLokacija.koorindatesX, klientoLokacija.koorindatesY),
                     GMarkerGoogleType.red);
             marker.Tag = gMapOverlayslist.Count;
             gMapOverlayslist.Add(marker);
@@ -72,7 +74,7 @@ namespace TransportoNuoma
             marker.ToolTipText = "hello " + klientas.vardas;
             marker.ToolTipMode = MarkerTooltipMode.OnMouseOver;
         }
-        
+        //new PointLatLng(54.679341, 25.279297),
 
         private void gmap_OnMarkerClick(GMapMarker item, MouseEventArgs e)
         {
