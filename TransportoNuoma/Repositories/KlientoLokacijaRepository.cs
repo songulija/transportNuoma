@@ -25,7 +25,7 @@ namespace TransportoNuoma.Repositories
                 cnn = new MySqlConnection(connectionString);//assign connection. The variable cnn, which is of type SqlConnection is used to establish the connection to the database.
                 cnn.Open();//open connection. we use the Open method of the cnn variable to open a connection to the database.
 
-                MySqlCommand cmd = new MySqlCommand("Select * from kliento_lokacija", cnn);//select all from newTestTable
+                MySqlCommand cmd = new MySqlCommand("SELECT kliento_lokacija.KlientoLokId,kliento_lokacija.Salis, kliento_lokacija.Miestas, kliento_lokacija.KoordinatesX,kliento_lokacija.KoordinatesY, klientas.Kliento_nr, klientas.Vardas,klientas.Pavarde,klientas.Email  FROM kliento_lokacija INNER JOIN klientas ON kliento_lokacija.Kliento_nr=klientas.Kliento_nr", cnn);//select all from newTestTable
 
                 cmd.ExecuteNonQuery();
 
