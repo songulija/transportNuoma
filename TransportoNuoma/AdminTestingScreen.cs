@@ -18,6 +18,7 @@ namespace TransportoNuoma
         TransTestRepository transTestRep;
         TransportRepository transportRep;
         GalimiTestaiRepository galimiTestRep;
+        PakrovimasRepository pakrovimasRep;
         public AdminTestingScreen(Klientas klientas)
         {
             InitializeComponent();
@@ -25,6 +26,7 @@ namespace TransportoNuoma
             transTestRep = new TransTestRepository();
             transportRep = new TransportRepository();
             galimiTestRep = new GalimiTestaiRepository();
+            pakrovimasRep = new PakrovimasRepository();
         }
 
         private void backButton_Click(object sender, EventArgs e)
@@ -125,6 +127,9 @@ namespace TransportoNuoma
         }
 
 
+        //GALIMI TEST
+
+
         private void addGalimiTestShow_Click(object sender, EventArgs e)
         {
             updateGalimiTestPanel.Visible = false;
@@ -164,6 +169,9 @@ namespace TransportoNuoma
                     MessageBox.Show("Succesfully inserted");
                 }
 
+                addGalimiTestTestPav.Clear();
+                addGalimiTestTestId.Clear();
+
             }
             catch (Exception ex)
             {
@@ -182,6 +190,10 @@ namespace TransportoNuoma
                 gt.testoKodas = int.Parse(updateGalimiTestTestoKodas.Text);
 
                 galimiTestRep.UpdateGalimiTestai(gt);
+
+                updateGalimiTestTestPav.Clear();
+                updateGalimiTestTestId.Clear();
+                updateGalimiTestTestoKodas.Clear();
             }
             catch (Exception ex)
             {
@@ -201,7 +213,7 @@ namespace TransportoNuoma
                 dataGridView4.DataSource = dta;
 
                 //FOR TRANSPORT
-                DataTable dta1 = transTestRep.displayTransTest();
+                DataTable dta1 = transportRep.displayTransportas();
                 dataGridView3.DataSource = dta1;
             }
             catch (Exception ex)
@@ -211,5 +223,93 @@ namespace TransportoNuoma
         }
 
 
+
+
+
+        //PAKROVIMAS
+
+        private void getPakrovimas_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                getPakrovimasDisplay();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void addPakrovimasShow_Click(object sender, EventArgs e)
+        {
+            updatePakrovimasPanel.Visible = false;
+            addPakrovimasPanel.Visible = true;
+        }
+
+        private void updatePakrovimasShow_Click(object sender, EventArgs e)
+        {
+            addPakrovimasPanel.Visible = false;
+            updatePakrovimasPanel.Visible = true;
+        }
+
+        private void addPakrovimas_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Pakrovimas pakrovimas = new Pakrovimas();
+                pakrovimas.pakrovimo_Dydis = int.Parse(addPakrovimasPakrovDydis.Text);
+                pakrovimas.transporto_Id = int.Parse(addPakrovimasTransId.Text);
+                Pakrovimas insertedPakrovimas = pakrovimasRep.InsertPakrovimas(pakrovimas);
+
+                addPakrovimasPakrovDydis.Clear();
+                addPakrovimasTransId.Clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            getPakrovimasDisplay();
+            MessageBox.Show("Succesfully inserted");
+        }
+
+        private void updatePakrovimas_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Pakrovimas pakrovimas = new Pakrovimas();
+                pakrovimas.pakrovimo_Dydis = int.Parse(updatePakrovimasPakrovDyd.Text);
+                pakrovimas.transporto_Id = int.Parse(updatePakrovimasTransId.Text);
+                pakrovimas.pakrovimo_Nr = int.Parse(updatePakrovimasPakrId.Text);
+                pakrovimasRep.UpdatePakrovimas(pakrovimas);
+
+                updatePakrovimasPakrovDyd.Clear();
+                updatePakrovimasTransId.Clear();
+                updatePakrovimasPakrId.Clear();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            getPakrovimasDisplay();
+            MessageBox.Show("Succesfully updated");
+        }
+
+        private void getPakrovimasDisplay()
+        {
+            try
+            {
+                //FOR TESTS
+                DataTable dta = pakrovimasRep.displayPakrovimas();
+                dataGridView6.DataSource = dta;
+
+                //FOR TRANSPORT
+                DataTable dta1 = transTestRep.displayTransTest();
+                dataGridView5.DataSource = dta1;
+            }catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }
