@@ -121,9 +121,13 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\GalimiNusizengimaiRepository.cs" />
+    <Compile Include="Repositories\GalimiTestaiRepository.cs" />
     <Compile Include="Repositories\Markes.cs" />
     <Compile Include="Repositories\NuomaRepository.cs" />
+    <Compile Include="Repositories\NusizengimaiRepository.cs" />
+    <Compile Include="Repositories\PakrovimasRepository.cs" />
     <Compile Include="Repositories\RezervacijaRepository.cs" />
+    <Compile Include="Repositories\TransGrazinimas.cs" />
     <Compile Include="Repositories\TransportRepository.cs" />
     <Compile Include="Repositories\TransTestRepository.cs" />
     <Compile Include="Repositories\UsersRepository.cs" />

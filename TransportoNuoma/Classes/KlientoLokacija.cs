@@ -15,6 +15,5 @@ namespace TransportoNuoma.Classes
         public double koorindatesY { get; set; }
         public int kliento_Nr { get; set; }
 
-
     }
 }
