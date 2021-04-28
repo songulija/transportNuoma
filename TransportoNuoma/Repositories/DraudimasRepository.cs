@@ -42,7 +42,7 @@ namespace TransportoNuoma.Repositories
         }
 
         //REGISTER STUDENT
-        public Draudimas InsertDraudimo(Draudimas draudimas)//provide transportas object when calling this function
+        public Draudimas InsertDraudimas(Draudimas draudimas)//provide transportas object when calling this function
         {
             try
             {

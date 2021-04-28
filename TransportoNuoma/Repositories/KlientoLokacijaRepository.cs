@@ -43,7 +43,7 @@ namespace TransportoNuoma.Repositories
         }
 
         //REGISTER STUDENT
-        public KlientoLokacija InsertLokacija(KlientoLokacija klientoLokacija)//provide transportas object when calling this function
+        public KlientoLokacija InsertKlientoLokacija(KlientoLokacija klientoLokacija)//provide transportas object when calling this function
         {
             try
             {
@@ -88,7 +88,7 @@ namespace TransportoNuoma.Repositories
         }
 
 
-        public void UpdateLokacija(KlientoLokacija klientoLokacija)
+        public void UpdateKlientoLokacija(KlientoLokacija klientoLokacija)
         {
             try
             {

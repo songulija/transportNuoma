@@ -42,7 +42,7 @@ namespace TransportoNuoma.Repositories
         }
 
         //REGISTER STUDENT
-        public TransportoTestai InsertMarke(TransportoTestai transTestai)//provide transportas object when calling this function
+        public TransportoTestai InsertTransTest(TransportoTestai transTestai)//provide transportas object when calling this function
         {
             try
             {

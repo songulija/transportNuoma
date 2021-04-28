@@ -16,7 +16,7 @@ namespace TransportoNuoma.Repositories
 
 
 
-        public void displayGalimiTest()
+        public void displayGalimiTestai()
         {
             try
             {
@@ -42,7 +42,7 @@ namespace TransportoNuoma.Repositories
         }
 
         //REGISTER STUDENT
-        public GalimiTestai InsertMarke(GalimiTestai galimiTestai)//provide transportas object when calling this function
+        public GalimiTestai InsertGalimiTestai(GalimiTestai galimiTestai)//provide transportas object when calling this function
         {
             try
             {
@@ -67,7 +67,7 @@ namespace TransportoNuoma.Repositories
         }
 
 
-        public void UpdateTransTest(GalimiTestai galimiTestai)
+        public void UpdateGalimiTestai(GalimiTestai galimiTestai)
         {
             try
             {

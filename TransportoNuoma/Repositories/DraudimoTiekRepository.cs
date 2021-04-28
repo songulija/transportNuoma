@@ -83,7 +83,7 @@ namespace TransportoNuoma.Repositories
         }
 
 
-        public void UpdateDraudimoTiekejas(DraudimoTiekejai draudimoTiekejai)
+        public void UpdateDraudimoTiekejai(DraudimoTiekejai draudimoTiekejai)
         {
             try
             {

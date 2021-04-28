@@ -17,7 +17,7 @@ namespace TransportoNuoma.Repositories
 
 
 
-        public void displayTransportas()
+        public void displayNuoma()
         {
             try
             {
@@ -93,7 +93,30 @@ namespace TransportoNuoma.Repositories
         }
 
 
-        
+        public void UpdateNuoma(Nuoma nuoma)
+        {
+            try
+            {
+                //setting new SqlConnection, providing connectionString
+                cnn = new MySqlConnection(connectionString);
+                cnn.Open();//open database
+
+                //check if user exist
+                MySqlCommand cmd = new MySqlCommand("Update nuoma SET NuomosPabLaik=@NuomosPabLaik WHERE Nuomos_nr=@Nuomos_nr", cnn);//to check if username exist we have to select all items with username
+                cmd.Parameters.AddWithValue("@NuomosPabLaik", nuoma.nuomosPabLaik);
+                cmd.Parameters.AddWithValue("@Nuomos_nr", nuoma.nuomos_Nr);
+                cnn.Open();
+                cmd.ExecuteNonQuery();
+                cnn.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+        }
+
+
+
 
     }
 }

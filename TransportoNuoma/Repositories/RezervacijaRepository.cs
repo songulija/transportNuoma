@@ -16,7 +16,7 @@ namespace TransportoNuoma.Repositories
 
 
 
-        public void displayTransportas()
+        public void displayRezervacija()
         {
             try
             {

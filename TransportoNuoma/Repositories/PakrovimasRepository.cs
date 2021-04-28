@@ -17,7 +17,7 @@ namespace TransportoNuoma.Repositories
 
 
 
-        public void displayTransportas()
+        public void displayPakrovimas()
         {
             try
             {
@@ -43,7 +43,7 @@ namespace TransportoNuoma.Repositories
         }
 
         //REGISTER STUDENT
-        public Pakrovimas InsertRezervacija(Pakrovimas pakrovimas)//provide transportas object when calling this function
+        public Pakrovimas InsertPakrovimas(Pakrovimas pakrovimas)//provide transportas object when calling this function
         {
             try
             {
@@ -85,7 +85,7 @@ namespace TransportoNuoma.Repositories
         }
 
 
-        public void UpdateRezervacija(Pakrovimas pakrovimas)
+        public void UpdatePakrovimas(Pakrovimas pakrovimas)
         {
             try
             {
