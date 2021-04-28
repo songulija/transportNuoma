@@ -84,6 +84,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminDraudimasForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminDraudimasForm.Designer.cs">
+      <DependentUpon>AdminDraudimasForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminLokacijaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminLokacijaForm.Designer.cs">
+      <DependentUpon>AdminLokacijaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminNuomaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminNuomaForm.Designer.cs">
+      <DependentUpon>AdminNuomaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminTestingScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminTestingScreen.Designer.cs">
+      <DependentUpon>AdminTestingScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Classes\Apmokejimas.cs" />
     <Compile Include="Classes\Draudimas.cs" />
     <Compile Include="Classes\DraudimoTiekejai.cs" />
@@ -136,6 +160,18 @@
     <Compile Include="Repositories\TransportRepository.cs" />
     <Compile Include="Repositories\TransTestRepository.cs" />
     <Compile Include="Repositories\UsersRepository.cs" />
+    <EmbeddedResource Include="AdminDraudimasForm.resx">
+      <DependentUpon>AdminDraudimasForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminLokacijaForm.resx">
+      <DependentUpon>AdminLokacijaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminNuomaForm.resx">
+      <DependentUpon>AdminNuomaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminTestingScreen.resx">
+      <DependentUpon>AdminTestingScreen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

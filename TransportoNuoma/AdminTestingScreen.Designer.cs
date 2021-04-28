@@ -29,6 +29,60 @@
         private void InitializeComponent()
         {
             this.backButton = new System.Windows.Forms.Button();
+            this.TransportPanel = new System.Windows.Forms.Panel();
+            this.updateTransTestPanel = new System.Windows.Forms.Panel();
+            this.updateButton = new System.Windows.Forms.Button();
+            this.addTransTestPanel = new System.Windows.Forms.Panel();
+            this.addTransTest = new System.Windows.Forms.Button();
+            this.addTransTestTransId = new System.Windows.Forms.TextBox();
+            this.sdsdsd = new System.Windows.Forms.Label();
+            this.addTransTestData = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.updateTransShow = new System.Windows.Forms.Button();
+            this.AddTransportShow = new System.Windows.Forms.Button();
+            this.getTransport = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.updateTransTestTransId = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.updateTransTestData = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.updateTransTestTestId = new System.Windows.Forms.TextBox();
+            this.sdsdsds = new System.Windows.Forms.Label();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.label5 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.updateGalimiTestPanel = new System.Windows.Forms.Panel();
+            this.updateGalimiTestTestoKodas = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.updateGalimiTest = new System.Windows.Forms.Button();
+            this.addGalimiTestPanel = new System.Windows.Forms.Panel();
+            this.addGalimiTest = new System.Windows.Forms.Button();
+            this.addGalimiTestTestId = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.addGalimiTestTestPav = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.updateGalimiTestShow = new System.Windows.Forms.Button();
+            this.addGalimiTestShow = new System.Windows.Forms.Button();
+            this.getGalimiTest = new System.Windows.Forms.Button();
+            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.label12 = new System.Windows.Forms.Label();
+            this.updateGalimiTestTestId = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.updateGalimiTestTestPav = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.TransportPanel.SuspendLayout();
+            this.updateTransTestPanel.SuspendLayout();
+            this.addTransTestPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            this.updateGalimiTestPanel.SuspendLayout();
+            this.addGalimiTestPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.SuspendLayout();
             // 
             // backButton
@@ -42,14 +96,452 @@
             this.backButton.UseVisualStyleBackColor = true;
             this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
+            // TransportPanel
+            // 
+            this.TransportPanel.Controls.Add(this.label5);
+            this.TransportPanel.Controls.Add(this.dataGridView2);
+            this.TransportPanel.Controls.Add(this.updateTransTestPanel);
+            this.TransportPanel.Controls.Add(this.addTransTestPanel);
+            this.TransportPanel.Controls.Add(this.updateTransShow);
+            this.TransportPanel.Controls.Add(this.AddTransportShow);
+            this.TransportPanel.Controls.Add(this.getTransport);
+            this.TransportPanel.Controls.Add(this.dataGridView1);
+            this.TransportPanel.Controls.Add(this.label1);
+            this.TransportPanel.Location = new System.Drawing.Point(27, 46);
+            this.TransportPanel.Name = "TransportPanel";
+            this.TransportPanel.Size = new System.Drawing.Size(400, 584);
+            this.TransportPanel.TabIndex = 2;
+            // 
+            // updateTransTestPanel
+            // 
+            this.updateTransTestPanel.Controls.Add(this.updateTransTestTestId);
+            this.updateTransTestPanel.Controls.Add(this.sdsdsds);
+            this.updateTransTestPanel.Controls.Add(this.updateTransTestTransId);
+            this.updateTransTestPanel.Controls.Add(this.label3);
+            this.updateTransTestPanel.Controls.Add(this.updateTransTestData);
+            this.updateTransTestPanel.Controls.Add(this.label4);
+            this.updateTransTestPanel.Controls.Add(this.updateButton);
+            this.updateTransTestPanel.Location = new System.Drawing.Point(204, 385);
+            this.updateTransTestPanel.Name = "updateTransTestPanel";
+            this.updateTransTestPanel.Size = new System.Drawing.Size(178, 196);
+            this.updateTransTestPanel.TabIndex = 17;
+            this.updateTransTestPanel.Visible = false;
+            // 
+            // updateButton
+            // 
+            this.updateButton.Location = new System.Drawing.Point(20, 133);
+            this.updateButton.Name = "updateButton";
+            this.updateButton.Size = new System.Drawing.Size(126, 33);
+            this.updateButton.TabIndex = 14;
+            this.updateButton.Text = "Update";
+            this.updateButton.UseVisualStyleBackColor = true;
+            this.updateButton.Click += new System.EventHandler(this.updateButton_Click);
+            // 
+            // addTransTestPanel
+            // 
+            this.addTransTestPanel.Controls.Add(this.addTransTest);
+            this.addTransTestPanel.Controls.Add(this.addTransTestTransId);
+            this.addTransTestPanel.Controls.Add(this.sdsdsd);
+            this.addTransTestPanel.Controls.Add(this.addTransTestData);
+            this.addTransTestPanel.Controls.Add(this.label2);
+            this.addTransTestPanel.Location = new System.Drawing.Point(18, 386);
+            this.addTransTestPanel.Name = "addTransTestPanel";
+            this.addTransTestPanel.Size = new System.Drawing.Size(178, 155);
+            this.addTransTestPanel.TabIndex = 5;
+            this.addTransTestPanel.Visible = false;
+            // 
+            // addTransTest
+            // 
+            this.addTransTest.Location = new System.Drawing.Point(20, 106);
+            this.addTransTest.Name = "addTransTest";
+            this.addTransTest.Size = new System.Drawing.Size(126, 33);
+            this.addTransTest.TabIndex = 14;
+            this.addTransTest.Text = "Add";
+            this.addTransTest.UseVisualStyleBackColor = true;
+            this.addTransTest.Click += new System.EventHandler(this.addTransTest_Click);
+            // 
+            // addTransTestTransId
+            // 
+            this.addTransTestTransId.Location = new System.Drawing.Point(20, 66);
+            this.addTransTestTransId.Name = "addTransTestTransId";
+            this.addTransTestTransId.Size = new System.Drawing.Size(126, 20);
+            this.addTransTestTransId.TabIndex = 3;
+            // 
+            // sdsdsd
+            // 
+            this.sdsdsd.AutoSize = true;
+            this.sdsdsd.Location = new System.Drawing.Point(17, 49);
+            this.sdsdsd.Name = "sdsdsd";
+            this.sdsdsd.Size = new System.Drawing.Size(48, 13);
+            this.sdsdsd.TabIndex = 2;
+            this.sdsdsd.Text = "Trans_id";
+            // 
+            // addTransTestData
+            // 
+            this.addTransTestData.Location = new System.Drawing.Point(20, 26);
+            this.addTransTestData.Name = "addTransTestData";
+            this.addTransTestData.Size = new System.Drawing.Size(126, 20);
+            this.addTransTestData.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(17, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(55, 13);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Test_data";
+            // 
+            // updateTransShow
+            // 
+            this.updateTransShow.Location = new System.Drawing.Point(202, 356);
+            this.updateTransShow.Name = "updateTransShow";
+            this.updateTransShow.Size = new System.Drawing.Size(110, 23);
+            this.updateTransShow.TabIndex = 4;
+            this.updateTransShow.Text = "Update Test";
+            this.updateTransShow.UseVisualStyleBackColor = true;
+            this.updateTransShow.Click += new System.EventHandler(this.updateTransShow_Click);
+            // 
+            // AddTransportShow
+            // 
+            this.AddTransportShow.Location = new System.Drawing.Point(110, 356);
+            this.AddTransportShow.Name = "AddTransportShow";
+            this.AddTransportShow.Size = new System.Drawing.Size(86, 23);
+            this.AddTransportShow.TabIndex = 3;
+            this.AddTransportShow.Text = "Add Test";
+            this.AddTransportShow.UseVisualStyleBackColor = true;
+            this.AddTransportShow.Click += new System.EventHandler(this.AddTransportShow_Click);
+            // 
+            // getTransport
+            // 
+            this.getTransport.Location = new System.Drawing.Point(18, 357);
+            this.getTransport.Name = "getTransport";
+            this.getTransport.Size = new System.Drawing.Size(86, 23);
+            this.getTransport.TabIndex = 2;
+            this.getTransport.Text = "Get Test";
+            this.getTransport.UseVisualStyleBackColor = true;
+            this.getTransport.Click += new System.EventHandler(this.getTransport_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(18, 42);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(351, 171);
+            this.dataGridView1.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(14, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(156, 24);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Transporto Testai";
+            // 
+            // updateTransTestTransId
+            // 
+            this.updateTransTestTransId.Location = new System.Drawing.Point(20, 67);
+            this.updateTransTestTransId.Name = "updateTransTestTransId";
+            this.updateTransTestTransId.Size = new System.Drawing.Size(126, 20);
+            this.updateTransTestTransId.TabIndex = 18;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(17, 50);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(48, 13);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "Trans_id";
+            // 
+            // updateTransTestData
+            // 
+            this.updateTransTestData.Location = new System.Drawing.Point(20, 27);
+            this.updateTransTestData.Name = "updateTransTestData";
+            this.updateTransTestData.Size = new System.Drawing.Size(126, 20);
+            this.updateTransTestData.TabIndex = 16;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(17, 10);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(55, 13);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "Test_data";
+            // 
+            // updateTransTestTestId
+            // 
+            this.updateTransTestTestId.Location = new System.Drawing.Point(20, 107);
+            this.updateTransTestTestId.Name = "updateTransTestTestId";
+            this.updateTransTestTestId.Size = new System.Drawing.Size(126, 20);
+            this.updateTransTestTestId.TabIndex = 20;
+            // 
+            // sdsdsds
+            // 
+            this.sdsdsds.AutoSize = true;
+            this.sdsdsds.Location = new System.Drawing.Point(17, 90);
+            this.sdsdsds.Name = "sdsdsds";
+            this.sdsdsds.Size = new System.Drawing.Size(43, 13);
+            this.sdsdsds.TabIndex = 19;
+            this.sdsdsds.Text = "Test_Id";
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(18, 240);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(330, 111);
+            this.dataGridView2.TabIndex = 18;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(14, 216);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(104, 24);
+            this.label5.TabIndex = 19;
+            this.label5.Text = "Transportai";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.dataGridView3);
+            this.panel1.Controls.Add(this.updateGalimiTestPanel);
+            this.panel1.Controls.Add(this.addGalimiTestPanel);
+            this.panel1.Controls.Add(this.updateGalimiTestShow);
+            this.panel1.Controls.Add(this.addGalimiTestShow);
+            this.panel1.Controls.Add(this.getGalimiTest);
+            this.panel1.Controls.Add(this.dataGridView4);
+            this.panel1.Controls.Add(this.label12);
+            this.panel1.Location = new System.Drawing.Point(433, 46);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(400, 584);
+            this.panel1.TabIndex = 20;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(14, 216);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(60, 24);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "Testai";
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Location = new System.Drawing.Point(18, 240);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.Size = new System.Drawing.Size(330, 111);
+            this.dataGridView3.TabIndex = 18;
+            // 
+            // updateGalimiTestPanel
+            // 
+            this.updateGalimiTestPanel.Controls.Add(this.updateGalimiTestTestId);
+            this.updateGalimiTestPanel.Controls.Add(this.updateGalimiTestTestoKodas);
+            this.updateGalimiTestPanel.Controls.Add(this.label8);
+            this.updateGalimiTestPanel.Controls.Add(this.label7);
+            this.updateGalimiTestPanel.Controls.Add(this.updateGalimiTestTestPav);
+            this.updateGalimiTestPanel.Controls.Add(this.updateGalimiTest);
+            this.updateGalimiTestPanel.Controls.Add(this.label9);
+            this.updateGalimiTestPanel.Location = new System.Drawing.Point(204, 385);
+            this.updateGalimiTestPanel.Name = "updateGalimiTestPanel";
+            this.updateGalimiTestPanel.Size = new System.Drawing.Size(178, 196);
+            this.updateGalimiTestPanel.TabIndex = 17;
+            this.updateGalimiTestPanel.Visible = false;
+            // 
+            // updateGalimiTestTestoKodas
+            // 
+            this.updateGalimiTestTestoKodas.Location = new System.Drawing.Point(20, 107);
+            this.updateGalimiTestTestoKodas.Name = "updateGalimiTestTestoKodas";
+            this.updateGalimiTestTestoKodas.Size = new System.Drawing.Size(126, 20);
+            this.updateGalimiTestTestoKodas.TabIndex = 20;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(17, 90);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(69, 13);
+            this.label7.TabIndex = 19;
+            this.label7.Text = "Testo_kodas";
+            // 
+            // updateGalimiTest
+            // 
+            this.updateGalimiTest.Location = new System.Drawing.Point(20, 133);
+            this.updateGalimiTest.Name = "updateGalimiTest";
+            this.updateGalimiTest.Size = new System.Drawing.Size(126, 33);
+            this.updateGalimiTest.TabIndex = 14;
+            this.updateGalimiTest.Text = "Update";
+            this.updateGalimiTest.UseVisualStyleBackColor = true;
+            this.updateGalimiTest.Click += new System.EventHandler(this.updateGalimiTest_Click);
+            // 
+            // addGalimiTestPanel
+            // 
+            this.addGalimiTestPanel.Controls.Add(this.addGalimiTest);
+            this.addGalimiTestPanel.Controls.Add(this.addGalimiTestTestId);
+            this.addGalimiTestPanel.Controls.Add(this.label10);
+            this.addGalimiTestPanel.Controls.Add(this.addGalimiTestTestPav);
+            this.addGalimiTestPanel.Controls.Add(this.label11);
+            this.addGalimiTestPanel.Location = new System.Drawing.Point(18, 386);
+            this.addGalimiTestPanel.Name = "addGalimiTestPanel";
+            this.addGalimiTestPanel.Size = new System.Drawing.Size(178, 155);
+            this.addGalimiTestPanel.TabIndex = 5;
+            this.addGalimiTestPanel.Visible = false;
+            // 
+            // addGalimiTest
+            // 
+            this.addGalimiTest.Location = new System.Drawing.Point(20, 106);
+            this.addGalimiTest.Name = "addGalimiTest";
+            this.addGalimiTest.Size = new System.Drawing.Size(126, 33);
+            this.addGalimiTest.TabIndex = 14;
+            this.addGalimiTest.Text = "Add";
+            this.addGalimiTest.UseVisualStyleBackColor = true;
+            this.addGalimiTest.Click += new System.EventHandler(this.addGalimiTest_Click);
+            // 
+            // addGalimiTestTestId
+            // 
+            this.addGalimiTestTestId.Location = new System.Drawing.Point(20, 66);
+            this.addGalimiTestTestId.Name = "addGalimiTestTestId";
+            this.addGalimiTestTestId.Size = new System.Drawing.Size(126, 20);
+            this.addGalimiTestTestId.TabIndex = 3;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(17, 49);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(37, 13);
+            this.label10.TabIndex = 2;
+            this.label10.Text = "TestId";
+            // 
+            // addGalimiTestTestPav
+            // 
+            this.addGalimiTestTestPav.Location = new System.Drawing.Point(20, 26);
+            this.addGalimiTestTestPav.Name = "addGalimiTestTestPav";
+            this.addGalimiTestTestPav.Size = new System.Drawing.Size(126, 20);
+            this.addGalimiTestTestPav.TabIndex = 1;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(17, 9);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(52, 13);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "Test_pav";
+            // 
+            // updateGalimiTestShow
+            // 
+            this.updateGalimiTestShow.Location = new System.Drawing.Point(240, 356);
+            this.updateGalimiTestShow.Name = "updateGalimiTestShow";
+            this.updateGalimiTestShow.Size = new System.Drawing.Size(110, 23);
+            this.updateGalimiTestShow.TabIndex = 4;
+            this.updateGalimiTestShow.Text = "Update Galimi Test";
+            this.updateGalimiTestShow.UseVisualStyleBackColor = true;
+            this.updateGalimiTestShow.Click += new System.EventHandler(this.updateGalimiTestShow_Click);
+            // 
+            // addGalimiTestShow
+            // 
+            this.addGalimiTestShow.Location = new System.Drawing.Point(137, 356);
+            this.addGalimiTestShow.Name = "addGalimiTestShow";
+            this.addGalimiTestShow.Size = new System.Drawing.Size(97, 23);
+            this.addGalimiTestShow.TabIndex = 3;
+            this.addGalimiTestShow.Text = "Add Galimi Test";
+            this.addGalimiTestShow.UseVisualStyleBackColor = true;
+            this.addGalimiTestShow.Click += new System.EventHandler(this.addGalimiTestShow_Click);
+            // 
+            // getGalimiTest
+            // 
+            this.getGalimiTest.Location = new System.Drawing.Point(18, 357);
+            this.getGalimiTest.Name = "getGalimiTest";
+            this.getGalimiTest.Size = new System.Drawing.Size(113, 23);
+            this.getGalimiTest.TabIndex = 2;
+            this.getGalimiTest.Text = "Get Galimi testai";
+            this.getGalimiTest.UseVisualStyleBackColor = true;
+            this.getGalimiTest.Click += new System.EventHandler(this.getGalimiTest_Click);
+            // 
+            // dataGridView4
+            // 
+            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView4.Location = new System.Drawing.Point(18, 42);
+            this.dataGridView4.Name = "dataGridView4";
+            this.dataGridView4.Size = new System.Drawing.Size(351, 171);
+            this.dataGridView4.TabIndex = 1;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(14, 15);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(117, 24);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "Galimi Testai";
+            // 
+            // updateGalimiTestTestId
+            // 
+            this.updateGalimiTestTestId.Location = new System.Drawing.Point(20, 67);
+            this.updateGalimiTestTestId.Name = "updateGalimiTestTestId";
+            this.updateGalimiTestTestId.Size = new System.Drawing.Size(126, 20);
+            this.updateGalimiTestTestId.TabIndex = 18;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(17, 50);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(37, 13);
+            this.label8.TabIndex = 17;
+            this.label8.Text = "TestId";
+            // 
+            // updateGalimiTestTestPav
+            // 
+            this.updateGalimiTestTestPav.Location = new System.Drawing.Point(20, 27);
+            this.updateGalimiTestTestPav.Name = "updateGalimiTestTestPav";
+            this.updateGalimiTestTestPav.Size = new System.Drawing.Size(126, 20);
+            this.updateGalimiTestTestPav.TabIndex = 16;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(17, 10);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(52, 13);
+            this.label9.TabIndex = 15;
+            this.label9.Text = "Test_pav";
+            // 
             // AdminTestingScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1086, 653);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.TransportPanel);
             this.Controls.Add(this.backButton);
             this.Name = "AdminTestingScreen";
             this.Text = "AdminTestingScreen";
+            this.TransportPanel.ResumeLayout(false);
+            this.TransportPanel.PerformLayout();
+            this.updateTransTestPanel.ResumeLayout(false);
+            this.updateTransTestPanel.PerformLayout();
+            this.addTransTestPanel.ResumeLayout(false);
+            this.addTransTestPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            this.updateGalimiTestPanel.ResumeLayout(false);
+            this.updateGalimiTestPanel.PerformLayout();
+            this.addGalimiTestPanel.ResumeLayout(false);
+            this.addGalimiTestPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -57,5 +549,49 @@
         #endregion
 
         private System.Windows.Forms.Button backButton;
+        private System.Windows.Forms.Panel TransportPanel;
+        private System.Windows.Forms.Panel updateTransTestPanel;
+        private System.Windows.Forms.TextBox updateTransTestTransId;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox updateTransTestData;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button updateButton;
+        private System.Windows.Forms.Panel addTransTestPanel;
+        private System.Windows.Forms.Button addTransTest;
+        private System.Windows.Forms.TextBox addTransTestTransId;
+        private System.Windows.Forms.Label sdsdsd;
+        private System.Windows.Forms.TextBox addTransTestData;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button updateTransShow;
+        private System.Windows.Forms.Button AddTransportShow;
+        private System.Windows.Forms.Button getTransport;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox updateTransTestTestId;
+        private System.Windows.Forms.Label sdsdsds;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.Panel updateGalimiTestPanel;
+        private System.Windows.Forms.TextBox updateGalimiTestTestId;
+        private System.Windows.Forms.TextBox updateGalimiTestTestoKodas;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox updateGalimiTestTestPav;
+        private System.Windows.Forms.Button updateGalimiTest;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Panel addGalimiTestPanel;
+        private System.Windows.Forms.Button addGalimiTest;
+        private System.Windows.Forms.TextBox addGalimiTestTestId;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox addGalimiTestTestPav;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button updateGalimiTestShow;
+        private System.Windows.Forms.Button addGalimiTestShow;
+        private System.Windows.Forms.Button getGalimiTest;
+        private System.Windows.Forms.DataGridView dataGridView4;
+        private System.Windows.Forms.Label label12;
     }
 }

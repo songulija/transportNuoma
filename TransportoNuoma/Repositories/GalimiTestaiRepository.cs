@@ -16,18 +16,19 @@ namespace TransportoNuoma.Repositories
 
 
 
-        public void displayGalimiTestai()
+        public DataTable displayGalimiTestai()
         {
+            DataTable dta = new DataTable();
             try
             {
                 cnn = new MySqlConnection(connectionString);//assign connection. The variable cnn, which is of type SqlConnection is used to establish the connection to the database.
                 cnn.Open();//open connection. we use the Open method of the cnn variable to open a connection to the database.
 
-                MySqlCommand cmd = new MySqlCommand("Select * from galimi_test", cnn);//select all from newTestTable
+                MySqlCommand cmd = new MySqlCommand("SELECT galimi_test.Test_pav, galimi_test.Testo_kodas, galimi_test.TestId, trans_test.Test_data, trans_test.Trans_Id, transportas.Trans_nr,transportas.Tipas FROM galimi_test INNER JOIN trans_test ON galimi_test.TestId=trans_test.TestId INNER JOIN transportas ON trans_test.Trans_Id=transportas.Trans_Id", cnn);//select all from newTestTable
 
                 cmd.ExecuteNonQuery();
 
-                DataTable dta = new DataTable();
+                
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                 adapter.Fill(dta);
             }
@@ -37,8 +38,7 @@ namespace TransportoNuoma.Repositories
             }
 
             cnn.Close();
-            Console.WriteLine("Connection Closed. Press any key to exit...");
-            Console.Read();
+            return dta;
         }
 
         //REGISTER STUDENT
@@ -73,7 +73,6 @@ namespace TransportoNuoma.Repositories
             {
                 //setting new SqlConnection, providing connectionString
                 cnn = new MySqlConnection(connectionString);
-                cnn.Open();//open database
 
                 //check if user exist
                 MySqlCommand cmd = new MySqlCommand("Update galimi_test SET Test_pav=@Test_pav, TestId=@TestId  WHERE Testo_kodas=@Testo_kodas", cnn);//to check if username exist we have to select all items with username

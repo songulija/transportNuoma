@@ -16,18 +16,19 @@ namespace TransportoNuoma.Repositories
 
 
 
-        public void displayTransTest()
+        public DataTable displayTransTest()
         {
+            DataTable dta = new DataTable();
             try
             {
                 cnn = new MySqlConnection(connectionString);//assign connection. The variable cnn, which is of type SqlConnection is used to establish the connection to the database.
                 cnn.Open();//open connection. we use the Open method of the cnn variable to open a connection to the database.
 
-                MySqlCommand cmd = new MySqlCommand("Select * from trans_test", cnn);//select all from newTestTable
+                MySqlCommand cmd = new MySqlCommand("SELECT trans_test.TestId, trans_test.Test_data, trans_test.Trans_Id, transportas.Trans_nr,transportas.Tipas,transportas.Gamybos_Metai  FROM trans_test INNER JOIN transportas ON trans_test.Trans_Id=transportas.Trans_Id", cnn);//select all from newTestTable
 
                 cmd.ExecuteNonQuery();
 
-                DataTable dta = new DataTable();
+                
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                 adapter.Fill(dta);
             }
@@ -37,8 +38,7 @@ namespace TransportoNuoma.Repositories
             }
 
             cnn.Close();
-            Console.WriteLine("Connection Closed. Press any key to exit...");
-            Console.Read();
+            return dta;
         }
 
         //REGISTER STUDENT
@@ -73,7 +73,6 @@ namespace TransportoNuoma.Repositories
             {
                 //setting new SqlConnection, providing connectionString
                 cnn = new MySqlConnection(connectionString);
-                cnn.Open();//open database
 
                 //check if user exist
                 MySqlCommand cmd = new MySqlCommand("Update trans_test SET Test_data=@Test_data, Trans_Id=@Trans_Id  WHERE TestId=@TestId", cnn);//to check if username exist we have to select all items with username
