@@ -8,8 +8,10 @@ namespace TransportoNuoma.Classes
 {
     class Draudimas
     {
-        public int nusizengimo_Kodas { get; set; }
-        public string nusizengimo_Pavadinimas { get; set; }
-        public int nusizengimai_Id { get; set; }
+        public int draudId { get; set; }
+        public DateTime draudPradData;
+        public DateTime draudPabData;
+        public int tiekId { get; set; }
+        public int Trans_Id { get; set; }
     }
 }
