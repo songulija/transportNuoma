@@ -17,8 +17,9 @@ namespace TransportoNuoma.Repositories
 
 
 
-        public void displayKlientoLokacija()
+        public DataTable displayKlientoLokacija()
         {
+            DataTable dta = new DataTable();
             try
             {
                 cnn = new MySqlConnection(connectionString);//assign connection. The variable cnn, which is of type SqlConnection is used to establish the connection to the database.
@@ -28,7 +29,6 @@ namespace TransportoNuoma.Repositories
 
                 cmd.ExecuteNonQuery();
 
-                DataTable dta = new DataTable();
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                 adapter.Fill(dta);
             }
@@ -38,8 +38,7 @@ namespace TransportoNuoma.Repositories
             }
 
             cnn.Close();
-            Console.WriteLine("Connection Closed. Press any key to exit...");
-            Console.Read();
+            return dta;
         }
         /**
          *  public int kliento_Lok_Id { get; set; }
@@ -79,33 +78,7 @@ namespace TransportoNuoma.Repositories
 
             return klientoLokacija;
         }
-        /**
-         * MySqlDataReader reader = cmd.ExecuteReader();//we want to read rows that we get with this command
-                while (reader.Read())//while reader can read, while there is information/rows of data
-                {
-                    //get all values from row
-                    int Kliento_nr = int.Parse(reader["Kliento_nr"].ToString());
-                    string Vardas = reader["Vardas"].ToString();
-                    string Pavarde = reader["Pavarde"].ToString();
-                    string Email = reader["Email"].ToString();
-                    int isAdmin = int.Parse(reader["isAdmin"].ToString());
-
-                    //create client object
-
-                    klientas.klientoNr = Kliento_nr;
-                    klientas.vardas = Vardas;
-                    klientas.pavarde = Pavarde;
-                    klientas.email = Email;
-                    klientas.isAdmin = isAdmin;
-
-                }
-
-                cnn.Close();
-                
-                return klientas;
-         * 
-         */
-        //REGISTER Client
+        
         public KlientoLokacija InsertKlientoLokacija(KlientoLokacija klientoLokacija)//provide transportas object when calling this function
         {
             try
@@ -157,7 +130,6 @@ namespace TransportoNuoma.Repositories
             {
                 //setting new SqlConnection, providing connectionString
                 cnn = new MySqlConnection(connectionString);
-                cnn.Open();//open database
 
                 //check if user exist
                 MySqlCommand cmd = new MySqlCommand("Update kliento_lokacija SET KoordinatesX=@KoordinatesX,KoordinatesY=@KoordinatesY WHERE KlientoLokId=@KlientoLokId", cnn);//to check if username exist we have to select all items with username

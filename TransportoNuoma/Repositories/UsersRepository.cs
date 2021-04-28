@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,33 +16,29 @@ namespace TransportoNuoma.Repositories
 
 
 
-        public void displayClients()
+        public DataTable displayClients()
         {
+            DataTable dta = new DataTable();
             try
             {
                 cnn = new MySqlConnection(connectionString);//assign connection. The variable cnn, which is of type SqlConnection is used to establish the connection to the database.
                 cnn.Open();//open connection. we use the Open method of the cnn variable to open a connection to the database.
 
-                MySqlCommand cmd = new MySqlCommand("Select * from klientas", cnn);//select all from newTestTable
+                MySqlCommand cmd = new MySqlCommand("SELECT * FROM klientas", cnn);//select all from newTestTable
 
-                MySqlDataReader rdr = cmd.ExecuteReader();
+                cmd.ExecuteNonQuery();
 
-                //read the data
-                while (rdr.Read())
-                {
-                    Console.WriteLine(rdr[0] + " -- " + rdr[1] + " -- " + rdr[2]);
-                }
-                rdr.Close();
+
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                adapter.Fill(dta);
             }
             catch (Exception err)
             {
                 Console.WriteLine(err.ToString());
             }
 
-
             cnn.Close();
-            Console.WriteLine("Connection Closed. Press any key to exit...");
-            Console.Read();
+            return dta;
         }
 
         //REGISTER STUDENT

@@ -66,35 +66,35 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.updateKlientoLokPanel = new System.Windows.Forms.Panel();
+            this.updateKlientoLokLokId = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.updateKlientoLokKlientoNr = new System.Windows.Forms.TextBox();
+            this.updateKlientoLok = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.updateKlientoLokKordY = new System.Windows.Forms.TextBox();
+            this.updateKlientoLokSalis = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.updateKlientoLokKordX = new System.Windows.Forms.TextBox();
+            this.updateKlientoLokMiestas = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.addKlientoLokPanel = new System.Windows.Forms.Panel();
+            this.addKlientoLokKlientoNr = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.addKlientoLokKordY = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.addKlientoLokKordX = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.addKlientoLok = new System.Windows.Forms.Button();
+            this.addKlientoLokMiestas = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.addKlientoLokSalis = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.updateKlientoLokShow = new System.Windows.Forms.Button();
+            this.addKlientoLokShow = new System.Windows.Forms.Button();
+            this.getKlientoLok = new System.Windows.Forms.Button();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.label25 = new System.Windows.Forms.Label();
             this.TransportPanel.SuspendLayout();
@@ -104,8 +104,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.updateKlientoLokPanel.SuspendLayout();
+            this.addKlientoLokPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.SuspendLayout();
             // 
@@ -442,11 +442,11 @@
             // 
             this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.Add(this.dataGridView3);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button5);
+            this.panel1.Controls.Add(this.updateKlientoLokPanel);
+            this.panel1.Controls.Add(this.addKlientoLokPanel);
+            this.panel1.Controls.Add(this.updateKlientoLokShow);
+            this.panel1.Controls.Add(this.addKlientoLokShow);
+            this.panel1.Controls.Add(this.getKlientoLok);
             this.panel1.Controls.Add(this.dataGridView4);
             this.panel1.Controls.Add(this.label25);
             this.panel1.Location = new System.Drawing.Point(484, 46);
@@ -472,33 +472,33 @@
             this.dataGridView3.Size = new System.Drawing.Size(415, 111);
             this.dataGridView3.TabIndex = 18;
             // 
-            // panel2
+            // updateKlientoLokPanel
             // 
-            this.panel2.Controls.Add(this.textBox1);
-            this.panel2.Controls.Add(this.label14);
-            this.panel2.Controls.Add(this.textBox2);
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.label15);
-            this.panel2.Controls.Add(this.label16);
-            this.panel2.Controls.Add(this.textBox3);
-            this.panel2.Controls.Add(this.textBox4);
-            this.panel2.Controls.Add(this.label17);
-            this.panel2.Controls.Add(this.label18);
-            this.panel2.Controls.Add(this.textBox5);
-            this.panel2.Controls.Add(this.textBox6);
-            this.panel2.Controls.Add(this.label19);
-            this.panel2.Location = new System.Drawing.Point(202, 353);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(244, 245);
-            this.panel2.TabIndex = 17;
-            this.panel2.Visible = false;
+            this.updateKlientoLokPanel.Controls.Add(this.updateKlientoLokLokId);
+            this.updateKlientoLokPanel.Controls.Add(this.label14);
+            this.updateKlientoLokPanel.Controls.Add(this.updateKlientoLokKlientoNr);
+            this.updateKlientoLokPanel.Controls.Add(this.updateKlientoLok);
+            this.updateKlientoLokPanel.Controls.Add(this.label15);
+            this.updateKlientoLokPanel.Controls.Add(this.label16);
+            this.updateKlientoLokPanel.Controls.Add(this.updateKlientoLokKordY);
+            this.updateKlientoLokPanel.Controls.Add(this.updateKlientoLokSalis);
+            this.updateKlientoLokPanel.Controls.Add(this.label17);
+            this.updateKlientoLokPanel.Controls.Add(this.label18);
+            this.updateKlientoLokPanel.Controls.Add(this.updateKlientoLokKordX);
+            this.updateKlientoLokPanel.Controls.Add(this.updateKlientoLokMiestas);
+            this.updateKlientoLokPanel.Controls.Add(this.label19);
+            this.updateKlientoLokPanel.Location = new System.Drawing.Point(202, 353);
+            this.updateKlientoLokPanel.Name = "updateKlientoLokPanel";
+            this.updateKlientoLokPanel.Size = new System.Drawing.Size(244, 245);
+            this.updateKlientoLokPanel.TabIndex = 17;
+            this.updateKlientoLokPanel.Visible = false;
             // 
-            // textBox1
+            // updateKlientoLokLokId
             // 
-            this.textBox1.Location = new System.Drawing.Point(155, 187);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(64, 20);
-            this.textBox1.TabIndex = 32;
+            this.updateKlientoLokLokId.Location = new System.Drawing.Point(155, 187);
+            this.updateKlientoLokLokId.Name = "updateKlientoLokLokId";
+            this.updateKlientoLokLokId.Size = new System.Drawing.Size(64, 20);
+            this.updateKlientoLokLokId.TabIndex = 32;
             // 
             // label14
             // 
@@ -509,30 +509,31 @@
             this.label14.TabIndex = 31;
             this.label14.Text = "lokacijosId";
             // 
-            // textBox2
+            // updateKlientoLokKlientoNr
             // 
-            this.textBox2.Location = new System.Drawing.Point(20, 187);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(126, 20);
-            this.textBox2.TabIndex = 30;
+            this.updateKlientoLokKlientoNr.Location = new System.Drawing.Point(20, 187);
+            this.updateKlientoLokKlientoNr.Name = "updateKlientoLokKlientoNr";
+            this.updateKlientoLokKlientoNr.Size = new System.Drawing.Size(126, 20);
+            this.updateKlientoLokKlientoNr.TabIndex = 30;
             // 
-            // button1
+            // updateKlientoLok
             // 
-            this.button1.Location = new System.Drawing.Point(20, 209);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(126, 33);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Update";
-            this.button1.UseVisualStyleBackColor = true;
+            this.updateKlientoLok.Location = new System.Drawing.Point(20, 209);
+            this.updateKlientoLok.Name = "updateKlientoLok";
+            this.updateKlientoLok.Size = new System.Drawing.Size(126, 33);
+            this.updateKlientoLok.TabIndex = 14;
+            this.updateKlientoLok.Text = "Update";
+            this.updateKlientoLok.UseVisualStyleBackColor = true;
+            this.updateKlientoLok.Click += new System.EventHandler(this.updateKlientoLok_Click);
             // 
             // label15
             // 
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(17, 170);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(49, 13);
+            this.label15.Size = new System.Drawing.Size(54, 13);
             this.label15.TabIndex = 29;
-            this.label15.Text = "Trans_Id";
+            this.label15.Text = "Kliento_nr";
             // 
             // label16
             // 
@@ -543,19 +544,19 @@
             this.label16.TabIndex = 21;
             this.label16.Text = "Salis";
             // 
-            // textBox3
+            // updateKlientoLokKordY
             // 
-            this.textBox3.Location = new System.Drawing.Point(20, 147);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(126, 20);
-            this.textBox3.TabIndex = 28;
+            this.updateKlientoLokKordY.Location = new System.Drawing.Point(20, 147);
+            this.updateKlientoLokKordY.Name = "updateKlientoLokKordY";
+            this.updateKlientoLokKordY.Size = new System.Drawing.Size(126, 20);
+            this.updateKlientoLokKordY.TabIndex = 28;
             // 
-            // textBox4
+            // updateKlientoLokSalis
             // 
-            this.textBox4.Location = new System.Drawing.Point(20, 26);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(126, 20);
-            this.textBox4.TabIndex = 22;
+            this.updateKlientoLokSalis.Location = new System.Drawing.Point(20, 26);
+            this.updateKlientoLokSalis.Name = "updateKlientoLokSalis";
+            this.updateKlientoLokSalis.Size = new System.Drawing.Size(126, 20);
+            this.updateKlientoLokSalis.TabIndex = 22;
             // 
             // label17
             // 
@@ -575,19 +576,20 @@
             this.label18.TabIndex = 23;
             this.label18.Text = "Miestas";
             // 
-            // textBox5
+            // updateKlientoLokKordX
             // 
-            this.textBox5.Location = new System.Drawing.Point(20, 107);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(126, 20);
-            this.textBox5.TabIndex = 26;
+            this.updateKlientoLokKordX.Location = new System.Drawing.Point(20, 107);
+            this.updateKlientoLokKordX.Name = "updateKlientoLokKordX";
+            this.updateKlientoLokKordX.Size = new System.Drawing.Size(126, 20);
+            this.updateKlientoLokKordX.TabIndex = 26;
             // 
-            // textBox6
+            // updateKlientoLokMiestas
             // 
-            this.textBox6.Location = new System.Drawing.Point(20, 66);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(126, 20);
-            this.textBox6.TabIndex = 24;
+            this.updateKlientoLokMiestas.AcceptsReturn = true;
+            this.updateKlientoLokMiestas.Location = new System.Drawing.Point(20, 66);
+            this.updateKlientoLokMiestas.Name = "updateKlientoLokMiestas";
+            this.updateKlientoLokMiestas.Size = new System.Drawing.Size(126, 20);
+            this.updateKlientoLokMiestas.TabIndex = 24;
             // 
             // label19
             // 
@@ -598,47 +600,47 @@
             this.label19.TabIndex = 25;
             this.label19.Text = "KoordinatesX";
             // 
-            // panel3
+            // addKlientoLokPanel
             // 
-            this.panel3.Controls.Add(this.textBox7);
-            this.panel3.Controls.Add(this.label20);
-            this.panel3.Controls.Add(this.textBox8);
-            this.panel3.Controls.Add(this.label21);
-            this.panel3.Controls.Add(this.textBox9);
-            this.panel3.Controls.Add(this.label22);
-            this.panel3.Controls.Add(this.button2);
-            this.panel3.Controls.Add(this.textBox10);
-            this.panel3.Controls.Add(this.label23);
-            this.panel3.Controls.Add(this.textBox11);
-            this.panel3.Controls.Add(this.label24);
-            this.panel3.Location = new System.Drawing.Point(18, 353);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(178, 245);
-            this.panel3.TabIndex = 5;
-            this.panel3.Visible = false;
+            this.addKlientoLokPanel.Controls.Add(this.addKlientoLokKlientoNr);
+            this.addKlientoLokPanel.Controls.Add(this.label20);
+            this.addKlientoLokPanel.Controls.Add(this.addKlientoLokKordY);
+            this.addKlientoLokPanel.Controls.Add(this.label21);
+            this.addKlientoLokPanel.Controls.Add(this.addKlientoLokKordX);
+            this.addKlientoLokPanel.Controls.Add(this.label22);
+            this.addKlientoLokPanel.Controls.Add(this.addKlientoLok);
+            this.addKlientoLokPanel.Controls.Add(this.addKlientoLokMiestas);
+            this.addKlientoLokPanel.Controls.Add(this.label23);
+            this.addKlientoLokPanel.Controls.Add(this.addKlientoLokSalis);
+            this.addKlientoLokPanel.Controls.Add(this.label24);
+            this.addKlientoLokPanel.Location = new System.Drawing.Point(18, 353);
+            this.addKlientoLokPanel.Name = "addKlientoLokPanel";
+            this.addKlientoLokPanel.Size = new System.Drawing.Size(178, 245);
+            this.addKlientoLokPanel.TabIndex = 5;
+            this.addKlientoLokPanel.Visible = false;
             // 
-            // textBox7
+            // addKlientoLokKlientoNr
             // 
-            this.textBox7.Location = new System.Drawing.Point(20, 187);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(126, 20);
-            this.textBox7.TabIndex = 20;
+            this.addKlientoLokKlientoNr.Location = new System.Drawing.Point(20, 187);
+            this.addKlientoLokKlientoNr.Name = "addKlientoLokKlientoNr";
+            this.addKlientoLokKlientoNr.Size = new System.Drawing.Size(126, 20);
+            this.addKlientoLokKlientoNr.TabIndex = 20;
             // 
             // label20
             // 
             this.label20.AutoSize = true;
             this.label20.Location = new System.Drawing.Point(17, 170);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(49, 13);
+            this.label20.Size = new System.Drawing.Size(54, 13);
             this.label20.TabIndex = 19;
-            this.label20.Text = "Trans_Id";
+            this.label20.Text = "Kliento_nr";
             // 
-            // textBox8
+            // addKlientoLokKordY
             // 
-            this.textBox8.Location = new System.Drawing.Point(20, 147);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(126, 20);
-            this.textBox8.TabIndex = 18;
+            this.addKlientoLokKordY.Location = new System.Drawing.Point(20, 147);
+            this.addKlientoLokKordY.Name = "addKlientoLokKordY";
+            this.addKlientoLokKordY.Size = new System.Drawing.Size(126, 20);
+            this.addKlientoLokKordY.TabIndex = 18;
             // 
             // label21
             // 
@@ -649,12 +651,12 @@
             this.label21.TabIndex = 17;
             this.label21.Text = "KoordinatesY";
             // 
-            // textBox9
+            // addKlientoLokKordX
             // 
-            this.textBox9.Location = new System.Drawing.Point(20, 107);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(126, 20);
-            this.textBox9.TabIndex = 16;
+            this.addKlientoLokKordX.Location = new System.Drawing.Point(20, 107);
+            this.addKlientoLokKordX.Name = "addKlientoLokKordX";
+            this.addKlientoLokKordX.Size = new System.Drawing.Size(126, 20);
+            this.addKlientoLokKordX.TabIndex = 16;
             // 
             // label22
             // 
@@ -665,21 +667,22 @@
             this.label22.TabIndex = 15;
             this.label22.Text = "KoordinatesX";
             // 
-            // button2
+            // addKlientoLok
             // 
-            this.button2.Location = new System.Drawing.Point(20, 209);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(126, 33);
-            this.button2.TabIndex = 14;
-            this.button2.Text = "Add";
-            this.button2.UseVisualStyleBackColor = true;
+            this.addKlientoLok.Location = new System.Drawing.Point(20, 209);
+            this.addKlientoLok.Name = "addKlientoLok";
+            this.addKlientoLok.Size = new System.Drawing.Size(126, 33);
+            this.addKlientoLok.TabIndex = 14;
+            this.addKlientoLok.Text = "Add";
+            this.addKlientoLok.UseVisualStyleBackColor = true;
+            this.addKlientoLok.Click += new System.EventHandler(this.addKlientoLok_Click);
             // 
-            // textBox10
+            // addKlientoLokMiestas
             // 
-            this.textBox10.Location = new System.Drawing.Point(20, 66);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(126, 20);
-            this.textBox10.TabIndex = 3;
+            this.addKlientoLokMiestas.Location = new System.Drawing.Point(20, 66);
+            this.addKlientoLokMiestas.Name = "addKlientoLokMiestas";
+            this.addKlientoLokMiestas.Size = new System.Drawing.Size(126, 20);
+            this.addKlientoLokMiestas.TabIndex = 3;
             // 
             // label23
             // 
@@ -690,12 +693,12 @@
             this.label23.TabIndex = 2;
             this.label23.Text = "Miestas";
             // 
-            // textBox11
+            // addKlientoLokSalis
             // 
-            this.textBox11.Location = new System.Drawing.Point(20, 26);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(126, 20);
-            this.textBox11.TabIndex = 1;
+            this.addKlientoLokSalis.Location = new System.Drawing.Point(20, 26);
+            this.addKlientoLokSalis.Name = "addKlientoLokSalis";
+            this.addKlientoLokSalis.Size = new System.Drawing.Size(126, 20);
+            this.addKlientoLokSalis.TabIndex = 1;
             // 
             // label24
             // 
@@ -706,32 +709,35 @@
             this.label24.TabIndex = 0;
             this.label24.Text = "Salis";
             // 
-            // button3
+            // updateKlientoLokShow
             // 
-            this.button3.Location = new System.Drawing.Point(304, 324);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(159, 23);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "UpdateAdd Transporto Lokacija";
-            this.button3.UseVisualStyleBackColor = true;
+            this.updateKlientoLokShow.Location = new System.Drawing.Point(304, 324);
+            this.updateKlientoLokShow.Name = "updateKlientoLokShow";
+            this.updateKlientoLokShow.Size = new System.Drawing.Size(159, 23);
+            this.updateKlientoLokShow.TabIndex = 4;
+            this.updateKlientoLokShow.Text = "UpdateAdd Transporto Lokacija";
+            this.updateKlientoLokShow.UseVisualStyleBackColor = true;
+            this.updateKlientoLokShow.Click += new System.EventHandler(this.updateKlientoLokShow_Click);
             // 
-            // button4
+            // addKlientoLokShow
             // 
-            this.button4.Location = new System.Drawing.Point(159, 324);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(139, 23);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Add Transporto Lokacija";
-            this.button4.UseVisualStyleBackColor = true;
+            this.addKlientoLokShow.Location = new System.Drawing.Point(159, 324);
+            this.addKlientoLokShow.Name = "addKlientoLokShow";
+            this.addKlientoLokShow.Size = new System.Drawing.Size(139, 23);
+            this.addKlientoLokShow.TabIndex = 3;
+            this.addKlientoLokShow.Text = "Add Transporto Lokacija";
+            this.addKlientoLokShow.UseVisualStyleBackColor = true;
+            this.addKlientoLokShow.Click += new System.EventHandler(this.addKlientoLokShow_Click);
             // 
-            // button5
+            // getKlientoLok
             // 
-            this.button5.Location = new System.Drawing.Point(18, 324);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(135, 23);
-            this.button5.TabIndex = 2;
-            this.button5.Text = "Get Transporto Lokacija";
-            this.button5.UseVisualStyleBackColor = true;
+            this.getKlientoLok.Location = new System.Drawing.Point(18, 324);
+            this.getKlientoLok.Name = "getKlientoLok";
+            this.getKlientoLok.Size = new System.Drawing.Size(135, 23);
+            this.getKlientoLok.TabIndex = 2;
+            this.getKlientoLok.Text = "Get Transporto Lokacija";
+            this.getKlientoLok.UseVisualStyleBackColor = true;
+            this.getKlientoLok.Click += new System.EventHandler(this.getKlientoLok_Click);
             // 
             // dataGridView4
             // 
@@ -772,10 +778,10 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.updateKlientoLokPanel.ResumeLayout(false);
+            this.updateKlientoLokPanel.PerformLayout();
+            this.addKlientoLokPanel.ResumeLayout(false);
+            this.addKlientoLokPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             this.ResumeLayout(false);
 
@@ -821,35 +827,35 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.DataGridView dataGridView3;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Panel updateKlientoLokPanel;
+        private System.Windows.Forms.TextBox updateKlientoLokLokId;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox updateKlientoLokKlientoNr;
+        private System.Windows.Forms.Button updateKlientoLok;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox updateKlientoLokKordY;
+        private System.Windows.Forms.TextBox updateKlientoLokSalis;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox updateKlientoLokKordX;
+        private System.Windows.Forms.TextBox updateKlientoLokMiestas;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.Panel addKlientoLokPanel;
+        private System.Windows.Forms.TextBox addKlientoLokKlientoNr;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox addKlientoLokKordY;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox addKlientoLokKordX;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.Button addKlientoLok;
+        private System.Windows.Forms.TextBox addKlientoLokMiestas;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox addKlientoLokSalis;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button updateKlientoLokShow;
+        private System.Windows.Forms.Button addKlientoLokShow;
+        private System.Windows.Forms.Button getKlientoLok;
         private System.Windows.Forms.DataGridView dataGridView4;
         private System.Windows.Forms.Label label25;
     }

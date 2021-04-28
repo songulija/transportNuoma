@@ -18,6 +18,7 @@ namespace TransportoNuoma
         LokacijaRepository transLokRep;
         TransportRepository transRep;
         KlientoLokacijaRepository klientoLokRep;
+        UsersRepository klientoRep;
 
         public AdminLokacijaForm(Klientas klientas)
         {
@@ -26,6 +27,7 @@ namespace TransportoNuoma
             transLokRep = new LokacijaRepository();
             klientoLokRep = new KlientoLokacijaRepository();
             transRep = new TransportRepository();
+            klientoRep = new UsersRepository();
 
         }
 
@@ -129,6 +131,104 @@ namespace TransportoNuoma
 
         }
 
-        
+
+
+
+        //KLIENTO LOKACIJA
+
+
+        private void getKlientoLok_Click(object sender, EventArgs e)
+        {
+            getKlientoLokDisplay();
+        }
+
+        private void addKlientoLokShow_Click(object sender, EventArgs e)
+        {
+            updateKlientoLokPanel.Visible = false;
+            addKlientoLokPanel.Visible = true;
+        }
+
+        private void updateKlientoLokShow_Click(object sender, EventArgs e)
+        {
+            addKlientoLokPanel.Visible = false;
+            updateKlientoLokPanel.Visible = true;
+        }
+
+        private void addKlientoLok_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                KlientoLokacija kl = new KlientoLokacija();
+                kl.salis = addKlientoLokSalis.Text;
+                kl.miestas = addKlientoLokMiestas.Text;
+                kl.koorindatesX = double.Parse(addKlientoLokKordX.Text);
+                kl.koorindatesY = double.Parse(addKlientoLokKordY.Text);
+                kl.kliento_Nr = int.Parse(addKlientoLokKlientoNr.Text);
+
+                KlientoLokacija klInserted = klientoLokRep.InsertKlientoLokacija(kl);
+
+                addKlientoLokSalis.Clear();
+                addKlientoLokMiestas.Clear();
+                addKlientoLokKordX.Clear();
+                addKlientoLokKordY.Clear();
+                addKlientoLokKlientoNr.Clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            MessageBox.Show("Succesfully inserted");
+            getKlientoLokDisplay();
+        }
+
+        private void updateKlientoLok_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                KlientoLokacija kl = new KlientoLokacija();
+                kl.salis = updateKlientoLokSalis.Text;
+                kl.miestas = updateKlientoLokMiestas.Text;
+                kl.koorindatesX = double.Parse(updateKlientoLokKordX.Text);
+                kl.koorindatesY = double.Parse(updateKlientoLokKordY.Text);
+                kl.kliento_Nr = int.Parse(updateKlientoLokKlientoNr.Text);
+                kl.kliento_Lok_Id = int.Parse(updateKlientoLokLokId.Text);
+
+                klientoLokRep.UpdateKlientoLokacija(kl);
+
+                updateKlientoLokSalis.Clear();
+                updateKlientoLokMiestas.Clear();
+                updateKlientoLokKordX.Clear();
+                updateKlientoLokKordY.Clear();
+                updateKlientoLokKlientoNr.Clear();
+                updateKlientoLokLokId.Clear();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            MessageBox.Show("Succesfully updated");
+            getKlientoLokDisplay();
+        }
+
+        private void getKlientoLokDisplay()
+        {
+            try
+            {
+                DataTable dta = klientoLokRep.displayKlientoLokacija();
+                dataGridView4.DataSource = dta;
+
+
+                DataTable dta1 = klientoRep.displayClients();
+                dataGridView3.DataSource = dta1;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+
     }
 }
