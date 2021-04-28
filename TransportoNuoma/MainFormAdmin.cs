@@ -175,5 +175,37 @@ namespace TransportoNuoma
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void adminTestingShow_Click(object sender, EventArgs e)
+        {
+            AdminTestingScreen admin = new AdminTestingScreen(klientas);
+            this.Hide();
+            admin.ShowDialog();
+            this.Close();
+        }
+
+        private void adminDraudimasShow_Click(object sender, EventArgs e)
+        {
+            AdminDraudimasForm admin = new AdminDraudimasForm(klientas);
+            this.Hide();
+            admin.ShowDialog();
+            this.Close();
+        }
+
+        private void adminLokacijaShow_Click(object sender, EventArgs e)
+        {
+            AdminLokacijaForm admin = new AdminLokacijaForm(klientas);
+            this.Hide();
+            admin.ShowDialog();
+            this.Close();
+        }
+
+        private void adminNuomaShow_Click(object sender, EventArgs e)
+        {
+            AdminNuomaForm testingScreen = new AdminNuomaForm(klientas);
+            this.Hide();
+            testingScreen.ShowDialog();
+            this.Close();
+        }
     }
 }
