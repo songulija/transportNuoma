@@ -89,7 +89,6 @@ namespace TransportoNuoma.Repositories
             {
                 //setting new SqlConnection, providing connectionString
                 cnn = new MySqlConnection(connectionString);
-                cnn.Open();//open database
 
                 //check if user exist
                 MySqlCommand cmd = new MySqlCommand("Update draudimoTiekejai SET pavadinimas=@pavadinimas WHERE tiekId=@tiekId", cnn);//to check if username exist we have to select all items with username
