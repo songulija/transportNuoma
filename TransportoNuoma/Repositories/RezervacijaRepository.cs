@@ -42,7 +42,7 @@ namespace TransportoNuoma.Repositories
         }
 
         //REGISTER STUDENT
-        public Rezervacija InsertRezervacija(Rezervacija rezervacija)//provide transportas object when calling this function
+        public (Rezervacija, bool) InsertRezervacija(Rezervacija rezervacija)//provide transportas object when calling this function
         {
             try
             {
@@ -53,14 +53,19 @@ namespace TransportoNuoma.Repositories
                 cnn.Open();//open database
 
                 //check if rezervacija exist
-                MySqlCommand cmd = new MySqlCommand("Select * from rezervacija where Trans_Id=@Trans_Id", cnn);//to check if username exist we have to select all items with username
+                MySqlCommand cmd = new MySqlCommand("SELECT * FROM rezervacija WHERE rezId=( SELECT MAX(rezId) FROM rezervacija WHERE Trans_Id=@Trans_Id);", cnn);//to check if username exist we have to select all items with username
                 cmd.Parameters.AddWithValue("@Trans_Id", rezervacija.Transporto_Id);
                 
                 MySqlDataReader dataReader = cmd.ExecuteReader();//sends SQLCommand.CommandText to the SQLCommand.Connection and builds SqlDataReader
-                if ((dataReader.Read() == true) && TimeSpan.Parse(dataReader["rezPab"].ToString()) > DateTime.Now.TimeOfDay)
+                if ((dataReader.Read() == true) && TimeSpan.Parse(dataReader["rezPab"].ToString()) >= DateTime.Now.TimeOfDay)
                 {
-                    Console.WriteLine("Transport is already under reservation");
-                    return null;    
+                    
+                        if (TimeSpan.Parse(dataReader["rezPab"].ToString()) >= DateTime.Now.TimeOfDay)
+                        {
+                            Console.WriteLine("Transport is already under reservation");
+                            return (null, false);
+                        }
+
                 }
                 else
                 {
@@ -77,54 +82,98 @@ namespace TransportoNuoma.Repositories
                 cmd1.Parameters.AddWithValue("@lokacijosId", rezervacija.lokacijos_Id);
                 cmd1.ExecuteNonQuery();
                 cnn.Close();
+                Console.WriteLine("Rezervation completed succesfuly");
 
+
+                
             }
             catch (Exception exc)
             {
                 Console.WriteLine(exc);
             }
-            return rezervacija;//return 
+           
+            return (rezervacija, true);//return 
         }
 
        
 
-        public void addNewRezervacija(Klientas klientas, Transportas transportas, Lokacija lokacija)
+        public bool addNewRezervacija(Klientas klientas, Transportas transportas, Lokacija lokacija)
         {
             
+                cnn = new MySqlConnection(connectionString);
+                cnn.Open();//opens connection
+                MySqlCommand cmd = new MySqlCommand("SELECT * FROM rezervacija WHERE rezId=( SELECT MAX(rezId) FROM rezervacija WHERE Kliento_nr=@Kliento_nr);", cnn);//to check if username exist we have to select all items with username
+                cmd.Parameters.AddWithValue("@Kliento_nr", klientas.klientoNr);
+                MySqlDataReader dataReader = cmd.ExecuteReader();//sends SQLCommand.CommandText to the SQLCommand.Connection and builds SqlDataReader
+            if (dataReader.Read() == true)
+            {
+                
+                    if (TimeSpan.Parse(dataReader["rezPab"].ToString()) > DateTime.Now.TimeOfDay)
+                    {
+                        Console.WriteLine("Client already has an active reservation");
+                        return false;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Creating new rezervation object");
+                        Rezervacija rezervacija1 = new Rezervacija();
+                        TimeSpan rezervacijosLaikas1 = new TimeSpan(0, 15, 0);
+                        rezervacija1.kliento_Id = klientas.klientoNr;
+                        rezervacija1.lokacijos_Id = lokacija.lokacijos_Id;
+                        rezervacija1.Transporto_Id = transportas.transporto_Id;
+                        rezervacija1.rezervacijos_Data = DateTime.Today;
+                        rezervacija1.rezervacijosPrad = DateTime.Now.TimeOfDay;
+                        rezervacija1.rezervacijosPab = rezervacija1.rezervacijosPrad.Add(rezervacijosLaikas1);     //DateTime.Today.AddSeconds(900);
+                        if (InsertRezervacija(rezervacija1).Item2 == true) { return true; }
+                        
+
+                    }
+                
+
+            }else if(dataReader.Read() == false)
+            {
+                Console.WriteLine("Creating new rezervation object");
+                Rezervacija rezervacija = new Rezervacija();
+                TimeSpan rezervacijosLaikas = new TimeSpan(0, 15, 0);
+                rezervacija.kliento_Id = klientas.klientoNr;
+                rezervacija.lokacijos_Id = lokacija.lokacijos_Id;
+                rezervacija.Transporto_Id = transportas.transporto_Id;
+                rezervacija.rezervacijos_Data = DateTime.Today;
+                rezervacija.rezervacijosPrad = DateTime.Now.TimeOfDay;
+                rezervacija.rezervacijosPab = rezervacija.rezervacijosPrad.Add(rezervacijosLaikas);     //DateTime.Today.AddSeconds(900);
+                if (InsertRezervacija(rezervacija).Item2 == true) { return true; }
+
+            }
+
+            dataReader.Close();
+                cnn.Close();
+            return false;
+            
+        }
+        public bool isTransportasTaken(Transportas transportas)
+        {
             try
             {
                 cnn = new MySqlConnection(connectionString);
-                cnn.Open();//opens connection
-                MySqlCommand cmd = new MySqlCommand("Select * from rezervacija where Kliento_nr=@Kliento_nr", cnn);//to check if username exist we have to select all items with username
-                cmd.Parameters.AddWithValue("@Kliento_nr", klientas.klientoNr);
+                cnn.Open();//open database
+
+                //check if rezervacija exist
+                MySqlCommand cmd = new MySqlCommand("SELECT * FROM rezervacija WHERE rezId=( SELECT MAX(rezId) FROM rezervacija WHERE Trans_Id=@Trans_Id);", cnn);//to check if username exist we have to select all items with username
+                cmd.Parameters.AddWithValue("@Trans_Id", transportas.transporto_Id);
                 MySqlDataReader dataReader = cmd.ExecuteReader();//sends SQLCommand.CommandText to the SQLCommand.Connection and builds SqlDataReader
                 if ((dataReader.Read() == true) && TimeSpan.Parse(dataReader["rezPab"].ToString()) > DateTime.Now.TimeOfDay)
                 {
-                    Console.WriteLine("Client already has an active reservation");
-                    
+                    return true;
                 }
                 else
                 {
-                    Rezervacija rezervacija = new Rezervacija();
-                    TimeSpan rezervacijosLaikas = new TimeSpan(0, 15, 0);
-                    rezervacija.kliento_Id = klientas.klientoNr;
-                    rezervacija.lokacijos_Id = lokacija.lokacijos_Id;
-                    rezervacija.Transporto_Id = transportas.transporto_Id;
-                    rezervacija.rezervacijos_Data = DateTime.Today;
-                    rezervacija.rezervacijosPrad = DateTime.Now.TimeOfDay;
-                    rezervacija.rezervacijosPab = rezervacija.rezervacijosPrad.Add(rezervacijosLaikas);     //DateTime.Today.AddSeconds(900);
-                    InsertRezervacija(rezervacija);
+                    Console.WriteLine("transport is not taken");   
                 }
-
+                
             }
-            catch(Exception e) { Console.WriteLine(e.Message); }
-            
-
-
-
-           
+            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            return false;
         }
-        
         public void UpdateRezervacija(Rezervacija rezervacija)
         {
             try
@@ -139,7 +188,7 @@ namespace TransportoNuoma.Repositories
                 cmd.Parameters.AddWithValue("@rezPrad", rezervacija.rezervacijosPrad);
                 cmd.Parameters.AddWithValue("@rezPab", rezervacija.rezervacijosPab);
                 cmd.Parameters.AddWithValue("@rezId", rezervacija.rezervacijos_Id);
-                cnn.Open();
+             
                 cmd.ExecuteNonQuery();
                 cnn.Close();
             }
@@ -148,6 +197,42 @@ namespace TransportoNuoma.Repositories
                 Console.WriteLine(ex);
             }
         }
-
+        public void CancelRezervacija(Klientas klientas)
+        {
+            try
+            {
+                //setting new SqlConnection, providing connectionString
+                cnn = new MySqlConnection(connectionString);
+                cnn.Open();//open database
+                MySqlCommand cmd = new MySqlCommand("Select * from rezervacija where Kliento_nr=@Kliento_nr", cnn);//to check if username exist we have to select all items with username
+                cmd.Parameters.AddWithValue("@Kliento_nr", klientas.klientoNr);
+                MySqlDataReader dataReader = cmd.ExecuteReader();//sends SQLCommand.CommandText to the SQLCommand.Connection and builds SqlDataReader
+                while(dataReader.Read() == true)
+                {
+                    if(TimeSpan.Parse(dataReader["rezPab"].ToString()) > DateTime.Now.TimeOfDay)
+                    {
+                        int rezervID = Convert.ToInt32(dataReader["rezId"]);
+                        
+                        MySqlCommand cmd1 = new MySqlCommand("Update rezervacija SET rezPab=@rezPab WHERE rezId=@rezId", cnn);//to check if username exist we have to select all items with username
+                        
+                        cmd1.Parameters.AddWithValue("@rezPab", DateTime.Now.TimeOfDay);
+                        cmd1.Parameters.AddWithValue("@rezId", rezervID);
+                        dataReader.Close();
+                        cmd1.ExecuteNonQuery();
+                        Console.WriteLine("Success");
+                        
+                        return;
+                    }
+                }
+                
+                Console.WriteLine("connection is closing");
+                cnn.Close();
+                
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+        }
     }
 }

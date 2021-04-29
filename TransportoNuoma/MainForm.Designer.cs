@@ -30,12 +30,12 @@
         {
             this.gmap = new GMap.NET.WindowsForms.GMapControl();
             this.rezervacijosPanel = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.timeLabel = new System.Windows.Forms.Label();
-            this.priceLabel = new System.Windows.Forms.Label();
-            this.cancelButton = new System.Windows.Forms.Button();
             this.unlockButton = new System.Windows.Forms.Button();
+            this.cancelButton = new System.Windows.Forms.Button();
+            this.priceLabel = new System.Windows.Forms.Label();
+            this.timeLabel = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.rezervacijosPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -86,41 +86,15 @@
             this.rezervacijosPanel.TabIndex = 1;
             this.rezervacijosPanel.Visible = false;
             // 
-            // label1
+            // unlockButton
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(19, 40);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Laikas";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(19, 74);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(34, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Kaina";
-            // 
-            // timeLabel
-            // 
-            this.timeLabel.AutoSize = true;
-            this.timeLabel.Location = new System.Drawing.Point(172, 40);
-            this.timeLabel.Name = "timeLabel";
-            this.timeLabel.Size = new System.Drawing.Size(34, 13);
-            this.timeLabel.TabIndex = 2;
-            this.timeLabel.Text = "00:00";
-            // 
-            // priceLabel
-            // 
-            this.priceLabel.AutoSize = true;
-            this.priceLabel.Location = new System.Drawing.Point(172, 74);
-            this.priceLabel.Name = "priceLabel";
-            this.priceLabel.Size = new System.Drawing.Size(34, 13);
-            this.priceLabel.TabIndex = 3;
-            this.priceLabel.Text = "0.00$";
+            this.unlockButton.Location = new System.Drawing.Point(131, 129);
+            this.unlockButton.Name = "unlockButton";
+            this.unlockButton.Size = new System.Drawing.Size(75, 23);
+            this.unlockButton.TabIndex = 5;
+            this.unlockButton.Text = "Atrakinti";
+            this.unlockButton.UseVisualStyleBackColor = true;
+            this.unlockButton.Click += new System.EventHandler(this.unlockButton_Click);
             // 
             // cancelButton
             // 
@@ -132,15 +106,41 @@
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click_1);
             // 
-            // unlockButton
+            // priceLabel
             // 
-            this.unlockButton.Location = new System.Drawing.Point(131, 129);
-            this.unlockButton.Name = "unlockButton";
-            this.unlockButton.Size = new System.Drawing.Size(75, 23);
-            this.unlockButton.TabIndex = 5;
-            this.unlockButton.Text = "Atrakinti";
-            this.unlockButton.UseVisualStyleBackColor = true;
-            this.unlockButton.Click += new System.EventHandler(this.unlockButton_Click);
+            this.priceLabel.AutoSize = true;
+            this.priceLabel.Location = new System.Drawing.Point(172, 74);
+            this.priceLabel.Name = "priceLabel";
+            this.priceLabel.Size = new System.Drawing.Size(34, 13);
+            this.priceLabel.TabIndex = 3;
+            this.priceLabel.Text = "0.00$";
+            // 
+            // timeLabel
+            // 
+            this.timeLabel.AutoSize = true;
+            this.timeLabel.Location = new System.Drawing.Point(172, 40);
+            this.timeLabel.Name = "timeLabel";
+            this.timeLabel.Size = new System.Drawing.Size(34, 13);
+            this.timeLabel.TabIndex = 2;
+            this.timeLabel.Text = "00:00";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(19, 74);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(34, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Kaina";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(19, 40);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(38, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Laikas";
             // 
             // MainForm
             // 
@@ -152,6 +152,7 @@
             this.Controls.Add(this.gmap);
             this.Name = "MainForm";
             this.Text = "User Window";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.rezervacijosPanel.ResumeLayout(false);
             this.rezervacijosPanel.PerformLayout();
             this.ResumeLayout(false);

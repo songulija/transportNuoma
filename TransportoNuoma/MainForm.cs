@@ -28,6 +28,7 @@ namespace TransportoNuoma
         System.Timers.Timer t;
         Transportas rezervuotasTransportas;
         RezervacijaRepository rezervacijaRepository;
+       
         public MainForm(Klientas klientas)
         {
             InitializeComponent();
@@ -35,7 +36,7 @@ namespace TransportoNuoma
             klientoLokacijaRepository = new KlientoLokacijaRepository();
             rezervuotasTransportas = new Transportas();
             rezervacijaRepository = new RezervacijaRepository();
-
+           
             Console.WriteLine(klientas.klientoNr);
             createClientMarker();
             transportList = transportRepository.getTransportList();
@@ -45,6 +46,7 @@ namespace TransportoNuoma
         }
         void loadMap()
         {
+            gmap.Refresh();
             gmap.MapProvider = GMapProviders.GoogleMap;
 
             gmap.Position = new PointLatLng(54.678175, 25.279267);
@@ -54,33 +56,27 @@ namespace TransportoNuoma
             gmap.Zoom = 10;
 
             addTransMarkers();
-
-
-
         }
         void addTransMarkers()
         {
             foreach (Transportas transportas in transportList)
             {
                 transportoLokacija = lokacijaRepository.getTransportoLokacija(transportas);
+                if(rezervacijaRepository.isTransportasTaken(transportas) == false)
+                {
+                    GMapOverlay markers = new GMapOverlay("markers");
+                    GMapMarker marker = new GMarkerGoogle(
+                    new PointLatLng(transportoLokacija.koordinatesX, transportoLokacija.koordinatesY),
+                        GMarkerGoogleType.green);
 
-                GMapOverlay markers = new GMapOverlay("markers");
-                GMapMarker marker = new GMarkerGoogle(
-                new PointLatLng(transportoLokacija.koordinatesX, transportoLokacija.koordinatesY),
-                    GMarkerGoogleType.green);
-
-                marker.Tag = transportas.transporto_Id;
-                gMapOverlayslist.Add(marker);
-                markers.Markers.Add(marker);
-                gmap.Overlays.Add(markers);
-                marker.ToolTipText = String.Format("\nPaspirtuko numeris: {0}\nPaspirtuko spalva: {1}\nPaspirtuko kaina: {2}", transportas.transporto_Nr, transportas.spalva, transportas.kaina);
-                marker.ToolTipMode = MarkerTooltipMode.OnMouseOver;
-
+                    marker.Tag = transportas.transporto_Id;
+                    gMapOverlayslist.Add(marker);
+                    markers.Markers.Add(marker);
+                    gmap.Overlays.Add(markers);
+                    marker.ToolTipText = String.Format("\nPaspirtuko numeris: {0}\nPaspirtuko spalva: {1}\nPaspirtuko kaina: {2}", transportas.transporto_Nr, transportas.spalva, transportas.kaina);
+                    marker.ToolTipMode = MarkerTooltipMode.OnMouseOver;
+                }
             }
-
-
-
-
         }
 
         public void createClientMarker()
@@ -98,7 +94,7 @@ namespace TransportoNuoma
             marker.ToolTipText = "hello " + klientas.vardas;
             marker.ToolTipMode = MarkerTooltipMode.OnMouseOver;
         }
-        //new PointLatLng(54.679341, 25.279297),
+        //new PointLatLng(54.679341, 25.279297)
 
 
         private void gmap_OnMarkerClick(GMapMarker item, MouseEventArgs e)
@@ -109,23 +105,27 @@ namespace TransportoNuoma
                 
                 
                 switch (MessageBox.Show("Ar norite užsirezervuoti šį paspirtuką?",
-                  "Vroom vroom..",
+                  "Vroom vroom.. :)",
                   MessageBoxButtons.YesNo,
                   MessageBoxIcon.Question))
                 {
                     case DialogResult.Yes:
-                        rezervacijosPanel.Visible = true;
-                        rezervuotasTransportas = transportRepository.getTransportasByID(Convert.ToInt32(item.Tag));
                         
-                        rezervacijaRepository.addNewRezervacija(klientas, rezervuotasTransportas, transportoLokacija);
+                        rezervuotasTransportas = transportRepository.getTransportasByID(Convert.ToInt32(item.Tag));
                         cts = new CancellationTokenSource();
                         //kuriame cancelation token
                         CancellationToken ct = cts.Token;
-                                                         
 
-                        th = new Thread(() => { CountDownMethod(ct, CancellationMethod); });
-                        th.Start();
-
+                        if (rezervacijaRepository.addNewRezervacija(klientas, rezervuotasTransportas, transportoLokacija) == true)
+                        {
+                            rezervacijosPanel.Visible = true;
+                            th = new Thread(() => { CountDownMethod(ct, CancellationMethod); });
+                            th.Start();
+                            MessageBox.Show("Rezervacija sekmynga!");
+                            
+                            loadMap();
+                        }
+                        else { MessageBox.Show("Rezervacija nepavyko :("); }
                         break;
 
                     case DialogResult.No:
@@ -194,6 +194,12 @@ namespace TransportoNuoma
         {
             cts.Cancel();
             rezervacijosPanel.Visible = false;
+            rezervacijaRepository.CancelRezervacija(klientas);
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if(cts != null) { cts.Cancel();}            
         }
 
         private void unlockButton_Click(object sender, EventArgs e)

@@ -132,3 +132,7 @@ C:\Users\PC\Desktop\transportNuoma\TransportoNuoma\obj\Debug\TransportoNuoma.csp
 C:\Users\PC\Desktop\transportNuoma\TransportoNuoma\obj\Debug\TransportoNuoma.csproj.CopyComplete
 C:\Users\PC\Desktop\transportNuoma\TransportoNuoma\obj\Debug\TransportoNuoma.exe
 C:\Users\PC\Desktop\transportNuoma\TransportoNuoma\obj\Debug\TransportoNuoma.pdb
+C:\Users\Arme6\Documents\GitHub\transportNuoma\TransportoNuoma\obj\Debug\TransportoNuoma.AdminDraudimasForm.resources
+C:\Users\Arme6\Documents\GitHub\transportNuoma\TransportoNuoma\obj\Debug\TransportoNuoma.AdminLokacijaForm.resources
+C:\Users\Arme6\Documents\GitHub\transportNuoma\TransportoNuoma\obj\Debug\TransportoNuoma.AdminNuomaForm.resources
+C:\Users\Arme6\Documents\GitHub\transportNuoma\TransportoNuoma\obj\Debug\TransportoNuoma.AdminTestingScreen.resources
