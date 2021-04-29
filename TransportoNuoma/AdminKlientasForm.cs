@@ -114,5 +114,179 @@ namespace TransportoNuoma
                 MessageBox.Show(ex.Message);
             }
         }
+
+
+
+        //GALIMI NUSIZ
+
+
+        private void getNusizengimai_Click(object sender, EventArgs e)
+        {
+            getNusizengimaiDisplay();
+        }
+
+
+        private void addNusizengimaiShow_Click(object sender, EventArgs e)
+        {
+            updateNusizPanel.Visible = false;
+            addNusizPanel.Visible = true;
+        }
+
+        private void updateNusizengimaiShow_Click(object sender, EventArgs e)
+        {
+            addNusizPanel.Visible = false;
+            updateNusizPanel.Visible = true;
+        }
+
+
+
+        private void addNusizengimai_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Nusizengimai nz = new Nusizengimai();
+                DateTime nusizData = DateTime.Parse(addNusizengimaiNusizData.Text);
+                nz.nusizengimo_Data = nusizData.Date;
+                nz.kliento_Nr = int.Parse(addNusizengimaiKlientoNr.Text);
+                Nusizengimai inserted = nusizRep.InsertNusizengimai(nz);
+
+                addNusizengimaiNusizData.Clear();
+                addNusizengimaiKlientoNr.Clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            MessageBox.Show("Succesfully inserted");
+            getNusizengimaiDisplay();
+        }
+
+        private void updateNusizengimai_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Nusizengimai nz = new Nusizengimai();
+                DateTime nusizData = DateTime.Parse(updateNusizengimaiNusizData.Text);
+                nz.nusizengimo_Data = nusizData.Date;
+                nz.kliento_Nr = int.Parse(updateNusizengimaiKlientoNr.Text);
+                nz.nusizengimai_Id = int.Parse(updateNusizengimaiNusizId.Text);
+
+                nusizRep.UpdateNusizengimai(nz);
+
+                updateNusizengimaiNusizData.Clear();
+                updateNusizengimaiKlientoNr.Clear();
+                updateNusizengimaiNusizId.Clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            MessageBox.Show("Succesfully updated");
+        }
+
+
+
+        private void getNusizengimaiDisplay()
+        {
+            try
+            {
+                DataTable dta = nusizRep.displayNusizengimai();
+                dataGridView2.DataSource = dta;
+
+
+                DataTable dta1 = usersRep.displayClients();
+                dataGridView3.DataSource = dta1;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void getGalimiNusiz_Click(object sender, EventArgs e)
+        {
+            getGalimiNusizengimaiDisplay();
+        }
+
+        private void addGalimiNusizShow_Click(object sender, EventArgs e)
+        {
+            updateGalimiNusizPanel.Visible = false;
+            addGalimiNusizPanel.Visible = true;
+        }
+
+        private void updateGalimiNusizShow_Click(object sender, EventArgs e)
+        {
+            addGalimiNusizPanel.Visible = false;
+            updateGalimiNusizPanel.Visible = true;
+
+        }
+
+        private void addGalimiNusiz_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                GalimiNusizengimai gn = new GalimiNusizengimai();
+                gn.nusizengimo_Pavadinimas = addGalimiNusizNusPav.Text;
+                gn.nusizengimo_Id = int.Parse(addGalimiNusizNusizId.Text);
+
+                GalimiNusizengimai ins = galimiNuzRep.InsertGalimiNusizengimai(gn);
+
+                addGalimiNusizNusPav.Clear();
+                addGalimiNusizNusizId.Clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                
+            }
+            MessageBox.Show("Inserted succesfully");
+            getGalimiNusizengimaiDisplay();
+        }
+
+        private void updateGalimiNusiz_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                GalimiNusizengimai gn = new GalimiNusizengimai();
+                gn.nusizengimo_Pavadinimas = updateGalimiNusizNusPav.Text;
+                gn.nusizengimo_Id = int.Parse(updateGalimiNusizNusizId.Text);
+                gn.nusizengimo_Kodas = int.Parse(updateGalimiNusizNusizKodas.Text);
+
+                galimiNuzRep.UpdateGalimiNusizengimai(gn);
+
+                updateGalimiNusizNusPav.Clear();
+                updateGalimiNusizNusizId.Clear();
+                updateGalimiNusizNusizKodas.Clear();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            MessageBox.Show("Updated succesfully");
+            getGalimiNusizengimaiDisplay();
+        }
+
+        private void getGalimiNusizengimaiDisplay()
+        {
+            try
+            {
+                DataTable dta = galimiNuzRep.displayGalimiNusizengimai();
+                dataGridView5.DataSource = dta;
+
+
+                DataTable dta1 = nusizRep.displayNusizengimai();
+                dataGridView4.DataSource = dta1;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+
+
     }
 }

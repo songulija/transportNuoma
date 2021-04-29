@@ -16,8 +16,9 @@ namespace TransportoNuoma.Repositories
 
 
 
-        public void displayNusizengimai()
+        public DataTable displayNusizengimai()
         {
+            DataTable dta = new DataTable();
             try
             {
                 cnn = new MySqlConnection(connectionString);//assign connection. The variable cnn, which is of type SqlConnection is used to establish the connection to the database.
@@ -27,7 +28,6 @@ namespace TransportoNuoma.Repositories
 
                 cmd.ExecuteNonQuery();
 
-                DataTable dta = new DataTable();
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                 adapter.Fill(dta);
             }
@@ -37,8 +37,7 @@ namespace TransportoNuoma.Repositories
             }
 
             cnn.Close();
-            Console.WriteLine("Connection Closed. Press any key to exit...");
-            Console.Read();
+            return dta;
         }
 
         //REGISTER STUDENT
@@ -90,7 +89,6 @@ namespace TransportoNuoma.Repositories
             {
                 //setting new SqlConnection, providing connectionString
                 cnn = new MySqlConnection(connectionString);
-                cnn.Open();//open database
 
                 //check if user exist
                 MySqlCommand cmd = new MySqlCommand("Update nusizengimai SET NusizData=@NusizData, Kliento_nr=@Kliento_nr WHERE NusizengimaiId=@NusizengimaiId", cnn);//to check if username exist we have to select all items with username

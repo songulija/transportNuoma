@@ -9,9 +9,9 @@ namespace TransportoNuoma.Classes
     class Apmokejimas
     {
         public int apmok_Id { get; set; }
-        public char saskaitos_Nr { get; set; }
+        public string saskaitos_Nr { get; set; }
         public int apmokejimo_Suma { get; set; }
-        public int graz_Nr { get; set; }
+        public DateTime apmok_data { get; set; }
         public int nuomos_Nr { get; set; }
     }
 }

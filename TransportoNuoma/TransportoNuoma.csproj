@@ -172,6 +172,9 @@
     <Compile Include="Repositories\TransportRepository.cs" />
     <Compile Include="Repositories\TransTestRepository.cs" />
     <Compile Include="Repositories\UsersRepository.cs" />
+    <EmbeddedResource Include="AdminApmokejimasGrazForm.resx">
+      <DependentUpon>AdminApmokejimasGrazForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminDraudimasForm.resx">
       <DependentUpon>AdminDraudimasForm.cs</DependentUpon>
     </EmbeddedResource>

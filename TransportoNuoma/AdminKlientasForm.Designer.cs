@@ -30,6 +30,14 @@
         {
             this.TransportPanel = new System.Windows.Forms.Panel();
             this.updateKlientaiPanel = new System.Windows.Forms.Panel();
+            this.updateKlientasKlientoNr = new System.Windows.Forms.TextBox();
+            this.updateKlientasEmail = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.updateKlientasPav = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.updateKlientasVardas = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.updateKlientas = new System.Windows.Forms.Button();
             this.addKlientaiPanel = new System.Windows.Forms.Panel();
             this.addKlientas = new System.Windows.Forms.Button();
@@ -48,18 +56,64 @@
             this.getKlientai = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.updateKlientasEmail = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.updateKlientasPav = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.updateKlientasVardas = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.updateKlientasKlientoNr = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.label11 = new System.Windows.Forms.Label();
+            this.updateNusizPanel = new System.Windows.Forms.Panel();
+            this.updateNusizengimaiNusizId = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.updateNusizengimaiKlientoNr = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.updateNusizengimaiNusizData = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.updateNusizengimai = new System.Windows.Forms.Button();
+            this.addNusizPanel = new System.Windows.Forms.Panel();
+            this.addNusizengimai = new System.Windows.Forms.Button();
+            this.addNusizengimaiKlientoNr = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.addNusizengimaiNusizData = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.updateNusizengimaiShow = new System.Windows.Forms.Button();
+            this.addNusizengimaiShow = new System.Windows.Forms.Button();
+            this.getNusizengimai = new System.Windows.Forms.Button();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.label20 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.label15 = new System.Windows.Forms.Label();
+            this.updateGalimiNusizPanel = new System.Windows.Forms.Panel();
+            this.updateGalimiNusizNusizKodas = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.updateGalimiNusizNusizId = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.updateGalimiNusizNusPav = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.updateGalimiNusiz = new System.Windows.Forms.Button();
+            this.addGalimiNusizPanel = new System.Windows.Forms.Panel();
+            this.addGalimiNusiz = new System.Windows.Forms.Button();
+            this.addGalimiNusizNusizId = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.addGalimiNusizNusPav = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.updateGalimiNusizShow = new System.Windows.Forms.Button();
+            this.addGalimiNusizShow = new System.Windows.Forms.Button();
+            this.getGalimiNusiz = new System.Windows.Forms.Button();
+            this.dataGridView5 = new System.Windows.Forms.DataGridView();
+            this.label24 = new System.Windows.Forms.Label();
             this.TransportPanel.SuspendLayout();
             this.updateKlientaiPanel.SuspendLayout();
             this.addKlientaiPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            this.updateNusizPanel.SuspendLayout();
+            this.addNusizPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            this.updateGalimiNusizPanel.SuspendLayout();
+            this.addGalimiNusizPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
             this.SuspendLayout();
             // 
             // TransportPanel
@@ -92,6 +146,70 @@
             this.updateKlientaiPanel.Size = new System.Drawing.Size(178, 363);
             this.updateKlientaiPanel.TabIndex = 17;
             this.updateKlientaiPanel.Visible = false;
+            // 
+            // updateKlientasKlientoNr
+            // 
+            this.updateKlientasKlientoNr.Location = new System.Drawing.Point(20, 147);
+            this.updateKlientasKlientoNr.Name = "updateKlientasKlientoNr";
+            this.updateKlientasKlientoNr.Size = new System.Drawing.Size(126, 20);
+            this.updateKlientasKlientoNr.TabIndex = 16;
+            // 
+            // updateKlientasEmail
+            // 
+            this.updateKlientasEmail.Location = new System.Drawing.Point(20, 107);
+            this.updateKlientasEmail.Name = "updateKlientasEmail";
+            this.updateKlientasEmail.Size = new System.Drawing.Size(126, 20);
+            this.updateKlientasEmail.TabIndex = 20;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(17, 130);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(50, 13);
+            this.label10.TabIndex = 15;
+            this.label10.Text = "KlientoNr";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(17, 90);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(32, 13);
+            this.label7.TabIndex = 19;
+            this.label7.Text = "Email";
+            // 
+            // updateKlientasPav
+            // 
+            this.updateKlientasPav.Location = new System.Drawing.Point(20, 67);
+            this.updateKlientasPav.Name = "updateKlientasPav";
+            this.updateKlientasPav.Size = new System.Drawing.Size(126, 20);
+            this.updateKlientasPav.TabIndex = 18;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(17, 50);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(47, 13);
+            this.label8.TabIndex = 17;
+            this.label8.Text = "Pavarde";
+            // 
+            // updateKlientasVardas
+            // 
+            this.updateKlientasVardas.Location = new System.Drawing.Point(20, 27);
+            this.updateKlientasVardas.Name = "updateKlientasVardas";
+            this.updateKlientasVardas.Size = new System.Drawing.Size(126, 20);
+            this.updateKlientasVardas.TabIndex = 16;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(17, 10);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(40, 13);
+            this.label9.TabIndex = 15;
+            this.label9.Text = "Vardas";
             // 
             // updateKlientas
             // 
@@ -260,75 +378,433 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Klientai";
             // 
-            // updateKlientasEmail
+            // panel1
             // 
-            this.updateKlientasEmail.Location = new System.Drawing.Point(20, 107);
-            this.updateKlientasEmail.Name = "updateKlientasEmail";
-            this.updateKlientasEmail.Size = new System.Drawing.Size(126, 20);
-            this.updateKlientasEmail.TabIndex = 20;
+            this.panel1.Controls.Add(this.dataGridView3);
+            this.panel1.Controls.Add(this.label11);
+            this.panel1.Controls.Add(this.updateNusizPanel);
+            this.panel1.Controls.Add(this.addNusizPanel);
+            this.panel1.Controls.Add(this.updateNusizengimaiShow);
+            this.panel1.Controls.Add(this.addNusizengimaiShow);
+            this.panel1.Controls.Add(this.getNusizengimai);
+            this.panel1.Controls.Add(this.dataGridView2);
+            this.panel1.Controls.Add(this.label20);
+            this.panel1.Location = new System.Drawing.Point(431, 12);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(382, 631);
+            this.panel1.TabIndex = 2;
             // 
-            // label7
+            // dataGridView3
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(17, 90);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(32, 13);
-            this.label7.TabIndex = 19;
-            this.label7.Text = "Email";
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Location = new System.Drawing.Point(18, 243);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.Size = new System.Drawing.Size(351, 139);
+            this.dataGridView3.TabIndex = 19;
             // 
-            // updateKlientasPav
+            // label11
             // 
-            this.updateKlientasPav.Location = new System.Drawing.Point(20, 67);
-            this.updateKlientasPav.Name = "updateKlientasPav";
-            this.updateKlientasPav.Size = new System.Drawing.Size(126, 20);
-            this.updateKlientasPav.TabIndex = 18;
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(14, 216);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(70, 24);
+            this.label11.TabIndex = 18;
+            this.label11.Text = "Klientai";
             // 
-            // label8
+            // updateNusizPanel
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(17, 50);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(47, 13);
-            this.label8.TabIndex = 17;
-            this.label8.Text = "Pavarde";
+            this.updateNusizPanel.Controls.Add(this.updateNusizengimaiNusizId);
+            this.updateNusizPanel.Controls.Add(this.label12);
+            this.updateNusizPanel.Controls.Add(this.updateNusizengimaiKlientoNr);
+            this.updateNusizPanel.Controls.Add(this.label13);
+            this.updateNusizPanel.Controls.Add(this.updateNusizengimaiNusizData);
+            this.updateNusizPanel.Controls.Add(this.label14);
+            this.updateNusizPanel.Controls.Add(this.updateNusizengimai);
+            this.updateNusizPanel.Location = new System.Drawing.Point(204, 428);
+            this.updateNusizPanel.Name = "updateNusizPanel";
+            this.updateNusizPanel.Size = new System.Drawing.Size(178, 183);
+            this.updateNusizPanel.TabIndex = 17;
+            this.updateNusizPanel.Visible = false;
             // 
-            // updateKlientasVardas
+            // updateNusizengimaiNusizId
             // 
-            this.updateKlientasVardas.Location = new System.Drawing.Point(20, 27);
-            this.updateKlientasVardas.Name = "updateKlientasVardas";
-            this.updateKlientasVardas.Size = new System.Drawing.Size(126, 20);
-            this.updateKlientasVardas.TabIndex = 16;
+            this.updateNusizengimaiNusizId.Location = new System.Drawing.Point(20, 107);
+            this.updateNusizengimaiNusizId.Name = "updateNusizengimaiNusizId";
+            this.updateNusizengimaiNusizId.Size = new System.Drawing.Size(126, 20);
+            this.updateNusizengimaiNusizId.TabIndex = 20;
             // 
-            // label9
+            // label12
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(17, 10);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(40, 13);
-            this.label9.TabIndex = 15;
-            this.label9.Text = "Vardas";
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(17, 90);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(78, 13);
+            this.label12.TabIndex = 19;
+            this.label12.Text = "NusizengimaiId";
             // 
-            // updateKlientasKlientoNr
+            // updateNusizengimaiKlientoNr
             // 
-            this.updateKlientasKlientoNr.Location = new System.Drawing.Point(20, 147);
-            this.updateKlientasKlientoNr.Name = "updateKlientasKlientoNr";
-            this.updateKlientasKlientoNr.Size = new System.Drawing.Size(126, 20);
-            this.updateKlientasKlientoNr.TabIndex = 16;
+            this.updateNusizengimaiKlientoNr.Location = new System.Drawing.Point(20, 67);
+            this.updateNusizengimaiKlientoNr.Name = "updateNusizengimaiKlientoNr";
+            this.updateNusizengimaiKlientoNr.Size = new System.Drawing.Size(126, 20);
+            this.updateNusizengimaiKlientoNr.TabIndex = 18;
             // 
-            // label10
+            // label13
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(17, 130);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(50, 13);
-            this.label10.TabIndex = 15;
-            this.label10.Text = "KlientoNr";
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(17, 50);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(54, 13);
+            this.label13.TabIndex = 17;
+            this.label13.Text = "Kliento_nr";
+            // 
+            // updateNusizengimaiNusizData
+            // 
+            this.updateNusizengimaiNusizData.Location = new System.Drawing.Point(20, 27);
+            this.updateNusizengimaiNusizData.Name = "updateNusizengimaiNusizData";
+            this.updateNusizengimaiNusizData.Size = new System.Drawing.Size(126, 20);
+            this.updateNusizengimaiNusizData.TabIndex = 16;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(17, 10);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(56, 13);
+            this.label14.TabIndex = 15;
+            this.label14.Text = "NusizData";
+            // 
+            // updateNusizengimai
+            // 
+            this.updateNusizengimai.Location = new System.Drawing.Point(20, 146);
+            this.updateNusizengimai.Name = "updateNusizengimai";
+            this.updateNusizengimai.Size = new System.Drawing.Size(126, 33);
+            this.updateNusizengimai.TabIndex = 14;
+            this.updateNusizengimai.Text = "Update";
+            this.updateNusizengimai.UseVisualStyleBackColor = true;
+            this.updateNusizengimai.Click += new System.EventHandler(this.updateNusizengimai_Click);
+            // 
+            // addNusizPanel
+            // 
+            this.addNusizPanel.Controls.Add(this.addNusizengimai);
+            this.addNusizPanel.Controls.Add(this.addNusizengimaiKlientoNr);
+            this.addNusizPanel.Controls.Add(this.label18);
+            this.addNusizPanel.Controls.Add(this.addNusizengimaiNusizData);
+            this.addNusizPanel.Controls.Add(this.label19);
+            this.addNusizPanel.Location = new System.Drawing.Point(18, 428);
+            this.addNusizPanel.Name = "addNusizPanel";
+            this.addNusizPanel.Size = new System.Drawing.Size(178, 184);
+            this.addNusizPanel.TabIndex = 5;
+            this.addNusizPanel.Visible = false;
+            // 
+            // addNusizengimai
+            // 
+            this.addNusizengimai.Location = new System.Drawing.Point(20, 92);
+            this.addNusizengimai.Name = "addNusizengimai";
+            this.addNusizengimai.Size = new System.Drawing.Size(126, 33);
+            this.addNusizengimai.TabIndex = 14;
+            this.addNusizengimai.Text = "Add";
+            this.addNusizengimai.UseVisualStyleBackColor = true;
+            this.addNusizengimai.Click += new System.EventHandler(this.addNusizengimai_Click);
+            // 
+            // addNusizengimaiKlientoNr
+            // 
+            this.addNusizengimaiKlientoNr.Location = new System.Drawing.Point(20, 66);
+            this.addNusizengimaiKlientoNr.Name = "addNusizengimaiKlientoNr";
+            this.addNusizengimaiKlientoNr.Size = new System.Drawing.Size(126, 20);
+            this.addNusizengimaiKlientoNr.TabIndex = 3;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(17, 49);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(54, 13);
+            this.label18.TabIndex = 2;
+            this.label18.Text = "Kliento_nr";
+            // 
+            // addNusizengimaiNusizData
+            // 
+            this.addNusizengimaiNusizData.Location = new System.Drawing.Point(20, 26);
+            this.addNusizengimaiNusizData.Name = "addNusizengimaiNusizData";
+            this.addNusizengimaiNusizData.Size = new System.Drawing.Size(126, 20);
+            this.addNusizengimaiNusizData.TabIndex = 1;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(17, 9);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(56, 13);
+            this.label19.TabIndex = 0;
+            this.label19.Text = "NusizData";
+            // 
+            // updateNusizengimaiShow
+            // 
+            this.updateNusizengimaiShow.Location = new System.Drawing.Point(259, 398);
+            this.updateNusizengimaiShow.Name = "updateNusizengimaiShow";
+            this.updateNusizengimaiShow.Size = new System.Drawing.Size(110, 23);
+            this.updateNusizengimaiShow.TabIndex = 4;
+            this.updateNusizengimaiShow.Text = "Update Nusiz";
+            this.updateNusizengimaiShow.UseVisualStyleBackColor = true;
+            this.updateNusizengimaiShow.Click += new System.EventHandler(this.updateNusizengimaiShow_Click);
+            // 
+            // addNusizengimaiShow
+            // 
+            this.addNusizengimaiShow.Location = new System.Drawing.Point(126, 398);
+            this.addNusizengimaiShow.Name = "addNusizengimaiShow";
+            this.addNusizengimaiShow.Size = new System.Drawing.Size(127, 23);
+            this.addNusizengimaiShow.TabIndex = 3;
+            this.addNusizengimaiShow.Text = "Add Nusiz";
+            this.addNusizengimaiShow.UseVisualStyleBackColor = true;
+            this.addNusizengimaiShow.Click += new System.EventHandler(this.addNusizengimaiShow_Click);
+            // 
+            // getNusizengimai
+            // 
+            this.getNusizengimai.Location = new System.Drawing.Point(18, 399);
+            this.getNusizengimai.Name = "getNusizengimai";
+            this.getNusizengimai.Size = new System.Drawing.Size(102, 23);
+            this.getNusizengimai.TabIndex = 2;
+            this.getNusizengimai.Text = "Get Nusizengimai";
+            this.getNusizengimai.UseVisualStyleBackColor = true;
+            this.getNusizengimai.Click += new System.EventHandler(this.getNusizengimai_Click);
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(18, 42);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(351, 171);
+            this.dataGridView2.TabIndex = 1;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(14, 15);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(124, 24);
+            this.label20.TabIndex = 0;
+            this.label20.Text = "Nusizengimai";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.dataGridView4);
+            this.panel2.Controls.Add(this.label15);
+            this.panel2.Controls.Add(this.updateGalimiNusizPanel);
+            this.panel2.Controls.Add(this.addGalimiNusizPanel);
+            this.panel2.Controls.Add(this.updateGalimiNusizShow);
+            this.panel2.Controls.Add(this.addGalimiNusizShow);
+            this.panel2.Controls.Add(this.getGalimiNusiz);
+            this.panel2.Controls.Add(this.dataGridView5);
+            this.panel2.Controls.Add(this.label24);
+            this.panel2.Location = new System.Drawing.Point(819, 12);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(474, 631);
+            this.panel2.TabIndex = 20;
+            // 
+            // dataGridView4
+            // 
+            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView4.Location = new System.Drawing.Point(18, 218);
+            this.dataGridView4.Name = "dataGridView4";
+            this.dataGridView4.Size = new System.Drawing.Size(436, 139);
+            this.dataGridView4.TabIndex = 19;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(14, 191);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(124, 24);
+            this.label15.TabIndex = 18;
+            this.label15.Text = "Nusizengimai";
+            // 
+            // updateGalimiNusizPanel
+            // 
+            this.updateGalimiNusizPanel.Controls.Add(this.updateGalimiNusizNusizKodas);
+            this.updateGalimiNusizPanel.Controls.Add(this.label16);
+            this.updateGalimiNusizPanel.Controls.Add(this.updateGalimiNusizNusizId);
+            this.updateGalimiNusizPanel.Controls.Add(this.label17);
+            this.updateGalimiNusizPanel.Controls.Add(this.updateGalimiNusizNusPav);
+            this.updateGalimiNusizPanel.Controls.Add(this.label21);
+            this.updateGalimiNusizPanel.Controls.Add(this.updateGalimiNusiz);
+            this.updateGalimiNusizPanel.Location = new System.Drawing.Point(204, 428);
+            this.updateGalimiNusizPanel.Name = "updateGalimiNusizPanel";
+            this.updateGalimiNusizPanel.Size = new System.Drawing.Size(178, 183);
+            this.updateGalimiNusizPanel.TabIndex = 17;
+            this.updateGalimiNusizPanel.Visible = false;
+            // 
+            // updateGalimiNusizNusizKodas
+            // 
+            this.updateGalimiNusizNusizKodas.Location = new System.Drawing.Point(20, 107);
+            this.updateGalimiNusizNusizKodas.Name = "updateGalimiNusizNusizKodas";
+            this.updateGalimiNusizNusizKodas.Size = new System.Drawing.Size(126, 20);
+            this.updateGalimiNusizNusizKodas.TabIndex = 20;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(17, 90);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(63, 13);
+            this.label16.TabIndex = 19;
+            this.label16.Text = "NusizKodas";
+            // 
+            // updateGalimiNusizNusizId
+            // 
+            this.updateGalimiNusizNusizId.Location = new System.Drawing.Point(20, 67);
+            this.updateGalimiNusizNusizId.Name = "updateGalimiNusizNusizId";
+            this.updateGalimiNusizNusizId.Size = new System.Drawing.Size(126, 20);
+            this.updateGalimiNusizNusizId.TabIndex = 18;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(17, 50);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(78, 13);
+            this.label17.TabIndex = 17;
+            this.label17.Text = "NusizengimaiId";
+            // 
+            // updateGalimiNusizNusPav
+            // 
+            this.updateGalimiNusizNusPav.Location = new System.Drawing.Point(20, 27);
+            this.updateGalimiNusizNusPav.Name = "updateGalimiNusizNusPav";
+            this.updateGalimiNusizNusPav.Size = new System.Drawing.Size(126, 20);
+            this.updateGalimiNusizNusPav.TabIndex = 16;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(17, 10);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(45, 13);
+            this.label21.TabIndex = 15;
+            this.label21.Text = "NusPav";
+            // 
+            // updateGalimiNusiz
+            // 
+            this.updateGalimiNusiz.Location = new System.Drawing.Point(20, 146);
+            this.updateGalimiNusiz.Name = "updateGalimiNusiz";
+            this.updateGalimiNusiz.Size = new System.Drawing.Size(126, 33);
+            this.updateGalimiNusiz.TabIndex = 14;
+            this.updateGalimiNusiz.Text = "Update";
+            this.updateGalimiNusiz.UseVisualStyleBackColor = true;
+            this.updateGalimiNusiz.Click += new System.EventHandler(this.updateGalimiNusiz_Click);
+            // 
+            // addGalimiNusizPanel
+            // 
+            this.addGalimiNusizPanel.Controls.Add(this.addGalimiNusiz);
+            this.addGalimiNusizPanel.Controls.Add(this.addGalimiNusizNusizId);
+            this.addGalimiNusizPanel.Controls.Add(this.label22);
+            this.addGalimiNusizPanel.Controls.Add(this.addGalimiNusizNusPav);
+            this.addGalimiNusizPanel.Controls.Add(this.label23);
+            this.addGalimiNusizPanel.Location = new System.Drawing.Point(18, 428);
+            this.addGalimiNusizPanel.Name = "addGalimiNusizPanel";
+            this.addGalimiNusizPanel.Size = new System.Drawing.Size(178, 184);
+            this.addGalimiNusizPanel.TabIndex = 5;
+            this.addGalimiNusizPanel.Visible = false;
+            // 
+            // addGalimiNusiz
+            // 
+            this.addGalimiNusiz.Location = new System.Drawing.Point(20, 92);
+            this.addGalimiNusiz.Name = "addGalimiNusiz";
+            this.addGalimiNusiz.Size = new System.Drawing.Size(126, 33);
+            this.addGalimiNusiz.TabIndex = 14;
+            this.addGalimiNusiz.Text = "Add";
+            this.addGalimiNusiz.UseVisualStyleBackColor = true;
+            this.addGalimiNusiz.Click += new System.EventHandler(this.addGalimiNusiz_Click);
+            // 
+            // addGalimiNusizNusizId
+            // 
+            this.addGalimiNusizNusizId.Location = new System.Drawing.Point(20, 66);
+            this.addGalimiNusizNusizId.Name = "addGalimiNusizNusizId";
+            this.addGalimiNusizNusizId.Size = new System.Drawing.Size(126, 20);
+            this.addGalimiNusizNusizId.TabIndex = 3;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(17, 49);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(78, 13);
+            this.label22.TabIndex = 2;
+            this.label22.Text = "NusizengimaiId";
+            // 
+            // addGalimiNusizNusPav
+            // 
+            this.addGalimiNusizNusPav.Location = new System.Drawing.Point(20, 26);
+            this.addGalimiNusizNusPav.Name = "addGalimiNusizNusPav";
+            this.addGalimiNusizNusPav.Size = new System.Drawing.Size(126, 20);
+            this.addGalimiNusizNusPav.TabIndex = 1;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(17, 9);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(45, 13);
+            this.label23.TabIndex = 0;
+            this.label23.Text = "NusPav";
+            // 
+            // updateGalimiNusizShow
+            // 
+            this.updateGalimiNusizShow.Location = new System.Drawing.Point(259, 398);
+            this.updateGalimiNusizShow.Name = "updateGalimiNusizShow";
+            this.updateGalimiNusizShow.Size = new System.Drawing.Size(110, 23);
+            this.updateGalimiNusizShow.TabIndex = 4;
+            this.updateGalimiNusizShow.Text = "Update GalimiNusiz";
+            this.updateGalimiNusizShow.UseVisualStyleBackColor = true;
+            this.updateGalimiNusizShow.Click += new System.EventHandler(this.updateGalimiNusizShow_Click);
+            // 
+            // addGalimiNusizShow
+            // 
+            this.addGalimiNusizShow.Location = new System.Drawing.Point(126, 398);
+            this.addGalimiNusizShow.Name = "addGalimiNusizShow";
+            this.addGalimiNusizShow.Size = new System.Drawing.Size(127, 23);
+            this.addGalimiNusizShow.TabIndex = 3;
+            this.addGalimiNusizShow.Text = "Add GalimiNusiz";
+            this.addGalimiNusizShow.UseVisualStyleBackColor = true;
+            this.addGalimiNusizShow.Click += new System.EventHandler(this.addGalimiNusizShow_Click);
+            // 
+            // getGalimiNusiz
+            // 
+            this.getGalimiNusiz.Location = new System.Drawing.Point(18, 399);
+            this.getGalimiNusiz.Name = "getGalimiNusiz";
+            this.getGalimiNusiz.Size = new System.Drawing.Size(102, 23);
+            this.getGalimiNusiz.TabIndex = 2;
+            this.getGalimiNusiz.Text = "Get GalimiNusiz";
+            this.getGalimiNusiz.UseVisualStyleBackColor = true;
+            this.getGalimiNusiz.Click += new System.EventHandler(this.getGalimiNusiz_Click);
+            // 
+            // dataGridView5
+            // 
+            this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView5.Location = new System.Drawing.Point(18, 42);
+            this.dataGridView5.Name = "dataGridView5";
+            this.dataGridView5.Size = new System.Drawing.Size(436, 146);
+            this.dataGridView5.TabIndex = 1;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(14, 15);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(181, 24);
+            this.label24.TabIndex = 0;
+            this.label24.Text = "Galimi Nusizengimai";
             // 
             // AdminKlientasForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1244, 654);
+            this.ClientSize = new System.Drawing.Size(1321, 654);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.TransportPanel);
             this.Name = "AdminKlientasForm";
             this.Text = "AdminKlientasForm";
@@ -339,6 +815,22 @@
             this.addKlientaiPanel.ResumeLayout(false);
             this.addKlientaiPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            this.updateNusizPanel.ResumeLayout(false);
+            this.updateNusizPanel.PerformLayout();
+            this.addNusizPanel.ResumeLayout(false);
+            this.addNusizPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            this.updateGalimiNusizPanel.ResumeLayout(false);
+            this.updateGalimiNusizPanel.PerformLayout();
+            this.addGalimiNusizPanel.ResumeLayout(false);
+            this.addGalimiNusizPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -373,5 +865,49 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox updateKlientasKlientoNr;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel updateNusizPanel;
+        private System.Windows.Forms.TextBox updateNusizengimaiNusizId;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox updateNusizengimaiKlientoNr;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox updateNusizengimaiNusizData;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Button updateNusizengimai;
+        private System.Windows.Forms.Panel addNusizPanel;
+        private System.Windows.Forms.Button addNusizengimai;
+        private System.Windows.Forms.TextBox addNusizengimaiKlientoNr;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox addNusizengimaiNusizData;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Button updateNusizengimaiShow;
+        private System.Windows.Forms.Button addNusizengimaiShow;
+        private System.Windows.Forms.Button getNusizengimai;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.DataGridView dataGridView4;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Panel updateGalimiNusizPanel;
+        private System.Windows.Forms.TextBox updateGalimiNusizNusizKodas;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox updateGalimiNusizNusizId;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox updateGalimiNusizNusPav;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Button updateGalimiNusiz;
+        private System.Windows.Forms.Panel addGalimiNusizPanel;
+        private System.Windows.Forms.Button addGalimiNusiz;
+        private System.Windows.Forms.TextBox addGalimiNusizNusizId;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.TextBox addGalimiNusizNusPav;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Button updateGalimiNusizShow;
+        private System.Windows.Forms.Button addGalimiNusizShow;
+        private System.Windows.Forms.Button getGalimiNusiz;
+        private System.Windows.Forms.DataGridView dataGridView5;
+        private System.Windows.Forms.Label label24;
     }
 }
