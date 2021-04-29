@@ -17,18 +17,18 @@ namespace TransportoNuoma.Repositories
 
 
 
-        public void displayKlientoLokacija()
+        public DataTable displayKlientoLokacija()
         {
+            DataTable dta = new DataTable();
             try
             {
                 cnn = new MySqlConnection(connectionString);//assign connection. The variable cnn, which is of type SqlConnection is used to establish the connection to the database.
                 cnn.Open();//open connection. we use the Open method of the cnn variable to open a connection to the database.
 
-                MySqlCommand cmd = new MySqlCommand("Select * from kliento_lokacija", cnn);//select all from newTestTable
+                MySqlCommand cmd = new MySqlCommand("SELECT kliento_lokacija.KlientoLokId,kliento_lokacija.Salis, kliento_lokacija.Miestas, kliento_lokacija.KoordinatesX,kliento_lokacija.KoordinatesY, klientas.Kliento_nr, klientas.Vardas,klientas.Pavarde,klientas.Email  FROM kliento_lokacija INNER JOIN klientas ON kliento_lokacija.Kliento_nr=klientas.Kliento_nr", cnn);//select all from newTestTable
 
                 cmd.ExecuteNonQuery();
 
-                DataTable dta = new DataTable();
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                 adapter.Fill(dta);
             }
@@ -38,53 +38,47 @@ namespace TransportoNuoma.Repositories
             }
 
             cnn.Close();
-            Console.WriteLine("Connection Closed. Press any key to exit...");
-            Console.Read();
+            return dta;
         }
-        
+        /**
+         *  public int kliento_Lok_Id { get; set; }
+        public string salis { get; set; }
+        public string miestas { get; set; }
+        public double koorindatesX { get; set; }
+        public double koorindatesY { get; set; }
+        public int kliento_Nr { get; set; }
+         * 
+         */
         public KlientoLokacija GetKlientoLokacija(Klientas klientas)
         {
-            try
+            KlientoLokacija klientoLokacija = new KlientoLokacija();
+
+            cnn = new MySqlConnection(connectionString);//assign connection. The variable cnn, which is of type SqlConnection is used to establish the connection to the database.
+            cnn.Open();//open connection. we use the Open method of the cnn variable to open a connection to the database.
+
+            MySqlCommand cmd = new MySqlCommand("Select * from kliento_lokacija where Kliento_Nr=@Kliento_Nr", cnn);//select all from newTestTable
+            cmd.Parameters.AddWithValue("@Kliento_Nr", klientas.klientoNr);
+            MySqlDataReader dataReader = cmd.ExecuteReader();
+            if ((dataReader.Read() == true))
             {
-                
-                KlientoLokacija klientoLokacija = new KlientoLokacija();
+                int kliento_Lok_Id = int.Parse(dataReader["KlientoLokId"].ToString());
+                string salis = dataReader["Salis"].ToString();
+                string miestas = dataReader["Miestas"].ToString();
+                double koorindatesX = double.Parse(dataReader["KoordinatesX"].ToString());
+                double koorindatesY = double.Parse(dataReader["KoordinatesY"].ToString());
+                int kliento_Nr = int.Parse(dataReader["Kliento_nr"].ToString());
 
-                cnn = new MySqlConnection(connectionString);//assign connection. The variable cnn, which is of type SqlConnection is used to establish the connection to the database.
-                cnn.Open();//open connection. we use the Open method of the cnn variable to open a connection to the database.
-
-                MySqlCommand cmd = new MySqlCommand("Select * from kliento_lokacija where Kliento_Nr=@Kliento_Nr", cnn);//select all from newTestTable
-                cmd.Parameters.AddWithValue("@Kliento_Nr", klientas.klientoNr);
-                MySqlDataReader dataReader = cmd.ExecuteReader();
-                if ((dataReader.Read() == true))
-                {
-                    int kliento_Lok_Id = int.Parse(dataReader["KlientoLokId"].ToString());
-                    string salis = dataReader["Salis"].ToString();
-                    string miestas = dataReader["Miestas"].ToString();
-                    double koorindatesX = double.Parse(dataReader["KoordinatesX"].ToString());
-                    double koorindatesY = double.Parse(dataReader["KoordinatesY"].ToString());
-                    int kliento_Nr = int.Parse(dataReader["Kliento_nr"].ToString());
-
-                    klientoLokacija.kliento_Lok_Id = kliento_Lok_Id;
-                    klientoLokacija.salis = salis;
-                    klientoLokacija.miestas = miestas;
-                    klientoLokacija.koorindatesX = koorindatesX;
-                    klientoLokacija.koorindatesY = koorindatesY;
-                    klientoLokacija.kliento_Nr = kliento_Nr;
-                }
-                dataReader.Close();
-                cnn.Close();
-                return klientoLokacija;
-                
-            }
-            catch(Exception ex)
-            {
-                Console.WriteLine(ex);
-                return null;
+                klientoLokacija.kliento_Lok_Id = kliento_Lok_Id;
+                klientoLokacija.salis = salis;
+                klientoLokacija.miestas = miestas;
+                klientoLokacija.koorindatesX = koorindatesX;
+                klientoLokacija.koorindatesY = koorindatesY;
+                klientoLokacija.kliento_Nr = kliento_Nr; 
             }
 
+            return klientoLokacija;
         }
         
-        //REGISTER Client
         public KlientoLokacija InsertKlientoLokacija(KlientoLokacija klientoLokacija)//provide transportas object when calling this function
         {
             try
@@ -136,7 +130,6 @@ namespace TransportoNuoma.Repositories
             {
                 //setting new SqlConnection, providing connectionString
                 cnn = new MySqlConnection(connectionString);
-                cnn.Open();//open database
 
                 //check if user exist
                 MySqlCommand cmd = new MySqlCommand("Update kliento_lokacija SET KoordinatesX=@KoordinatesX,KoordinatesY=@KoordinatesY WHERE KlientoLokId=@KlientoLokId", cnn);//to check if username exist we have to select all items with username

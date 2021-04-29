@@ -16,18 +16,19 @@ namespace TransportoNuoma.Repositories
 
 
 
-        public void displayLokacija()
+        public DataTable displayLokacija()
         {
+            DataTable dta = new DataTable();
             try
             {
                 cnn = new MySqlConnection(connectionString);//assign connection. The variable cnn, which is of type SqlConnection is used to establish the connection to the database.
                 cnn.Open();//open connection. we use the Open method of the cnn variable to open a connection to the database.
 
-                MySqlCommand cmd = new MySqlCommand("Select * from lokacija", cnn);//select all from newTestTable
+                MySqlCommand cmd = new MySqlCommand("SELECT lokacija.Salis, lokacija.Miestas, lokacija.KoordinatesX,lokacija.KoordinatesY, transportas.Trans_Id, transportas.Trans_nr,transportas.Tipas FROM lokacija INNER JOIN transportas ON lokacija.Trans_Id=transportas.Trans_Id", cnn);//select all from newTestTable
 
                 cmd.ExecuteNonQuery();
 
-                DataTable dta = new DataTable();
+                
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                 adapter.Fill(dta);
             }
@@ -37,8 +38,7 @@ namespace TransportoNuoma.Repositories
             }
 
             cnn.Close();
-            Console.WriteLine("Connection Closed. Press any key to exit...");
-            Console.Read();
+            return dta;
         }
 
 
@@ -132,7 +132,6 @@ namespace TransportoNuoma.Repositories
             {
                 //setting new SqlConnection, providing connectionString
                 cnn = new MySqlConnection(connectionString);
-                cnn.Open();//open database
 
                 //check if user exist
                 MySqlCommand cmd = new MySqlCommand("Update lokacija SET Miestas=@Miestas,KoordinatesX=@KoordinatesX,KoordinatesY=@KoordinatesY WHERE lokacijosId=@lokacijosId", cnn);//to check if username exist we have to select all items with username

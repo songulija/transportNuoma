@@ -62,6 +62,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.updateMarkePanel = new System.Windows.Forms.Panel();
+            this.updateMarkesId = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.updateMarke = new System.Windows.Forms.Button();
             this.updateMarkesPav = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
@@ -74,8 +76,10 @@
             this.getMarke = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.label24 = new System.Windows.Forms.Label();
-            this.updateMarkesId = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
+            this.adminTestingShow = new System.Windows.Forms.Button();
+            this.adminDraudimasShow = new System.Windows.Forms.Button();
+            this.adminLokacijaShow = new System.Windows.Forms.Button();
+            this.adminNuomaShow = new System.Windows.Forms.Button();
             this.TransportPanel.SuspendLayout();
             this.updatePanel.SuspendLayout();
             this.addPanel.SuspendLayout();
@@ -411,6 +415,22 @@
             this.updateMarkePanel.TabIndex = 17;
             this.updateMarkePanel.Visible = false;
             // 
+            // updateMarkesId
+            // 
+            this.updateMarkesId.Location = new System.Drawing.Point(20, 66);
+            this.updateMarkesId.Name = "updateMarkesId";
+            this.updateMarkesId.Size = new System.Drawing.Size(126, 20);
+            this.updateMarkesId.TabIndex = 16;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(17, 49);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(54, 13);
+            this.label10.TabIndex = 15;
+            this.label10.Text = "Markes Id";
+            // 
             // updateMarke
             // 
             this.updateMarke.Location = new System.Drawing.Point(20, 95);
@@ -522,27 +542,55 @@
             this.label24.TabIndex = 0;
             this.label24.Text = "Marke";
             // 
-            // updateMarkesId
+            // adminTestingShow
             // 
-            this.updateMarkesId.Location = new System.Drawing.Point(20, 66);
-            this.updateMarkesId.Name = "updateMarkesId";
-            this.updateMarkesId.Size = new System.Drawing.Size(126, 20);
-            this.updateMarkesId.TabIndex = 16;
+            this.adminTestingShow.Location = new System.Drawing.Point(1036, 97);
+            this.adminTestingShow.Name = "adminTestingShow";
+            this.adminTestingShow.Size = new System.Drawing.Size(170, 43);
+            this.adminTestingShow.TabIndex = 19;
+            this.adminTestingShow.Text = "Administrate Testing";
+            this.adminTestingShow.UseVisualStyleBackColor = true;
+            this.adminTestingShow.Click += new System.EventHandler(this.adminTestingShow_Click);
             // 
-            // label10
+            // adminDraudimasShow
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(17, 49);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(54, 13);
-            this.label10.TabIndex = 15;
-            this.label10.Text = "Markes Id";
+            this.adminDraudimasShow.Location = new System.Drawing.Point(1036, 161);
+            this.adminDraudimasShow.Name = "adminDraudimasShow";
+            this.adminDraudimasShow.Size = new System.Drawing.Size(170, 43);
+            this.adminDraudimasShow.TabIndex = 20;
+            this.adminDraudimasShow.Text = "Administrate Draudimas";
+            this.adminDraudimasShow.UseVisualStyleBackColor = true;
+            this.adminDraudimasShow.Click += new System.EventHandler(this.adminDraudimasShow_Click);
+            // 
+            // adminLokacijaShow
+            // 
+            this.adminLokacijaShow.Location = new System.Drawing.Point(1036, 228);
+            this.adminLokacijaShow.Name = "adminLokacijaShow";
+            this.adminLokacijaShow.Size = new System.Drawing.Size(170, 43);
+            this.adminLokacijaShow.TabIndex = 21;
+            this.adminLokacijaShow.Text = "Administrate Lokacija";
+            this.adminLokacijaShow.UseVisualStyleBackColor = true;
+            this.adminLokacijaShow.Click += new System.EventHandler(this.adminLokacijaShow_Click);
+            // 
+            // adminNuomaShow
+            // 
+            this.adminNuomaShow.Location = new System.Drawing.Point(1036, 295);
+            this.adminNuomaShow.Name = "adminNuomaShow";
+            this.adminNuomaShow.Size = new System.Drawing.Size(170, 43);
+            this.adminNuomaShow.TabIndex = 23;
+            this.adminNuomaShow.Text = "Administrate Nuoma";
+            this.adminNuomaShow.UseVisualStyleBackColor = true;
+            this.adminNuomaShow.Click += new System.EventHandler(this.adminNuomaShow_Click);
             // 
             // MainFormAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1297, 655);
+            this.Controls.Add(this.adminNuomaShow);
+            this.Controls.Add(this.adminLokacijaShow);
+            this.Controls.Add(this.adminDraudimasShow);
+            this.Controls.Add(this.adminTestingShow);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.TransportPanel);
             this.Name = "MainFormAdmin";
@@ -615,5 +663,9 @@
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.TextBox updateMarkesId;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button adminTestingShow;
+        private System.Windows.Forms.Button adminDraudimasShow;
+        private System.Windows.Forms.Button adminLokacijaShow;
+        private System.Windows.Forms.Button adminNuomaShow;
     }
 }
