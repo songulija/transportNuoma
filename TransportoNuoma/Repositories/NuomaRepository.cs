@@ -17,8 +17,9 @@ namespace TransportoNuoma.Repositories
 
 
 
-        public void displayNuoma()
+        public DataTable displayNuoma()
         {
+            DataTable dta = new DataTable();
             try
             {
                 cnn = new MySqlConnection(connectionString);//assign connection. The variable cnn, which is of type SqlConnection is used to establish the connection to the database.
@@ -28,7 +29,7 @@ namespace TransportoNuoma.Repositories
 
                 cmd.ExecuteNonQuery();
 
-                DataTable dta = new DataTable();
+                
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                 adapter.Fill(dta);
             }
@@ -38,8 +39,7 @@ namespace TransportoNuoma.Repositories
             }
 
             cnn.Close();
-            Console.WriteLine("Connection Closed. Press any key to exit...");
-            Console.Read();
+            return dta;
         }
 
         //REGISTER STUDENT
@@ -99,11 +99,11 @@ namespace TransportoNuoma.Repositories
             {
                 //setting new SqlConnection, providing connectionString
                 cnn = new MySqlConnection(connectionString);
-                cnn.Open();//open database
 
                 //check if user exist
-                MySqlCommand cmd = new MySqlCommand("Update nuoma SET NuomosPabLaik=@NuomosPabLaik WHERE Nuomos_nr=@Nuomos_nr", cnn);//to check if username exist we have to select all items with username
-                cmd.Parameters.AddWithValue("@NuomosPabLaik", nuoma.nuomosPabLaik);
+                MySqlCommand cmd = new MySqlCommand("Update nuoma SET Trans_Id=@Trans_Id,Kliento_nr=@Kliento_nr WHERE Nuomos_nr=@Nuomos_nr", cnn);//to check if username exist we have to select all items with username
+                cmd.Parameters.AddWithValue("@Trans_Id", nuoma.transporto_Id);
+                cmd.Parameters.AddWithValue("@Kliento_nr", nuoma.kliento_Nr);
                 cmd.Parameters.AddWithValue("@Nuomos_nr", nuoma.nuomos_Nr);
                 cnn.Open();
                 cmd.ExecuteNonQuery();
