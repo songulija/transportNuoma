@@ -46,8 +46,8 @@ namespace TransportoNuoma.Repositories
         {
             try
             {
-
-
+                
+                
                 //setting new SqlConnection, providing connectionString
                 cnn = new MySqlConnection(connectionString);
                 cnn.Open();//open database
@@ -57,10 +57,10 @@ namespace TransportoNuoma.Repositories
                 cmd.Parameters.AddWithValue("@Trans_Id", rezervacija.Transporto_Id);
                 
                 MySqlDataReader dataReader = cmd.ExecuteReader();//sends SQLCommand.CommandText to the SQLCommand.Connection and builds SqlDataReader
-                if ((dataReader.Read() == true))
+                if ((dataReader.Read() == true) && TimeSpan.Parse(dataReader["rezPab"].ToString()) > DateTime.Now.TimeOfDay)
                 {
-                    Console.WriteLine("Transport with that Number already exists");
-                    return null;
+                    Console.WriteLine("Transport is already under reservation");
+                    return null;    
                 }
                 else
                 {
@@ -86,17 +86,43 @@ namespace TransportoNuoma.Repositories
             return rezervacija;//return 
         }
 
+       
+
         public void addNewRezervacija(Klientas klientas, Transportas transportas, Lokacija lokacija)
         {
-            Rezervacija rezervacija = new Rezervacija();
             
-            rezervacija.kliento_Id = klientas.klientoNr;
-            rezervacija.lokacijos_Id = lokacija.lokacijos_Id;
-            rezervacija.Transporto_Id = transportas.transporto_Id;
-            rezervacija.rezervacijos_Data = DateTime.Today;
-            rezervacija.rezervacijosPrad = DateTime.Today;
-            rezervacija.rezervacijosPab = DateTime.Today.AddSeconds(900);
-            InsertRezervacija(rezervacija);
+            try
+            {
+                cnn = new MySqlConnection(connectionString);
+                cnn.Open();//opens connection
+                MySqlCommand cmd = new MySqlCommand("Select * from rezervacija where Kliento_nr=@Kliento_nr", cnn);//to check if username exist we have to select all items with username
+                cmd.Parameters.AddWithValue("@Kliento_nr", klientas.klientoNr);
+                MySqlDataReader dataReader = cmd.ExecuteReader();//sends SQLCommand.CommandText to the SQLCommand.Connection and builds SqlDataReader
+                if ((dataReader.Read() == true) && TimeSpan.Parse(dataReader["rezPab"].ToString()) > DateTime.Now.TimeOfDay)
+                {
+                    Console.WriteLine("Client already has an active reservation");
+                    
+                }
+                else
+                {
+                    Rezervacija rezervacija = new Rezervacija();
+                    TimeSpan rezervacijosLaikas = new TimeSpan(0, 15, 0);
+                    rezervacija.kliento_Id = klientas.klientoNr;
+                    rezervacija.lokacijos_Id = lokacija.lokacijos_Id;
+                    rezervacija.Transporto_Id = transportas.transporto_Id;
+                    rezervacija.rezervacijos_Data = DateTime.Today;
+                    rezervacija.rezervacijosPrad = DateTime.Now.TimeOfDay;
+                    rezervacija.rezervacijosPab = rezervacija.rezervacijosPrad.Add(rezervacijosLaikas);     //DateTime.Today.AddSeconds(900);
+                    InsertRezervacija(rezervacija);
+                }
+
+            }
+            catch(Exception e) { Console.WriteLine(e.Message); }
+            
+
+
+
+           
         }
         
         public void UpdateRezervacija(Rezervacija rezervacija)

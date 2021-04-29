@@ -10,8 +10,8 @@ namespace TransportoNuoma.Classes
     {
         public int rezervacijos_Id { get; set; }
         public DateTime rezervacijos_Data { get; set; }
-        public DateTime rezervacijosPrad { get; set; }
-        public DateTime rezervacijosPab { get; set; }
+        public TimeSpan rezervacijosPrad { get; set; }
+        public TimeSpan rezervacijosPab { get; set; }
         public int kliento_Id { get; set; }
         public int Transporto_Id { get; set; }
         public int lokacijos_Id { get; set; }
