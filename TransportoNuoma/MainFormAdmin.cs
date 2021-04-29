@@ -207,5 +207,21 @@ namespace TransportoNuoma
             testingScreen.ShowDialog();
             this.Close();
         }
+
+        private void adminKlientasShow_Click(object sender, EventArgs e)
+        {
+            AdminKlientasForm testingScreen = new AdminKlientasForm(klientas);
+            this.Hide();
+            testingScreen.ShowDialog();
+            this.Close();
+        }
+
+        private void adminApmokejimasShow_Click(object sender, EventArgs e)
+        {
+            AdminApmokejimasGrazForm testingScreen = new AdminApmokejimasGrazForm(klientas);
+            this.Hide();
+            testingScreen.ShowDialog();
+            this.Close();
+        }
     }
 }

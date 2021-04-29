@@ -80,6 +80,8 @@
             this.adminDraudimasShow = new System.Windows.Forms.Button();
             this.adminLokacijaShow = new System.Windows.Forms.Button();
             this.adminNuomaShow = new System.Windows.Forms.Button();
+            this.adminKlientasShow = new System.Windows.Forms.Button();
+            this.adminApmokejimasShow = new System.Windows.Forms.Button();
             this.TransportPanel.SuspendLayout();
             this.updatePanel.SuspendLayout();
             this.addPanel.SuspendLayout();
@@ -582,11 +584,33 @@
             this.adminNuomaShow.UseVisualStyleBackColor = true;
             this.adminNuomaShow.Click += new System.EventHandler(this.adminNuomaShow_Click);
             // 
+            // adminKlientasShow
+            // 
+            this.adminKlientasShow.Location = new System.Drawing.Point(1036, 351);
+            this.adminKlientasShow.Name = "adminKlientasShow";
+            this.adminKlientasShow.Size = new System.Drawing.Size(170, 43);
+            this.adminKlientasShow.TabIndex = 24;
+            this.adminKlientasShow.Text = "Administrate Klientas";
+            this.adminKlientasShow.UseVisualStyleBackColor = true;
+            this.adminKlientasShow.Click += new System.EventHandler(this.adminKlientasShow_Click);
+            // 
+            // adminApmokejimasShow
+            // 
+            this.adminApmokejimasShow.Location = new System.Drawing.Point(1036, 406);
+            this.adminApmokejimasShow.Name = "adminApmokejimasShow";
+            this.adminApmokejimasShow.Size = new System.Drawing.Size(170, 43);
+            this.adminApmokejimasShow.TabIndex = 25;
+            this.adminApmokejimasShow.Text = "Administrate Grazinimas ir Apmokejimas";
+            this.adminApmokejimasShow.UseVisualStyleBackColor = true;
+            this.adminApmokejimasShow.Click += new System.EventHandler(this.adminApmokejimasShow_Click);
+            // 
             // MainFormAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1297, 655);
+            this.Controls.Add(this.adminApmokejimasShow);
+            this.Controls.Add(this.adminKlientasShow);
             this.Controls.Add(this.adminNuomaShow);
             this.Controls.Add(this.adminLokacijaShow);
             this.Controls.Add(this.adminDraudimasShow);
@@ -667,5 +691,7 @@
         private System.Windows.Forms.Button adminDraudimasShow;
         private System.Windows.Forms.Button adminLokacijaShow;
         private System.Windows.Forms.Button adminNuomaShow;
+        private System.Windows.Forms.Button adminKlientasShow;
+        private System.Windows.Forms.Button adminApmokejimasShow;
     }
 }

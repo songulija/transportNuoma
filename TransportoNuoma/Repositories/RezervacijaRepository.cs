@@ -16,18 +16,19 @@ namespace TransportoNuoma.Repositories
 
 
 
-        public void displayRezervacija()
+        public DataTable displayRezervacija()
         {
+            DataTable dta = new DataTable();
             try
             {
                 cnn = new MySqlConnection(connectionString);//assign connection. The variable cnn, which is of type SqlConnection is used to establish the connection to the database.
                 cnn.Open();//open connection. we use the Open method of the cnn variable to open a connection to the database.
 
-                MySqlCommand cmd = new MySqlCommand("Select * from rezervacija", cnn);//select all from newTestTable
+                MySqlCommand cmd = new MySqlCommand("SELECT rezervacija.rezId, rezervacija.rezData, rezervacija.rezPrad, rezervacija.rezPab,klientas.Kliento_nr,klientas.Vardas,klientas.Pavarde, transportas.Trans_Id,transportas.Trans_nr,lokacija.lokacijosId,lokacija.KoordinatesX,lokacija.KoordinatesY FROM rezervacija INNER JOIN klientas ON rezervacija.Kliento_nr=klientas.Kliento_nr INNER JOIN transportas ON rezervacija.Trans_Id=transportas.Trans_Id INNER JOIN lokacija ON rezervacija.lokacijosId=lokacija.lokacijosId", cnn);//select all from newTestTable
 
                 cmd.ExecuteNonQuery();
 
-                DataTable dta = new DataTable();
+                
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                 adapter.Fill(dta);
             }
@@ -37,8 +38,7 @@ namespace TransportoNuoma.Repositories
             }
 
             cnn.Close();
-            Console.WriteLine("Connection Closed. Press any key to exit...");
-            Console.Read();
+            return dta;
         }
 
         //REGISTER STUDENT
@@ -120,8 +120,6 @@ namespace TransportoNuoma.Repositories
             catch(Exception e) { Console.WriteLine(e.Message); }
             
 
-
-
            
         }
         
@@ -131,13 +129,11 @@ namespace TransportoNuoma.Repositories
             {
                 //setting new SqlConnection, providing connectionString
                 cnn = new MySqlConnection(connectionString);
-                cnn.Open();//open database
 
                 //check if user exist
-                MySqlCommand cmd = new MySqlCommand("Update rezervacija SET rezData=@rezData, rezPrad=@rezPrad, rezPab=@rezPab WHERE rezId=@rezId", cnn);//to check if username exist we have to select all items with username
-                cmd.Parameters.AddWithValue("@rezData", rezervacija.rezervacijos_Data);
-                cmd.Parameters.AddWithValue("@rezPrad", rezervacija.rezervacijosPrad);
-                cmd.Parameters.AddWithValue("@rezPab", rezervacija.rezervacijosPab);
+                MySqlCommand cmd = new MySqlCommand("Update rezervacija SET Trans_Id=@Trans_Id, Kliento_nr=@Kliento_nr WHERE rezId=@rezId", cnn);//to check if username exist we have to select all items with username
+                cmd.Parameters.AddWithValue("@Trans_Id", rezervacija.Transporto_Id);
+                cmd.Parameters.AddWithValue("@Kliento_nr", rezervacija.kliento_Id);
                 cmd.Parameters.AddWithValue("@rezId", rezervacija.rezervacijos_Id);
                 cnn.Open();
                 cmd.ExecuteNonQuery();

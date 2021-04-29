@@ -143,6 +143,31 @@ namespace TransportoNuoma.Repositories
 
 
 
+        public void UpdateKlientas(Klientas klientas)
+        {
+            try
+            {
+                //setting new SqlConnection, providing connectionString
+                cnn = new MySqlConnection(connectionString);
+
+                //check if user exist
+                MySqlCommand cmd = new MySqlCommand("Update klientas SET Email=@Email, Vardas=@Vardas,Pavarde=@Pavarde  WHERE Kliento_nr=@Kliento_nr", cnn);//to check if username exist we have to select all items with username
+                cmd.Parameters.AddWithValue("@Email", klientas.email);
+                cmd.Parameters.AddWithValue("@Vardas", klientas.vardas);
+                cmd.Parameters.AddWithValue("@Pavarde", klientas.pavarde);
+                cmd.Parameters.AddWithValue("@Kliento_nr", klientas.klientoNr);
+                cnn.Open();
+                cmd.ExecuteNonQuery();
+                cnn.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+        }
+
+
+
 
     }
 }
