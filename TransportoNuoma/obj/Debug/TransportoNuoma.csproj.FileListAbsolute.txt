@@ -179,3 +179,4 @@ C:\Users\PC\Desktop\mergedTransNuoma\TransportoNuoma\obj\Debug\TransportoNuoma.c
 C:\Users\PC\Desktop\mergedTransNuoma\TransportoNuoma\obj\Debug\TransportoNuoma.csproj.CopyComplete
 C:\Users\PC\Desktop\mergedTransNuoma\TransportoNuoma\obj\Debug\TransportoNuoma.exe
 C:\Users\PC\Desktop\mergedTransNuoma\TransportoNuoma\obj\Debug\TransportoNuoma.pdb
+C:\Users\PC\Desktop\mergedTransNuoma\TransportoNuoma\obj\Debug\TransportoNuoma.AdminKlientasForm.resources
