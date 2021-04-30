@@ -95,7 +95,30 @@ namespace TransportoNuoma.Repositories
             return (rezervacija, true);//return 
         }
 
-       
+        public Rezervacija getLastReservacija(Klientas klientas)
+        {
+            Rezervacija rezervacija = new Rezervacija();
+            try
+            {
+                cnn = new MySqlConnection(connectionString);
+                cnn.Open();
+                MySqlCommand cmd = new MySqlCommand("SELECT * FROM rezervacija WHERE rezId=( SELECT MAX(rezId) FROM rezervacija WHERE Kliento_nr=@Kliento_nr);", cnn);
+                cmd.Parameters.AddWithValue("@Kliento_nr", klientas.klientoNr);
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+                dataReader.Read();
+                rezervacija.rezervacijos_Id = int.Parse(dataReader["rezId"].ToString());
+                rezervacija.kliento_Id = int.Parse(dataReader["Kliento_nr"].ToString());
+                rezervacija.lokacijos_Id = int.Parse(dataReader["lokacijosId"].ToString());
+                rezervacija.rezervacijosPab = TimeSpan.Parse(dataReader["rezPab"].ToString());
+                rezervacija.rezervacijosPrad = TimeSpan.Parse(dataReader["rezPrad"].ToString());
+                rezervacija.rezervacijos_Data = DateTime.Parse(dataReader["rezData"].ToString());
+                dataReader.Close();
+                cnn.Close();
+            }
+            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            
+            return rezervacija;
+        }
 
         public bool addNewRezervacija(Klientas klientas, Transportas transportas, Lokacija lokacija)
         {

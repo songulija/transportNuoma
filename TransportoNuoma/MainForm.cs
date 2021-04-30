@@ -29,6 +29,7 @@ namespace TransportoNuoma
         System.Timers.Timer t;
         Transportas rezervuotasTransportas;
         RezervacijaRepository rezervacijaRepository;
+        Rezervacija rezervacija = new Rezervacija();
         
 
         public MainForm(Klientas klientas)
@@ -121,6 +122,7 @@ namespace TransportoNuoma
 
                         if (rezervacijaRepository.addNewRezervacija(klientas, rezervuotasTransportas, transportoLokacija) == true)
                         {
+                            rezervacija = rezervacijaRepository.getLastReservacija(klientas);
                             rezervacijosPanel.Visible = true;
                             th = new Thread(() => { CountDownMethod(ct, CancellationMethod); });
                             th.Start();
@@ -237,6 +239,8 @@ namespace TransportoNuoma
                 Interval = 1000 // sec
             };
             t.Elapsed += OnTimeEvent;
+            nuomaRepository.RegisterNewNuoma(klientas, rezervuotasTransportas, rezervacija);
+
             t.Start();
             
         }

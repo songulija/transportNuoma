@@ -140,9 +140,9 @@ namespace TransportoNuoma.Repositories
                 MySqlCommand cmd1 = new MySqlCommand("Insert into nuoma (NuomosPrData,NuomosPradLaik,NuomosPabLaik,NuomosPabData,Trans_Id,Kliento_nr,rezId) VALUES(@NuomosPrData,@NuomosPradLaik,@NuomosPabLaik,@NuomosPabData,@Trans_Id,@Kliento_nr,@rezId)", cnn);
                 cmd1.Parameters.AddWithValue("@NuomosPrData", DateTime.Today);
                 cmd1.Parameters.AddWithValue("@NuomosPradLaik", DateTime.Now.TimeOfDay);
-                cmd1.Parameters.AddWithValue("@NuomosPabLaik", DateTime.Today);
                 TimeSpan nuomosLaikas = new TimeSpan(1, 0, 0);
-                cmd1.Parameters.AddWithValue("@NuomosPabData", DateTime.Now.TimeOfDay.Add(nuomosLaikas));
+                cmd1.Parameters.AddWithValue("@NuomosPabLaik", DateTime.Now.TimeOfDay.Add(nuomosLaikas));               
+                cmd1.Parameters.AddWithValue("@NuomosPabData", DateTime.Today);
                 cmd1.Parameters.AddWithValue("@Trans_Id", transportas.transporto_Id);
                 cmd1.Parameters.AddWithValue("@Kliento_nr", klientas.klientoNr);
                 cmd1.Parameters.AddWithValue("@rezId", rezervacija.rezervacijos_Id);
