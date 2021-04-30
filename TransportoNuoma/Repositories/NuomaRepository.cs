@@ -112,9 +112,10 @@ namespace TransportoNuoma.Repositories
                 {
                     Console.WriteLine("transport is not taken");
                 }
-
+                dataReader.Close();
             }
             catch (Exception ex) { Console.WriteLine(ex.Message); }
+            cnn.Close();
             return true;
         }
 
@@ -176,6 +177,44 @@ namespace TransportoNuoma.Repositories
             }
         }
 
+        public void CancelNuoma(Klientas klientas)
+        {
+            try
+            {
+                //setting new SqlConnection, providing connectionString
+                cnn = new MySqlConnection(connectionString);
+                cnn.Open();//open database
+                MySqlCommand cmd = new MySqlCommand("SELECT * FROM nuoma WHERE Nuomos_nr=( SELECT MAX(Nuomos_nr) FROM nuoma WHERE Kliento_nr=@Kliento_nr)", cnn);//to check if username exist we have to select all items with username
+                cmd.Parameters.AddWithValue("@Kliento_nr", klientas.klientoNr);
+                MySqlDataReader dataReader = cmd.ExecuteReader();//sends SQLCommand.CommandText to the SQLCommand.Connection and builds SqlDataReader
+                while (dataReader.Read() == true)
+                {
+                    if (TimeSpan.Parse(dataReader["NuomosPabLaik"].ToString()) > DateTime.Now.TimeOfDay && DateTime.Parse(dataReader["NuomosPabData"].ToString()) >= DateTime.Today)
+                    {
+                        int nuomosID = Convert.ToInt32(dataReader["Nuomos_nr"]);
+
+                        MySqlCommand cmd1 = new MySqlCommand("Update nuoma SET NuomosPabLaik=@NuomosPabLaik WHERE Nuomos_nr=@Nuomos_nr", cnn);//to check if username exist we have to select all items with username
+
+                        cmd1.Parameters.AddWithValue("@NuomosPabLaik", DateTime.Now.TimeOfDay);
+                        cmd1.Parameters.AddWithValue("@Nuomos_nr", nuomosID);
+                        dataReader.Close();
+                        cmd1.ExecuteNonQuery();
+                        Console.WriteLine("Lease succesfuly canceled");
+
+                        return;
+                    }
+                }
+
+                Console.WriteLine("connection is closing");
+                dataReader.Close();
+                cnn.Close();
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+        }
 
 
 

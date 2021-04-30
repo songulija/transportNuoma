@@ -208,7 +208,7 @@ namespace TransportoNuoma
 
         private void cancelButton_Click_1(object sender, EventArgs e)
         {
-            if(t.Enabled == false)
+            if(t == null)
             {
                 cts.Cancel();
                 rezervacijosPanel.Visible = false;
@@ -221,7 +221,19 @@ namespace TransportoNuoma
                     }
                 }
             }
-            else { /*cancel button logic when nuoma is active*/ }
+            else 
+            {
+                t.Enabled = false;
+                rezervacijosPanel.Visible = false;
+                nuomaRepository.CancelNuoma(klientas);
+                foreach (GMapMarker marker in gMapOverlayslist)
+                {
+                    if (marker.IsVisible != true)
+                    {
+                        marker.IsVisible = true;
+                    }
+                }
+            }
             
         }
 

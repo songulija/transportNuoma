@@ -13,6 +13,7 @@ namespace TransportoNuoma.Repositories
     {
         string connectionString = "server=34.91.29.158;user id=root;persistsecurityinfo=True;port=3306;database=lsongulija;password=123456";
         MySqlConnection cnn;
+        MySqlConnection cnn1;
 
 
 
@@ -125,16 +126,28 @@ namespace TransportoNuoma.Repositories
             
                 cnn = new MySqlConnection(connectionString);
                 cnn.Open();//opens connection
-                MySqlCommand cmd = new MySqlCommand("SELECT * FROM rezervacija WHERE rezId=( SELECT MAX(rezId) FROM rezervacija WHERE Kliento_nr=@Kliento_nr);", cnn);//to check if username exist we have to select all items with username
+            cnn1 = new MySqlConnection(connectionString);
+            cnn1.Open();//opens connection
+            MySqlCommand cmd = new MySqlCommand("SELECT * FROM rezervacija WHERE rezId=( SELECT MAX(rezId) FROM rezervacija WHERE Kliento_nr=@Kliento_nr);", cnn);//to check if username exist we have to select all items with username
                 cmd.Parameters.AddWithValue("@Kliento_nr", klientas.klientoNr);
                 MySqlDataReader dataReader = cmd.ExecuteReader();//sends SQLCommand.CommandText to the SQLCommand.Connection and builds SqlDataReader
-            if (dataReader.Read() == true)
+
+            MySqlCommand cmd1 = new MySqlCommand("SELECT * FROM nuoma WHERE Nuomos_nr=( SELECT MAX(Nuomos_nr) FROM nuoma WHERE Kliento_nr=@Kliento_nr)", cnn1);
+            cmd1.Parameters.AddWithValue("@Kliento_nr", klientas.klientoNr);
+            MySqlDataReader dataReader1 = cmd1.ExecuteReader();
+
+            if (dataReader.Read() == true && dataReader1.Read())
             {
                 
-                    if (TimeSpan.Parse(dataReader["rezPab"].ToString()) > DateTime.Now.TimeOfDay && DateTime.Parse(dataReader["rezData"].ToString()) >= DateTime.Today)
+                    if (TimeSpan.Parse(dataReader["rezPab"].ToString()) > DateTime.Now.TimeOfDay && DateTime.Parse(dataReader["rezData"].ToString()) >= DateTime.Today ||
+                    TimeSpan.Parse(dataReader1["NuomosPabLaik"].ToString()) > DateTime.Now.TimeOfDay && DateTime.Parse(dataReader1["NuomosPabData"].ToString()) >= DateTime.Today)
                     {
-                        Console.WriteLine("Client already has an active reservation");
+                        
+                        Console.WriteLine("Client already has an active reservation or lease");
+                        dataReader1.Close();
+                        cnn1.Close();
                         return false;
+                        
                     }
                     else
                     {
@@ -170,6 +183,7 @@ namespace TransportoNuoma.Repositories
 
             dataReader.Close();
                 cnn.Close();
+            cnn1.Close();
             return false;
             
         }
