@@ -57,7 +57,7 @@ namespace TransportoNuoma.Repositories
                 cmd.Parameters.AddWithValue("@Trans_Id", rezervacija.Transporto_Id);
                 
                 MySqlDataReader dataReader = cmd.ExecuteReader();//sends SQLCommand.CommandText to the SQLCommand.Connection and builds SqlDataReader
-                if ((dataReader.Read() == true) && TimeSpan.Parse(dataReader["rezPab"].ToString()) >= DateTime.Now.TimeOfDay)
+                if ((dataReader.Read() == true) && TimeSpan.Parse(dataReader["rezPab"].ToString()) >= DateTime.Now.TimeOfDay && DateTime.Parse(dataReader["rezData"].ToString()) >= DateTime.Today)
                 {
                     
                         if (TimeSpan.Parse(dataReader["rezPab"].ToString()) >= DateTime.Now.TimeOfDay)
@@ -108,7 +108,7 @@ namespace TransportoNuoma.Repositories
             if (dataReader.Read() == true)
             {
                 
-                    if (TimeSpan.Parse(dataReader["rezPab"].ToString()) > DateTime.Now.TimeOfDay)
+                    if (TimeSpan.Parse(dataReader["rezPab"].ToString()) > DateTime.Now.TimeOfDay && DateTime.Parse(dataReader["rezData"].ToString()) >= DateTime.Today)
                     {
                         Console.WriteLine("Client already has an active reservation");
                         return false;
@@ -152,7 +152,7 @@ namespace TransportoNuoma.Repositories
         }
         public bool isTransportasTaken(Transportas transportas)
         {
-            try
+            try 
             {
                 cnn = new MySqlConnection(connectionString);
                 cnn.Open();//open database
@@ -161,7 +161,7 @@ namespace TransportoNuoma.Repositories
                 MySqlCommand cmd = new MySqlCommand("SELECT * FROM rezervacija WHERE rezId=( SELECT MAX(rezId) FROM rezervacija WHERE Trans_Id=@Trans_Id);", cnn);//to check if username exist we have to select all items with username
                 cmd.Parameters.AddWithValue("@Trans_Id", transportas.transporto_Id);
                 MySqlDataReader dataReader = cmd.ExecuteReader();//sends SQLCommand.CommandText to the SQLCommand.Connection and builds SqlDataReader
-                if ((dataReader.Read() == true) && TimeSpan.Parse(dataReader["rezPab"].ToString()) > DateTime.Now.TimeOfDay)
+                if ((dataReader.Read() == true) && TimeSpan.Parse(dataReader["rezPab"].ToString()) > DateTime.Now.TimeOfDay && DateTime.Parse(dataReader["rezData"].ToString()) >= DateTime.Today)
                 {
                     return true;
                 }
@@ -204,12 +204,12 @@ namespace TransportoNuoma.Repositories
                 //setting new SqlConnection, providing connectionString
                 cnn = new MySqlConnection(connectionString);
                 cnn.Open();//open database
-                MySqlCommand cmd = new MySqlCommand("Select * from rezervacija where Kliento_nr=@Kliento_nr", cnn);//to check if username exist we have to select all items with username
+                MySqlCommand cmd = new MySqlCommand("SELECT * FROM rezervacija WHERE rezId=( SELECT MAX(rezId) FROM rezervacija WHERE Kliento_nr=@Kliento_nr)", cnn);//to check if username exist we have to select all items with username
                 cmd.Parameters.AddWithValue("@Kliento_nr", klientas.klientoNr);
                 MySqlDataReader dataReader = cmd.ExecuteReader();//sends SQLCommand.CommandText to the SQLCommand.Connection and builds SqlDataReader
                 while(dataReader.Read() == true)
                 {
-                    if(TimeSpan.Parse(dataReader["rezPab"].ToString()) > DateTime.Now.TimeOfDay)
+                    if(TimeSpan.Parse(dataReader["rezPab"].ToString()) > DateTime.Now.TimeOfDay )
                     {
                         int rezervID = Convert.ToInt32(dataReader["rezId"]);
                         
@@ -219,7 +219,7 @@ namespace TransportoNuoma.Repositories
                         cmd1.Parameters.AddWithValue("@rezId", rezervID);
                         dataReader.Close();
                         cmd1.ExecuteNonQuery();
-                        Console.WriteLine("Success");
+                        Console.WriteLine("Succesfuly canceled");
                         
                         return;
                     }

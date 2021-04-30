@@ -92,7 +92,31 @@ namespace TransportoNuoma.Repositories
             return nuoma;//return 
         }
 
+        public bool checkIfAvailable(Transportas transportas)
+        {
+            try
+            {
+                cnn = new MySqlConnection(connectionString);
+                cnn.Open();//open database
 
+                //check if rezervacija exist
+                MySqlCommand cmd = new MySqlCommand("SELECT * FROM nuoma WHERE Nuomos_nr=( SELECT MAX(Nuomos_nr) FROM nuoma WHERE Trans_Id=@Trans_Id)", cnn);//to check if username exist we have to select all items with username
+                cmd.Parameters.AddWithValue("@Trans_Id", transportas.transporto_Id);
+                MySqlDataReader dataReader = cmd.ExecuteReader();//sends SQLCommand.CommandText to the SQLCommand.Connection and builds SqlDataReader
+                if ((dataReader.Read() == true) && TimeSpan.Parse(dataReader["NuomosPabLaik"].ToString()) > DateTime.Now.TimeOfDay && DateTime.Parse(dataReader["NuomosPabData"].ToString()) >= DateTime.Today)
+                {
+                    Console.WriteLine("transport is taken");
+                    return false;
+                }
+                else
+                {
+                    Console.WriteLine("transport is not taken");
+                }
+
+            }
+            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            return true;
+        }
         public void UpdateNuoma(Nuoma nuoma)
         {
             try

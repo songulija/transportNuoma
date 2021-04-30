@@ -20,6 +20,7 @@ namespace TransportoNuoma
         KlientoLokacijaRepository klientoLokacijaRepository;
         LokacijaRepository lokacijaRepository = new LokacijaRepository();
         TransportRepository transportRepository = new TransportRepository();
+        NuomaRepository nuomaRepository = new NuomaRepository();
         List<Transportas> transportList = new List<Transportas>();
         Lokacija transportoLokacija;
         CancellationTokenSource cts;
@@ -38,7 +39,7 @@ namespace TransportoNuoma
             rezervacijaRepository = new RezervacijaRepository();
            
             Console.WriteLine(klientas.klientoNr);
-            createClientMarker();
+            
             transportList = transportRepository.getTransportList();
             Console.WriteLine(transportList.Count);
 
@@ -46,7 +47,7 @@ namespace TransportoNuoma
         }
         void loadMap()
         {
-            gmap.Refresh();
+            gmap.Overlays.Clear();
             gmap.MapProvider = GMapProviders.GoogleMap;
 
             gmap.Position = new PointLatLng(54.678175, 25.279267);
@@ -54,7 +55,7 @@ namespace TransportoNuoma
             gmap.MinZoom = 1;
             gmap.MaxZoom = 100;
             gmap.Zoom = 10;
-
+            createClientMarker();
             addTransMarkers();
         }
         void addTransMarkers()
@@ -62,7 +63,7 @@ namespace TransportoNuoma
             foreach (Transportas transportas in transportList)
             {
                 transportoLokacija = lokacijaRepository.getTransportoLokacija(transportas);
-                if(rezervacijaRepository.isTransportasTaken(transportas) == false)
+                if(rezervacijaRepository.isTransportasTaken(transportas) == false && nuomaRepository.checkIfAvailable(transportas) == true)
                 {
                     GMapOverlay markers = new GMapOverlay("markers");
                     GMapMarker marker = new GMarkerGoogle(
@@ -75,6 +76,7 @@ namespace TransportoNuoma
                     gmap.Overlays.Add(markers);
                     marker.ToolTipText = String.Format("\nPaspirtuko numeris: {0}\nPaspirtuko spalva: {1}\nPaspirtuko kaina: {2}", transportas.transporto_Nr, transportas.spalva, transportas.kaina);
                     marker.ToolTipMode = MarkerTooltipMode.OnMouseOver;
+                    
                 }
             }
         }
@@ -122,8 +124,19 @@ namespace TransportoNuoma
                             th = new Thread(() => { CountDownMethod(ct, CancellationMethod); });
                             th.Start();
                             MessageBox.Show("Rezervacija sekmynga!");
+
+                           
+                            foreach(GMapMarker marker in gMapOverlayslist)
+                            {
+                                if(marker.Tag != item.Tag)
+                                {
+                                    if(Convert.ToInt32(marker.Tag) != 0)
+                                    {
+                                        marker.IsVisible = false;
+                                    }
+                                }
+                            }
                             
-                            loadMap();
                         }
                         else { MessageBox.Show("Rezervacija nepavyko :("); }
                         break;
@@ -195,6 +208,13 @@ namespace TransportoNuoma
             cts.Cancel();
             rezervacijosPanel.Visible = false;
             rezervacijaRepository.CancelRezervacija(klientas);
+            foreach (GMapMarker marker in gMapOverlayslist)
+            {
+                if (marker.IsVisible != true)
+                {
+                    marker.IsVisible = true;
+                }
+            }
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -205,7 +225,7 @@ namespace TransportoNuoma
         private void unlockButton_Click(object sender, EventArgs e)
         {
             cts.Cancel();
-            priceLabel.Text = string.Format("0.00€");
+            priceLabel.Text = string.Format("{0}.00€",rezervuotasTransportas.kaina);
             t = new System.Timers.Timer();
             t.Interval = 1000; // sec
             t.Elapsed += OnTimeEvent;
