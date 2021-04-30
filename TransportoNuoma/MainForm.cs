@@ -13,6 +13,7 @@ namespace TransportoNuoma
 {
     public partial class MainForm : Form
     {
+
         int h, m, s;
         Klientas klientas;
         KlientoLokacija klientoLokacija;
@@ -30,7 +31,7 @@ namespace TransportoNuoma
         Transportas rezervuotasTransportas;
         RezervacijaRepository rezervacijaRepository;
         Rezervacija rezervacija = new Rezervacija();
-        
+        Nuoma nuoma = new Nuoma();
 
         public MainForm(Klientas klientas)
         {
@@ -44,10 +45,24 @@ namespace TransportoNuoma
             
             transportList = transportRepository.getTransportList();
             Console.WriteLine(transportList.Count);
-
-            loadMap();
+            if(nuomaRepository.CheckForActiveNuoma(klientas).Item1 == true)
+            {               
+                nuoma = nuomaRepository.CheckForActiveNuoma(klientas).Item2;
+                loadMap(null, nuoma);
+            }
+            else if (rezervacijaRepository.CheckForActiveRes(klientas).Item1 == true)
+            {
+                rezervacija = rezervacijaRepository.CheckForActiveRes(klientas).Item2;
+                loadMap(rezervacija,null);
+            }
+            else
+            {
+                loadMap(null, null);
+            }
+            
+            
         }
-        void loadMap()
+        void loadMap(Rezervacija rezervacija, Nuoma nuoma)
         {
             gmap.Overlays.Clear();
             gmap.MapProvider = GMapProviders.GoogleMap;
@@ -59,13 +74,49 @@ namespace TransportoNuoma
             gmap.Zoom = 10;
             createClientMarker();
             addTransMarkers();
+            if (rezervacija != null)
+            {
+                foreach (GMapMarker marker in gMapOverlayslist)
+                {
+                    if (Convert.ToInt32(marker.Tag) != rezervacija.Transporto_Id)
+                    {
+                        if (Convert.ToInt32(marker.Tag) != 0)
+                        {
+                            marker.IsVisible = false;
+                        }
+                    }
+                    
+                }
+                int time = Convert.ToInt32(rezervacija.rezervacijosPab.TotalSeconds - DateTime.Now.TimeOfDay.TotalSeconds);
+                cts = new CancellationTokenSource();
+                CancellationToken ct = cts.Token;
+                rezervacijosPanel.Visible = true;
+                th = new Thread(() => { CountDownMethod(ct, CancellationMethod, time); });
+                th.Start();
+            }
+            else if (nuoma != null)
+            {
+                foreach (GMapMarker marker in gMapOverlayslist)
+                {
+                    if (Convert.ToInt32(marker.Tag) != nuoma.transporto_Id)
+                    {
+                        if (Convert.ToInt32(marker.Tag) != 0)
+                        {
+                            marker.IsVisible = false;
+                        }
+                    }
+                }
+                rezervacijosPanel.Visible = true;
+                TimerMethod();
+
+            }
         }
         void addTransMarkers()
         {
             foreach (Transportas transportas in transportList)
             {
                 transportoLokacija = lokacijaRepository.getTransportoLokacija(transportas);
-                if(rezervacijaRepository.isTransportasTaken(transportas) == false && nuomaRepository.CheckIfAvailable(transportas) == true)
+                if(rezervacijaRepository.isTransportasTaken(transportas,klientas) == false && nuomaRepository.CheckIfAvailable(transportas, klientas) == true)
                 {
                     GMapOverlay markers = new GMapOverlay("markers");
                     GMapMarker marker = new GMarkerGoogle(
@@ -124,7 +175,7 @@ namespace TransportoNuoma
                         {
                             rezervacija = rezervacijaRepository.getLastReservacija(klientas);
                             rezervacijosPanel.Visible = true;
-                            th = new Thread(() => { CountDownMethod(ct, CancellationMethod); });
+                            th = new Thread(() => { CountDownMethod(ct, CancellationMethod,900); });
                             th.Start();
                             MessageBox.Show("Rezervacija sekmynga!");
 
@@ -154,12 +205,12 @@ namespace TransportoNuoma
 
         }
 
-        private void CountDownMethod(CancellationToken ct, CancellationThreadHandler handler)
+        private void CountDownMethod(CancellationToken ct, CancellationThreadHandler handler,int time)
         {
             int m, s;
 
 
-            for (int i = 900; i >= 0; i--)
+            for (int i = time; i >= 0; i--)
             {
                 try
                 {
@@ -245,18 +296,23 @@ namespace TransportoNuoma
         private void unlockButton_Click(object sender, EventArgs e)
         {
             cts.Cancel();
-            priceLabel.Text = string.Format("{0}.00€",rezervuotasTransportas.kaina);
+            TimerMethod();
+            t.Start();                     
+        }
+        public void TimerMethod()
+        {
+            priceLabel.Text = string.Format("{0}.00€", rezervuotasTransportas.kaina);
             t = new System.Timers.Timer
             {
                 Interval = 1000 // sec
+
+
             };
             t.Elapsed += OnTimeEvent;
             nuomaRepository.RegisterNewNuoma(klientas, rezervuotasTransportas, rezervacija);
 
             t.Start();
-            
         }
-        
         private void OnTimeEvent(object sender, ElapsedEventArgs e)
         {
 
@@ -274,5 +330,6 @@ namespace TransportoNuoma
             this.BeginInvoke((MethodInvoker)delegate { timeLabel.Text = String.Format("{0}:{1}:{2}", h.ToString().PadLeft(2, '0'), m.ToString().PadLeft(2, '0'), s.ToString().PadLeft(2, '0')); });
             
         }
+        
     }
 }

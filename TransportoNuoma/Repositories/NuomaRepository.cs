@@ -92,7 +92,7 @@ namespace TransportoNuoma.Repositories
             return nuoma;//return 
         }
 
-        public bool CheckIfAvailable(Transportas transportas)
+        public bool CheckIfAvailable(Transportas transportas, Klientas klientas)
         {
             try
             {
@@ -105,6 +105,7 @@ namespace TransportoNuoma.Repositories
                 MySqlDataReader dataReader = cmd.ExecuteReader();//sends SQLCommand.CommandText to the SQLCommand.Connection and builds SqlDataReader
                 if ((dataReader.Read() == true) && TimeSpan.Parse(dataReader["NuomosPabLaik"].ToString()) > DateTime.Now.TimeOfDay && DateTime.Parse(dataReader["NuomosPabData"].ToString()) >= DateTime.Today)
                 {
+                    if (int.Parse(dataReader["Kliento_nr"].ToString()) == klientas.klientoNr) { return true; }
                     Console.WriteLine("transport is taken");
                     return false;
                 }
@@ -137,7 +138,7 @@ namespace TransportoNuoma.Repositories
                     }
                 }
                 dataReader.Close();
-                Console.WriteLine("Creating new lease object");
+                Console.WriteLine("Creating new lease...");
                 MySqlCommand cmd1 = new MySqlCommand("Insert into nuoma (NuomosPrData,NuomosPradLaik,NuomosPabLaik,NuomosPabData,Trans_Id,Kliento_nr,rezId) VALUES(@NuomosPrData,@NuomosPradLaik,@NuomosPabLaik,@NuomosPabData,@Trans_Id,@Kliento_nr,@rezId)", cnn);
                 cmd1.Parameters.AddWithValue("@NuomosPrData", DateTime.Today);
                 cmd1.Parameters.AddWithValue("@NuomosPradLaik", DateTime.Now.TimeOfDay);
@@ -215,7 +216,46 @@ namespace TransportoNuoma.Repositories
                 Console.WriteLine(ex);
             }
         }
+        public (bool, Nuoma) CheckForActiveNuoma(Klientas klientas)
+        {
+            try
+            {
+                //setting new SqlConnection, providing connectionString
+                cnn = new MySqlConnection(connectionString);
+                cnn.Open();//open database
+                MySqlCommand cmd = new MySqlCommand("SELECT * FROM nuoma WHERE Nuomos_nr=( SELECT MAX(Nuomos_nr) FROM nuoma WHERE Kliento_nr=@Kliento_nr)", cnn);//to check if username exist we have to select all items with username
+                cmd.Parameters.AddWithValue("@Kliento_nr", klientas.klientoNr);
+                MySqlDataReader dataReader = cmd.ExecuteReader();//sends SQLCommand.CommandText to the SQLCommand.Connection and builds SqlDataReader
+                while (dataReader.Read() == true)
+                {
+                    if (TimeSpan.Parse(dataReader["NuomosPabLaik"].ToString()) > DateTime.Now.TimeOfDay && DateTime.Parse(dataReader["NuomosPabData"].ToString()) == DateTime.Today)
+                    {
+                        Nuoma nuoma = new Nuoma();
+                        nuoma.kliento_Nr = int.Parse(dataReader["Kliento_nr"].ToString());
+                        nuoma.nuomosPabData = DateTime.Parse(dataReader["NuomosPabData"].ToString());
+                        nuoma.nuomosPabLaik = TimeSpan.Parse(dataReader["NuomosPabLaik"].ToString());
+                        nuoma.nuomosPradLaik = TimeSpan.Parse(dataReader["NuomosPradLaik"].ToString());
+                        nuoma.nuomosPrData = DateTime.Parse(dataReader["NuomosPrData"].ToString());
+                        nuoma.nuomos_Nr = int.Parse(dataReader["Nuomos_nr"].ToString());
+                        nuoma.rezId = int.Parse(dataReader["rezId"].ToString());
+                        nuoma.transporto_Id = int.Parse(dataReader["Trans_Id"].ToString());
+                       
+                        dataReader.Close();
+                        return (true, nuoma);
+                    }
+                }
 
+                Console.WriteLine("connection is closing");
+                dataReader.Close();
+                cnn.Close();
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            return (false, null);
+        }
 
 
     }
