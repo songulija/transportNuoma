@@ -92,7 +92,7 @@ namespace TransportoNuoma.Repositories
             return nuoma;//return 
         }
 
-        public bool checkIfAvailable(Transportas transportas)
+        public bool CheckIfAvailable(Transportas transportas)
         {
             try
             {
@@ -117,6 +117,43 @@ namespace TransportoNuoma.Repositories
             catch (Exception ex) { Console.WriteLine(ex.Message); }
             return true;
         }
+
+        public bool RegisterNewNuoma(Klientas klientas, Transportas transportas, Rezervacija rezervacija)
+        {
+            try
+            {
+                cnn = new MySqlConnection(connectionString);
+                cnn.Open();//opens connection
+                MySqlCommand cmd = new MySqlCommand("SELECT * FROM nuoma WHERE Nuomos_nr=( SELECT MAX(Nuomos_nr) FROM nuoma WHERE Kliento_nr=@Kliento_nr);", cnn);//to check if username exist we have to select all items with username
+                cmd.Parameters.AddWithValue("@Kliento_nr", klientas.klientoNr);
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+                if (dataReader.Read() == true)
+                {
+                    if (TimeSpan.Parse(dataReader["NuomosPabLaik"].ToString()) > DateTime.Now.TimeOfDay && DateTime.Parse(dataReader["NuomosPabData"].ToString()) >= DateTime.Today)
+                    {
+                        Console.WriteLine("Client already has an active lease");
+                        return false;
+                    }
+                }
+                dataReader.Close();
+                Console.WriteLine("Creating new lease object");
+                MySqlCommand cmd1 = new MySqlCommand("Insert into nuoma (NuomosPrData,NuomosPradLaik,NuomosPabLaik,NuomosPabData,Trans_Id,Kliento_nr,rezId) VALUES(@NuomosPrData,@NuomosPradLaik,@NuomosPabLaik,@NuomosPabData,@Trans_Id,@Kliento_nr,@rezId)", cnn);
+                cmd1.Parameters.AddWithValue("@NuomosPrData", DateTime.Today);
+                cmd1.Parameters.AddWithValue("@NuomosPradLaik", DateTime.Now.TimeOfDay);
+                cmd1.Parameters.AddWithValue("@NuomosPabLaik", DateTime.Today);
+                TimeSpan nuomosLaikas = new TimeSpan(1, 0, 0);
+                cmd1.Parameters.AddWithValue("@NuomosPabData", DateTime.Now.TimeOfDay.Add(nuomosLaikas));
+                cmd1.Parameters.AddWithValue("@Trans_Id", transportas.transporto_Id);
+                cmd1.Parameters.AddWithValue("@Kliento_nr", klientas.klientoNr);
+                cmd1.Parameters.AddWithValue("@rezId", rezervacija.rezervacijos_Id);
+                cmd1.ExecuteNonQuery();
+                Console.WriteLine("Lease succesfuly inserted");
+                cnn.Close();
+            }catch(Exception ex) { Console.WriteLine(ex.Message); }
+            
+            return true;
+        }
+            
         public void UpdateNuoma(Nuoma nuoma)
         {
             try

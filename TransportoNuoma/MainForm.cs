@@ -29,7 +29,8 @@ namespace TransportoNuoma
         System.Timers.Timer t;
         Transportas rezervuotasTransportas;
         RezervacijaRepository rezervacijaRepository;
-       
+        
+
         public MainForm(Klientas klientas)
         {
             InitializeComponent();
@@ -63,7 +64,7 @@ namespace TransportoNuoma
             foreach (Transportas transportas in transportList)
             {
                 transportoLokacija = lokacijaRepository.getTransportoLokacija(transportas);
-                if(rezervacijaRepository.isTransportasTaken(transportas) == false && nuomaRepository.checkIfAvailable(transportas) == true)
+                if(rezervacijaRepository.isTransportasTaken(transportas) == false && nuomaRepository.CheckIfAvailable(transportas) == true)
                 {
                     GMapOverlay markers = new GMapOverlay("markers");
                     GMapMarker marker = new GMarkerGoogle(
@@ -205,16 +206,21 @@ namespace TransportoNuoma
 
         private void cancelButton_Click_1(object sender, EventArgs e)
         {
-            cts.Cancel();
-            rezervacijosPanel.Visible = false;
-            rezervacijaRepository.CancelRezervacija(klientas);
-            foreach (GMapMarker marker in gMapOverlayslist)
+            if(t.Enabled == false)
             {
-                if (marker.IsVisible != true)
+                cts.Cancel();
+                rezervacijosPanel.Visible = false;
+                rezervacijaRepository.CancelRezervacija(klientas);
+                foreach (GMapMarker marker in gMapOverlayslist)
                 {
-                    marker.IsVisible = true;
+                    if (marker.IsVisible != true)
+                    {
+                        marker.IsVisible = true;
+                    }
                 }
             }
+            else { /*cancel button logic when nuoma is active*/ }
+            
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -226,8 +232,10 @@ namespace TransportoNuoma
         {
             cts.Cancel();
             priceLabel.Text = string.Format("{0}.00€",rezervuotasTransportas.kaina);
-            t = new System.Timers.Timer();
-            t.Interval = 1000; // sec
+            t = new System.Timers.Timer
+            {
+                Interval = 1000 // sec
+            };
             t.Elapsed += OnTimeEvent;
             t.Start();
             
