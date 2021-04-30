@@ -42,6 +42,13 @@ namespace TransportoNuoma
                         mainFormAdmin.ShowDialog();
                         this.Close();
                     }
+                    else if(loggedKlientas.isAdmin == 2)
+                    {
+                        MainFormWorker mainFormWorker = new MainFormWorker(loggedKlientas);
+                        this.Hide();
+                        mainFormWorker.ShowDialog();
+                        this.Close();
+                    }
                     else
                     {
                         MainForm mainForm = new MainForm(loggedKlientas);

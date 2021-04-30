@@ -64,6 +64,7 @@ namespace TransportoNuoma
         }
         void loadMap(Rezervacija rezervacija, Nuoma nuoma)
         {
+            
             gmap.Overlays.Clear();
             gmap.MapProvider = GMapProviders.GoogleMap;
 

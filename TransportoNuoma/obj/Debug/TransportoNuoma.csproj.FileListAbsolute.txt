@@ -136,3 +136,4 @@ C:\Users\Arme6\Documents\GitHub\transportNuoma\TransportoNuoma\obj\Debug\Transpo
 C:\Users\Arme6\Documents\GitHub\transportNuoma\TransportoNuoma\obj\Debug\TransportoNuoma.AdminLokacijaForm.resources
 C:\Users\Arme6\Documents\GitHub\transportNuoma\TransportoNuoma\obj\Debug\TransportoNuoma.AdminNuomaForm.resources
 C:\Users\Arme6\Documents\GitHub\transportNuoma\TransportoNuoma\obj\Debug\TransportoNuoma.AdminTestingScreen.resources
+C:\Users\Arme6\Documents\GitHub\transportNuoma\TransportoNuoma\obj\Debug\TransportoNuoma.MainFormWorker.resources
