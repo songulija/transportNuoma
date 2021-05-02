@@ -189,6 +189,29 @@ namespace TransportoNuoma.Repositories
             }
         }
 
-        
+
+        public void DeleteTransportas(Transportas transportas)
+        {
+            try
+            {
+                cnn = new MySqlConnection(connectionString);
+
+                string newSql = "DELETE FROM transportas WHERE transportas.Trans_Id=@id;";
+
+                cnn.Open();//open connection. we use the Open method of the cnn variable to open a connection to the database.
+                MySqlCommand cmd = new MySqlCommand(newSql, cnn);//select all from newTestTable
+                cmd.Parameters.AddWithValue("@id", transportas.transporto_Id);
+                cmd.ExecuteNonQuery();//execute function
+
+                cnn.Close();
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine(exc);
+            }
+
+        }
+
+
     }
 }

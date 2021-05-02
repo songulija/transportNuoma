@@ -18,6 +18,7 @@ namespace TransportoNuoma
         UsersRepository usersRep;
         GalimiNusizengimaiRepository galimiNuzRep;
         NusizengimaiRepository nusizRep;
+        ApmokejimasRepository apmokRep;
 
         public AdminKlientasForm(Klientas klientas)
         {
@@ -26,6 +27,7 @@ namespace TransportoNuoma
             usersRep = new UsersRepository();
             galimiNuzRep = new GalimiNusizengimaiRepository();
             nusizRep = new NusizengimaiRepository();
+            apmokRep = new ApmokejimasRepository();
         }
 
         private void getKlientai_Click(object sender, EventArgs e)
@@ -107,6 +109,14 @@ namespace TransportoNuoma
                 //FOR TESTS
                 DataTable dta = usersRep.displayClients();
                 dataGridView1.DataSource = dta;
+
+                //FOR TESTS
+                DataTable dta1 = galimiNuzRep.displayGalimiNusizengimai();
+                dataGridView6.DataSource = dta1;
+
+                //FOR TESTS
+                DataTable dta2 = apmokRep.displayApmokejimas();
+                dataGridView7.DataSource = dta2;
 
             }
             catch (Exception ex)
@@ -332,6 +342,24 @@ namespace TransportoNuoma
             this.Hide();
             admin.ShowDialog();
             this.Close();
+        }
+
+        private void deleteKlientas_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Klientas kl = new Klientas();
+                kl.klientoNr = int.Parse(deleteKlientasKlientoNr.Text);
+                usersRep.DeleteKlientas(kl);
+
+                deleteKlientasKlientoNr.Clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            MessageBox.Show("Deleted succesfully");
+            getKlientaiDisplay();
         }
     }
 }

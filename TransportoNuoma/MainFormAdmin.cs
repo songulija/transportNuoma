@@ -28,15 +28,21 @@ namespace TransportoNuoma
 
         private void getTransport_Click(object sender, EventArgs e)
         {
+            getTransportDisplay();
+        }
+
+        private void getTransportDisplay()
+        {
             try
             {
                 DataTable dta = transportRepos.displayTransportas();
                 dataGridView1.DataSource = dta;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine(ex);
             }
+
         }
         private void AddTransportShow_Click(object sender, EventArgs e)
         {
@@ -72,6 +78,7 @@ namespace TransportoNuoma
                 Console.WriteLine(ex);
             }
             MessageBox.Show("Succesfully updated");
+            getTransportDisplay();
         }
         private void addUpdateButton_Click(object sender, EventArgs e)
         {
@@ -97,7 +104,9 @@ namespace TransportoNuoma
             {
                 Console.WriteLine(ex);
             }
-            
+            getTransportDisplay();
+
+
         }
 
         private void CleanTransport()
@@ -125,6 +134,11 @@ namespace TransportoNuoma
         }
 
         private void getMarke_Click(object sender, EventArgs e)
+        {
+            getMarkeDisplay();
+        }
+
+        private void getMarkeDisplay()
         {
             try
             {
@@ -159,6 +173,7 @@ namespace TransportoNuoma
             {
                 MessageBox.Show(ex.Message);
             }
+            getMarkeDisplay();
         }
 
         private void updateMarke_Click(object sender, EventArgs e)
@@ -174,6 +189,7 @@ namespace TransportoNuoma
             {
                 MessageBox.Show(ex.Message);
             }
+            getMarkeDisplay();
         }
 
         private void adminTestingShow_Click(object sender, EventArgs e)
@@ -222,6 +238,42 @@ namespace TransportoNuoma
             this.Hide();
             testingScreen.ShowDialog();
             this.Close();
+        }
+
+        private void deleteTrasnportas_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Transportas gl = new Transportas();
+                gl.transporto_Id = int.Parse(deleteTrasnportasTransId.Text);
+                transportRepos.DeleteTransportas(gl);
+
+                deleteTrasnportasTransId.Clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            MessageBox.Show("Deleted succesfully");
+            getTransportDisplay();
+        }
+
+        private void DeleteMarke_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                TransportoMarke gl = new TransportoMarke();
+                gl.markes_Id = int.Parse(DeleteMarkeMarkesId.Text);
+                markesRepository.DeleteMarke(gl);
+
+                DeleteMarkeMarkesId.Clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            MessageBox.Show("Deleted succesfully");
+            getMarkeDisplay();
         }
     }
 }

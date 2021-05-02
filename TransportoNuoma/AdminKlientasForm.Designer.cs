@@ -109,6 +109,14 @@
             this.deleteNusizengimaiNusizId = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
             this.backButton = new System.Windows.Forms.Button();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.deleteKlientas = new System.Windows.Forms.Button();
+            this.deleteKlientasKlientoNr = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.dataGridView6 = new System.Windows.Forms.DataGridView();
+            this.dataGridView7 = new System.Windows.Forms.DataGridView();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
             this.TransportPanel.SuspendLayout();
             this.updateKlientaiPanel.SuspendLayout();
             this.addKlientaiPanel.SuspendLayout();
@@ -125,10 +133,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).BeginInit();
             this.SuspendLayout();
             // 
             // TransportPanel
             // 
+            this.TransportPanel.Controls.Add(this.label29);
+            this.TransportPanel.Controls.Add(this.label28);
+            this.TransportPanel.Controls.Add(this.dataGridView7);
+            this.TransportPanel.Controls.Add(this.dataGridView6);
+            this.TransportPanel.Controls.Add(this.panel5);
             this.TransportPanel.Controls.Add(this.updateKlientaiPanel);
             this.TransportPanel.Controls.Add(this.addKlientaiPanel);
             this.TransportPanel.Controls.Add(this.updateKlientaiShow);
@@ -138,7 +154,7 @@
             this.TransportPanel.Controls.Add(this.label1);
             this.TransportPanel.Location = new System.Drawing.Point(12, 46);
             this.TransportPanel.Name = "TransportPanel";
-            this.TransportPanel.Size = new System.Drawing.Size(382, 597);
+            this.TransportPanel.Size = new System.Drawing.Size(413, 865);
             this.TransportPanel.TabIndex = 1;
             // 
             // updateKlientaiPanel
@@ -152,9 +168,9 @@
             this.updateKlientaiPanel.Controls.Add(this.updateKlientasVardas);
             this.updateKlientaiPanel.Controls.Add(this.label9);
             this.updateKlientaiPanel.Controls.Add(this.updateKlientas);
-            this.updateKlientaiPanel.Location = new System.Drawing.Point(204, 248);
+            this.updateKlientaiPanel.Location = new System.Drawing.Point(202, 479);
             this.updateKlientaiPanel.Name = "updateKlientaiPanel";
-            this.updateKlientaiPanel.Size = new System.Drawing.Size(178, 363);
+            this.updateKlientaiPanel.Size = new System.Drawing.Size(178, 223);
             this.updateKlientaiPanel.TabIndex = 17;
             this.updateKlientaiPanel.Visible = false;
             // 
@@ -245,9 +261,9 @@
             this.addKlientaiPanel.Controls.Add(this.label3);
             this.addKlientaiPanel.Controls.Add(this.addKlientasVardas);
             this.addKlientaiPanel.Controls.Add(this.label2);
-            this.addKlientaiPanel.Location = new System.Drawing.Point(18, 249);
+            this.addKlientaiPanel.Location = new System.Drawing.Point(21, 479);
             this.addKlientaiPanel.Name = "addKlientaiPanel";
-            this.addKlientaiPanel.Size = new System.Drawing.Size(178, 363);
+            this.addKlientaiPanel.Size = new System.Drawing.Size(178, 258);
             this.addKlientaiPanel.TabIndex = 5;
             this.addKlientaiPanel.Visible = false;
             // 
@@ -343,7 +359,7 @@
             // 
             // updateKlientaiShow
             // 
-            this.updateKlientaiShow.Location = new System.Drawing.Point(202, 219);
+            this.updateKlientaiShow.Location = new System.Drawing.Point(300, 214);
             this.updateKlientaiShow.Name = "updateKlientaiShow";
             this.updateKlientaiShow.Size = new System.Drawing.Size(110, 23);
             this.updateKlientaiShow.TabIndex = 4;
@@ -353,7 +369,7 @@
             // 
             // AddKlientaiShow
             // 
-            this.AddKlientaiShow.Location = new System.Drawing.Point(110, 219);
+            this.AddKlientaiShow.Location = new System.Drawing.Point(208, 214);
             this.AddKlientaiShow.Name = "AddKlientaiShow";
             this.AddKlientaiShow.Size = new System.Drawing.Size(86, 23);
             this.AddKlientaiShow.TabIndex = 3;
@@ -363,7 +379,7 @@
             // 
             // getKlientai
             // 
-            this.getKlientai.Location = new System.Drawing.Point(18, 220);
+            this.getKlientai.Location = new System.Drawing.Point(110, 214);
             this.getKlientai.Name = "getKlientai";
             this.getKlientai.Size = new System.Drawing.Size(86, 23);
             this.getKlientai.TabIndex = 2;
@@ -894,11 +910,81 @@
             this.backButton.UseVisualStyleBackColor = true;
             this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.deleteKlientas);
+            this.panel5.Controls.Add(this.deleteKlientasKlientoNr);
+            this.panel5.Controls.Add(this.label25);
+            this.panel5.Location = new System.Drawing.Point(202, 710);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(178, 97);
+            this.panel5.TabIndex = 16;
+            // 
+            // deleteKlientas
+            // 
+            this.deleteKlientas.Location = new System.Drawing.Point(20, 52);
+            this.deleteKlientas.Name = "deleteKlientas";
+            this.deleteKlientas.Size = new System.Drawing.Size(126, 22);
+            this.deleteKlientas.TabIndex = 14;
+            this.deleteKlientas.Text = "Delete";
+            this.deleteKlientas.UseVisualStyleBackColor = true;
+            this.deleteKlientas.Click += new System.EventHandler(this.deleteKlientas_Click);
+            // 
+            // deleteKlientasKlientoNr
+            // 
+            this.deleteKlientasKlientoNr.Location = new System.Drawing.Point(20, 26);
+            this.deleteKlientasKlientoNr.Name = "deleteKlientasKlientoNr";
+            this.deleteKlientasKlientoNr.Size = new System.Drawing.Size(126, 20);
+            this.deleteKlientasKlientoNr.TabIndex = 1;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(17, 9);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(50, 13);
+            this.label25.TabIndex = 0;
+            this.label25.Text = "KlientoNr";
+            // 
+            // dataGridView6
+            // 
+            this.dataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView6.Location = new System.Drawing.Point(18, 237);
+            this.dataGridView6.Name = "dataGridView6";
+            this.dataGridView6.Size = new System.Drawing.Size(351, 111);
+            this.dataGridView6.TabIndex = 18;
+            // 
+            // dataGridView7
+            // 
+            this.dataGridView7.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView7.Location = new System.Drawing.Point(21, 367);
+            this.dataGridView7.Name = "dataGridView7";
+            this.dataGridView7.Size = new System.Drawing.Size(351, 111);
+            this.dataGridView7.TabIndex = 19;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(18, 219);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(64, 13);
+            this.label28.TabIndex = 20;
+            this.label28.Text = "Galimi Nusiz";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(18, 351);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(69, 13);
+            this.label29.TabIndex = 21;
+            this.label29.Text = "Apmokejimas";
+            // 
             // AdminKlientasForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1355, 654);
+            this.ClientSize = new System.Drawing.Size(1355, 934);
             this.Controls.Add(this.backButton);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -932,6 +1018,10 @@
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1019,5 +1109,13 @@
         private System.Windows.Forms.TextBox deleteNusizengimaiNusizId;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Button backButton;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Button deleteKlientas;
+        private System.Windows.Forms.TextBox deleteKlientasKlientoNr;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.DataGridView dataGridView7;
+        private System.Windows.Forms.DataGridView dataGridView6;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label28;
     }
 }

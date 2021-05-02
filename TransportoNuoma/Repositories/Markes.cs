@@ -100,5 +100,28 @@ namespace TransportoNuoma.Repositories
                 Console.WriteLine(ex);
             }
         }
+
+
+        public void DeleteMarke(TransportoMarke marke)
+        {
+            try
+            {
+                cnn = new MySqlConnection(connectionString);
+
+                string newSql = "DELETE FROM tmarke WHERE tmarke.MarkesId=@id;";
+
+                cnn.Open();//open connection. we use the Open method of the cnn variable to open a connection to the database.
+                MySqlCommand cmd = new MySqlCommand(newSql, cnn);//select all from newTestTable
+                cmd.Parameters.AddWithValue("@id", marke.markes_Id);
+                cmd.ExecuteNonQuery();//execute function
+
+                cnn.Close();
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine(exc);
+            }
+
+        }
     }
 }
