@@ -30,7 +30,19 @@
         {
             this.backButton = new System.Windows.Forms.Button();
             this.TransportPanel = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.deleteTransTest = new System.Windows.Forms.Button();
+            this.deleteTransTestTestId = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.updateTransTestPanel = new System.Windows.Forms.Panel();
+            this.updateTransTestTestId = new System.Windows.Forms.TextBox();
+            this.sdsdsds = new System.Windows.Forms.Label();
+            this.updateTransTestTransId = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.updateTransTestData = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.updateButton = new System.Windows.Forms.Button();
             this.addTransTestPanel = new System.Windows.Forms.Panel();
             this.addTransTest = new System.Windows.Forms.Button();
@@ -43,21 +55,21 @@
             this.getTransport = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.updateTransTestTransId = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.updateTransTestData = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.updateTransTestTestId = new System.Windows.Forms.TextBox();
-            this.sdsdsds = new System.Windows.Forms.Label();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.deleteGalimTest = new System.Windows.Forms.Button();
+            this.deleteGalTestTestoKodas = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.updateGalimiTestPanel = new System.Windows.Forms.Panel();
+            this.updateGalimiTestTestId = new System.Windows.Forms.TextBox();
             this.updateGalimiTestTestoKodas = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.updateGalimiTestTestPav = new System.Windows.Forms.TextBox();
             this.updateGalimiTest = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
             this.addGalimiTestPanel = new System.Windows.Forms.Panel();
             this.addGalimiTest = new System.Windows.Forms.Button();
             this.addGalimiTestTestId = new System.Windows.Forms.TextBox();
@@ -69,11 +81,11 @@
             this.getGalimiTest = new System.Windows.Forms.Button();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.label12 = new System.Windows.Forms.Label();
-            this.updateGalimiTestTestId = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.updateGalimiTestTestPav = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.DeletePakrovimas = new System.Windows.Forms.Button();
+            this.DeletePakrovimasPakrovNr = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.dataGridView5 = new System.Windows.Forms.DataGridView();
             this.updatePakrovimasPanel = new System.Windows.Forms.Panel();
@@ -96,16 +108,19 @@
             this.dataGridView6 = new System.Windows.Forms.DataGridView();
             this.label19 = new System.Windows.Forms.Label();
             this.TransportPanel.SuspendLayout();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.updateTransTestPanel.SuspendLayout();
             this.addTransTestPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.updateGalimiTestPanel.SuspendLayout();
             this.addGalimiTestPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.panel2.SuspendLayout();
+            this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
             this.updatePakrovimasPanel.SuspendLayout();
             this.addPakrovimasPanel.SuspendLayout();
@@ -125,6 +140,7 @@
             // 
             // TransportPanel
             // 
+            this.TransportPanel.Controls.Add(this.panel3);
             this.TransportPanel.Controls.Add(this.label5);
             this.TransportPanel.Controls.Add(this.dataGridView2);
             this.TransportPanel.Controls.Add(this.updateTransTestPanel);
@@ -136,8 +152,62 @@
             this.TransportPanel.Controls.Add(this.label1);
             this.TransportPanel.Location = new System.Drawing.Point(27, 46);
             this.TransportPanel.Name = "TransportPanel";
-            this.TransportPanel.Size = new System.Drawing.Size(400, 584);
+            this.TransportPanel.Size = new System.Drawing.Size(400, 656);
             this.TransportPanel.TabIndex = 2;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.deleteTransTest);
+            this.panel3.Controls.Add(this.deleteTransTestTestId);
+            this.panel3.Controls.Add(this.label26);
+            this.panel3.Location = new System.Drawing.Point(18, 544);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(161, 103);
+            this.panel3.TabIndex = 20;
+            // 
+            // deleteTransTest
+            // 
+            this.deleteTransTest.Location = new System.Drawing.Point(19, 50);
+            this.deleteTransTest.Name = "deleteTransTest";
+            this.deleteTransTest.Size = new System.Drawing.Size(114, 33);
+            this.deleteTransTest.TabIndex = 14;
+            this.deleteTransTest.Text = "Delete";
+            this.deleteTransTest.UseVisualStyleBackColor = true;
+            this.deleteTransTest.Click += new System.EventHandler(this.deleteTransTest_Click);
+            // 
+            // deleteTransTestTestId
+            // 
+            this.deleteTransTestTestId.Location = new System.Drawing.Point(19, 26);
+            this.deleteTransTestTestId.Name = "deleteTransTestTestId";
+            this.deleteTransTestTestId.Size = new System.Drawing.Size(114, 20);
+            this.deleteTransTestTestId.TabIndex = 1;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(16, 10);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(43, 13);
+            this.label26.TabIndex = 0;
+            this.label26.Text = "Test_Id";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(14, 216);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(104, 24);
+            this.label5.TabIndex = 19;
+            this.label5.Text = "Transportai";
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(18, 240);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(330, 111);
+            this.dataGridView2.TabIndex = 18;
             // 
             // updateTransTestPanel
             // 
@@ -153,6 +223,54 @@
             this.updateTransTestPanel.Size = new System.Drawing.Size(178, 196);
             this.updateTransTestPanel.TabIndex = 17;
             this.updateTransTestPanel.Visible = false;
+            // 
+            // updateTransTestTestId
+            // 
+            this.updateTransTestTestId.Location = new System.Drawing.Point(20, 107);
+            this.updateTransTestTestId.Name = "updateTransTestTestId";
+            this.updateTransTestTestId.Size = new System.Drawing.Size(126, 20);
+            this.updateTransTestTestId.TabIndex = 20;
+            // 
+            // sdsdsds
+            // 
+            this.sdsdsds.AutoSize = true;
+            this.sdsdsds.Location = new System.Drawing.Point(17, 90);
+            this.sdsdsds.Name = "sdsdsds";
+            this.sdsdsds.Size = new System.Drawing.Size(43, 13);
+            this.sdsdsds.TabIndex = 19;
+            this.sdsdsds.Text = "Test_Id";
+            // 
+            // updateTransTestTransId
+            // 
+            this.updateTransTestTransId.Location = new System.Drawing.Point(20, 67);
+            this.updateTransTestTransId.Name = "updateTransTestTransId";
+            this.updateTransTestTransId.Size = new System.Drawing.Size(126, 20);
+            this.updateTransTestTransId.TabIndex = 18;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(17, 50);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(48, 13);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "Trans_id";
+            // 
+            // updateTransTestData
+            // 
+            this.updateTransTestData.Location = new System.Drawing.Point(20, 27);
+            this.updateTransTestData.Name = "updateTransTestData";
+            this.updateTransTestData.Size = new System.Drawing.Size(126, 20);
+            this.updateTransTestData.TabIndex = 16;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(17, 10);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(55, 13);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "Test_data";
             // 
             // updateButton
             // 
@@ -267,74 +385,9 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Transporto Testai";
             // 
-            // updateTransTestTransId
-            // 
-            this.updateTransTestTransId.Location = new System.Drawing.Point(20, 67);
-            this.updateTransTestTransId.Name = "updateTransTestTransId";
-            this.updateTransTestTransId.Size = new System.Drawing.Size(126, 20);
-            this.updateTransTestTransId.TabIndex = 18;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(17, 50);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 13);
-            this.label3.TabIndex = 17;
-            this.label3.Text = "Trans_id";
-            // 
-            // updateTransTestData
-            // 
-            this.updateTransTestData.Location = new System.Drawing.Point(20, 27);
-            this.updateTransTestData.Name = "updateTransTestData";
-            this.updateTransTestData.Size = new System.Drawing.Size(126, 20);
-            this.updateTransTestData.TabIndex = 16;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(17, 10);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(55, 13);
-            this.label4.TabIndex = 15;
-            this.label4.Text = "Test_data";
-            // 
-            // updateTransTestTestId
-            // 
-            this.updateTransTestTestId.Location = new System.Drawing.Point(20, 107);
-            this.updateTransTestTestId.Name = "updateTransTestTestId";
-            this.updateTransTestTestId.Size = new System.Drawing.Size(126, 20);
-            this.updateTransTestTestId.TabIndex = 20;
-            // 
-            // sdsdsds
-            // 
-            this.sdsdsds.AutoSize = true;
-            this.sdsdsds.Location = new System.Drawing.Point(17, 90);
-            this.sdsdsds.Name = "sdsdsds";
-            this.sdsdsds.Size = new System.Drawing.Size(43, 13);
-            this.sdsdsds.TabIndex = 19;
-            this.sdsdsds.Text = "Test_Id";
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(18, 240);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(330, 111);
-            this.dataGridView2.TabIndex = 18;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(14, 216);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(104, 24);
-            this.label5.TabIndex = 19;
-            this.label5.Text = "Transportai";
-            // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.dataGridView3);
             this.panel1.Controls.Add(this.updateGalimiTestPanel);
@@ -346,8 +399,44 @@
             this.panel1.Controls.Add(this.label12);
             this.panel1.Location = new System.Drawing.Point(433, 46);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(400, 584);
+            this.panel1.Size = new System.Drawing.Size(400, 656);
             this.panel1.TabIndex = 20;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.deleteGalimTest);
+            this.panel4.Controls.Add(this.deleteGalTestTestoKodas);
+            this.panel4.Controls.Add(this.label20);
+            this.panel4.Location = new System.Drawing.Point(18, 547);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(161, 103);
+            this.panel4.TabIndex = 20;
+            // 
+            // deleteGalimTest
+            // 
+            this.deleteGalimTest.Location = new System.Drawing.Point(19, 50);
+            this.deleteGalimTest.Name = "deleteGalimTest";
+            this.deleteGalimTest.Size = new System.Drawing.Size(114, 33);
+            this.deleteGalimTest.TabIndex = 14;
+            this.deleteGalimTest.Text = "Delete";
+            this.deleteGalimTest.UseVisualStyleBackColor = true;
+            this.deleteGalimTest.Click += new System.EventHandler(this.deleteGalimTest_Click);
+            // 
+            // deleteGalTestTestoKodas
+            // 
+            this.deleteGalTestTestoKodas.Location = new System.Drawing.Point(19, 26);
+            this.deleteGalTestTestoKodas.Name = "deleteGalTestTestoKodas";
+            this.deleteGalTestTestoKodas.Size = new System.Drawing.Size(114, 20);
+            this.deleteGalTestTestoKodas.TabIndex = 1;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(16, 10);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(64, 13);
+            this.label20.TabIndex = 0;
+            this.label20.Text = "TestoKodas";
             // 
             // label6
             // 
@@ -382,12 +471,28 @@
             this.updateGalimiTestPanel.TabIndex = 17;
             this.updateGalimiTestPanel.Visible = false;
             // 
+            // updateGalimiTestTestId
+            // 
+            this.updateGalimiTestTestId.Location = new System.Drawing.Point(20, 67);
+            this.updateGalimiTestTestId.Name = "updateGalimiTestTestId";
+            this.updateGalimiTestTestId.Size = new System.Drawing.Size(126, 20);
+            this.updateGalimiTestTestId.TabIndex = 18;
+            // 
             // updateGalimiTestTestoKodas
             // 
             this.updateGalimiTestTestoKodas.Location = new System.Drawing.Point(20, 107);
             this.updateGalimiTestTestoKodas.Name = "updateGalimiTestTestoKodas";
             this.updateGalimiTestTestoKodas.Size = new System.Drawing.Size(126, 20);
             this.updateGalimiTestTestoKodas.TabIndex = 20;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(17, 50);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(37, 13);
+            this.label8.TabIndex = 17;
+            this.label8.Text = "TestId";
             // 
             // label7
             // 
@@ -398,6 +503,13 @@
             this.label7.TabIndex = 19;
             this.label7.Text = "Testo_kodas";
             // 
+            // updateGalimiTestTestPav
+            // 
+            this.updateGalimiTestTestPav.Location = new System.Drawing.Point(20, 27);
+            this.updateGalimiTestTestPav.Name = "updateGalimiTestTestPav";
+            this.updateGalimiTestTestPav.Size = new System.Drawing.Size(126, 20);
+            this.updateGalimiTestTestPav.TabIndex = 16;
+            // 
             // updateGalimiTest
             // 
             this.updateGalimiTest.Location = new System.Drawing.Point(20, 133);
@@ -407,6 +519,15 @@
             this.updateGalimiTest.Text = "Update";
             this.updateGalimiTest.UseVisualStyleBackColor = true;
             this.updateGalimiTest.Click += new System.EventHandler(this.updateGalimiTest_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(17, 10);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(52, 13);
+            this.label9.TabIndex = 15;
+            this.label9.Text = "Test_pav";
             // 
             // addGalimiTestPanel
             // 
@@ -511,40 +632,9 @@
             this.label12.TabIndex = 0;
             this.label12.Text = "Galimi Testai";
             // 
-            // updateGalimiTestTestId
-            // 
-            this.updateGalimiTestTestId.Location = new System.Drawing.Point(20, 67);
-            this.updateGalimiTestTestId.Name = "updateGalimiTestTestId";
-            this.updateGalimiTestTestId.Size = new System.Drawing.Size(126, 20);
-            this.updateGalimiTestTestId.TabIndex = 18;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(17, 50);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(37, 13);
-            this.label8.TabIndex = 17;
-            this.label8.Text = "TestId";
-            // 
-            // updateGalimiTestTestPav
-            // 
-            this.updateGalimiTestTestPav.Location = new System.Drawing.Point(20, 27);
-            this.updateGalimiTestTestPav.Name = "updateGalimiTestTestPav";
-            this.updateGalimiTestTestPav.Size = new System.Drawing.Size(126, 20);
-            this.updateGalimiTestTestPav.TabIndex = 16;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(17, 10);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(52, 13);
-            this.label9.TabIndex = 15;
-            this.label9.Text = "Test_pav";
-            // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.panel5);
             this.panel2.Controls.Add(this.label13);
             this.panel2.Controls.Add(this.dataGridView5);
             this.panel2.Controls.Add(this.updatePakrovimasPanel);
@@ -556,8 +646,44 @@
             this.panel2.Controls.Add(this.label19);
             this.panel2.Location = new System.Drawing.Point(839, 46);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(400, 584);
+            this.panel2.Size = new System.Drawing.Size(400, 656);
             this.panel2.TabIndex = 21;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.DeletePakrovimas);
+            this.panel5.Controls.Add(this.DeletePakrovimasPakrovNr);
+            this.panel5.Controls.Add(this.label21);
+            this.panel5.Location = new System.Drawing.Point(18, 544);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(161, 103);
+            this.panel5.TabIndex = 20;
+            // 
+            // DeletePakrovimas
+            // 
+            this.DeletePakrovimas.Location = new System.Drawing.Point(19, 50);
+            this.DeletePakrovimas.Name = "DeletePakrovimas";
+            this.DeletePakrovimas.Size = new System.Drawing.Size(114, 33);
+            this.DeletePakrovimas.TabIndex = 14;
+            this.DeletePakrovimas.Text = "Delete";
+            this.DeletePakrovimas.UseVisualStyleBackColor = true;
+            this.DeletePakrovimas.Click += new System.EventHandler(this.DeletePakrovimas_Click);
+            // 
+            // DeletePakrovimasPakrovNr
+            // 
+            this.DeletePakrovimasPakrovNr.Location = new System.Drawing.Point(19, 26);
+            this.DeletePakrovimasPakrovNr.Name = "DeletePakrovimasPakrovNr";
+            this.DeletePakrovimasPakrovNr.Size = new System.Drawing.Size(114, 20);
+            this.DeletePakrovimasPakrovNr.TabIndex = 1;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(16, 10);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(67, 13);
+            this.label21.TabIndex = 0;
+            this.label21.Text = "pakrovimoNr";
             // 
             // label13
             // 
@@ -757,7 +883,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1270, 653);
+            this.ClientSize = new System.Drawing.Size(1270, 705);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.TransportPanel);
@@ -766,14 +892,18 @@
             this.Text = "AdminTestingScreen";
             this.TransportPanel.ResumeLayout(false);
             this.TransportPanel.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.updateTransTestPanel.ResumeLayout(false);
             this.updateTransTestPanel.PerformLayout();
             this.addTransTestPanel.ResumeLayout(false);
             this.addTransTestPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.updateGalimiTestPanel.ResumeLayout(false);
             this.updateGalimiTestPanel.PerformLayout();
@@ -782,6 +912,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
             this.updatePakrovimasPanel.ResumeLayout(false);
             this.updatePakrovimasPanel.PerformLayout();
@@ -861,5 +993,17 @@
         private System.Windows.Forms.Button getPakrovimas;
         private System.Windows.Forms.DataGridView dataGridView6;
         private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button deleteTransTest;
+        private System.Windows.Forms.TextBox deleteTransTestTestId;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Button deleteGalimTest;
+        private System.Windows.Forms.TextBox deleteGalTestTestoKodas;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Button DeletePakrovimas;
+        private System.Windows.Forms.TextBox DeletePakrovimasPakrovNr;
+        private System.Windows.Forms.Label label21;
     }
 }

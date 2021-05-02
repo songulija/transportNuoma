@@ -212,5 +212,45 @@ namespace TransportoNuoma
             }
 
         }
+
+        private void deleteDraudTiek_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DraudimoTiekejai gl = new DraudimoTiekejai();
+                gl.tiekejo_Id = int.Parse(deleteDraudTiekTiekId.Text);
+                draudTiekRep.DeleteDraudTiek(gl);
+
+                deleteDraudTiekTiekId.Clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            MessageBox.Show("Deleted succesfully");
+            getDraudimasTiekDisplay();
+            getDraudimasDisplay();
+            
+        }
+
+        private void deleteDraudimas_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Draudimas gl = new Draudimas();
+                gl.draudId = int.Parse(deleteDraudimasDraudId.Text);
+                draudimasRep.DeleteDraud(gl);
+
+                deleteDraudimasDraudId.Clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            MessageBox.Show("Deleted succesfully");
+            getDraudimasDisplay();
+            getDraudimasTiekDisplay();
+            
+        }
     }
 }

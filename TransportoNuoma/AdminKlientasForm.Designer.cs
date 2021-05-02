@@ -100,6 +100,15 @@
             this.getGalimiNusiz = new System.Windows.Forms.Button();
             this.dataGridView5 = new System.Windows.Forms.DataGridView();
             this.label24 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.deleteGalimiNusiz = new System.Windows.Forms.Button();
+            this.deleteGalimiNusizNusizKodas = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.deleteNusizengimai = new System.Windows.Forms.Button();
+            this.deleteNusizengimaiNusizId = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.backButton = new System.Windows.Forms.Button();
             this.TransportPanel.SuspendLayout();
             this.updateKlientaiPanel.SuspendLayout();
             this.addKlientaiPanel.SuspendLayout();
@@ -114,6 +123,8 @@
             this.updateGalimiNusizPanel.SuspendLayout();
             this.addGalimiNusizPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // TransportPanel
@@ -125,9 +136,9 @@
             this.TransportPanel.Controls.Add(this.getKlientai);
             this.TransportPanel.Controls.Add(this.dataGridView1);
             this.TransportPanel.Controls.Add(this.label1);
-            this.TransportPanel.Location = new System.Drawing.Point(12, 12);
+            this.TransportPanel.Location = new System.Drawing.Point(12, 46);
             this.TransportPanel.Name = "TransportPanel";
-            this.TransportPanel.Size = new System.Drawing.Size(382, 631);
+            this.TransportPanel.Size = new System.Drawing.Size(382, 597);
             this.TransportPanel.TabIndex = 1;
             // 
             // updateKlientaiPanel
@@ -380,6 +391,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.dataGridView3);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.updateNusizPanel);
@@ -391,7 +403,7 @@
             this.panel1.Controls.Add(this.label20);
             this.panel1.Location = new System.Drawing.Point(431, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(382, 631);
+            this.panel1.Size = new System.Drawing.Size(382, 641);
             this.panel1.TabIndex = 2;
             // 
             // dataGridView3
@@ -421,7 +433,7 @@
             this.updateNusizPanel.Controls.Add(this.updateNusizengimaiNusizData);
             this.updateNusizPanel.Controls.Add(this.label14);
             this.updateNusizPanel.Controls.Add(this.updateNusizengimai);
-            this.updateNusizPanel.Location = new System.Drawing.Point(204, 428);
+            this.updateNusizPanel.Location = new System.Drawing.Point(204, 418);
             this.updateNusizPanel.Name = "updateNusizPanel";
             this.updateNusizPanel.Size = new System.Drawing.Size(178, 183);
             this.updateNusizPanel.TabIndex = 17;
@@ -492,9 +504,9 @@
             this.addNusizPanel.Controls.Add(this.label18);
             this.addNusizPanel.Controls.Add(this.addNusizengimaiNusizData);
             this.addNusizPanel.Controls.Add(this.label19);
-            this.addNusizPanel.Location = new System.Drawing.Point(18, 428);
+            this.addNusizPanel.Location = new System.Drawing.Point(18, 417);
             this.addNusizPanel.Name = "addNusizPanel";
-            this.addNusizPanel.Size = new System.Drawing.Size(178, 184);
+            this.addNusizPanel.Size = new System.Drawing.Size(178, 127);
             this.addNusizPanel.TabIndex = 5;
             this.addNusizPanel.Visible = false;
             // 
@@ -542,7 +554,7 @@
             // 
             // updateNusizengimaiShow
             // 
-            this.updateNusizengimaiShow.Location = new System.Drawing.Point(259, 398);
+            this.updateNusizengimaiShow.Location = new System.Drawing.Point(259, 388);
             this.updateNusizengimaiShow.Name = "updateNusizengimaiShow";
             this.updateNusizengimaiShow.Size = new System.Drawing.Size(110, 23);
             this.updateNusizengimaiShow.TabIndex = 4;
@@ -552,7 +564,7 @@
             // 
             // addNusizengimaiShow
             // 
-            this.addNusizengimaiShow.Location = new System.Drawing.Point(126, 398);
+            this.addNusizengimaiShow.Location = new System.Drawing.Point(126, 388);
             this.addNusizengimaiShow.Name = "addNusizengimaiShow";
             this.addNusizengimaiShow.Size = new System.Drawing.Size(127, 23);
             this.addNusizengimaiShow.TabIndex = 3;
@@ -562,7 +574,7 @@
             // 
             // getNusizengimai
             // 
-            this.getNusizengimai.Location = new System.Drawing.Point(18, 399);
+            this.getNusizengimai.Location = new System.Drawing.Point(18, 388);
             this.getNusizengimai.Name = "getNusizengimai";
             this.getNusizengimai.Size = new System.Drawing.Size(102, 23);
             this.getNusizengimai.TabIndex = 2;
@@ -590,6 +602,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.dataGridView4);
             this.panel2.Controls.Add(this.label15);
             this.panel2.Controls.Add(this.updateGalimiNusizPanel);
@@ -601,7 +614,7 @@
             this.panel2.Controls.Add(this.label24);
             this.panel2.Location = new System.Drawing.Point(819, 12);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(474, 631);
+            this.panel2.Size = new System.Drawing.Size(524, 631);
             this.panel2.TabIndex = 20;
             // 
             // dataGridView4
@@ -633,7 +646,7 @@
             this.updateGalimiNusizPanel.Controls.Add(this.updateGalimiNusiz);
             this.updateGalimiNusizPanel.Location = new System.Drawing.Point(204, 428);
             this.updateGalimiNusizPanel.Name = "updateGalimiNusizPanel";
-            this.updateGalimiNusizPanel.Size = new System.Drawing.Size(178, 183);
+            this.updateGalimiNusizPanel.Size = new System.Drawing.Size(150, 183);
             this.updateGalimiNusizPanel.TabIndex = 17;
             this.updateGalimiNusizPanel.Visible = false;
             // 
@@ -798,11 +811,95 @@
             this.label24.TabIndex = 0;
             this.label24.Text = "Galimi Nusizengimai";
             // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.deleteGalimiNusiz);
+            this.panel3.Controls.Add(this.deleteGalimiNusizNusizKodas);
+            this.panel3.Controls.Add(this.label26);
+            this.panel3.Location = new System.Drawing.Point(360, 428);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(161, 103);
+            this.panel3.TabIndex = 15;
+            // 
+            // deleteGalimiNusiz
+            // 
+            this.deleteGalimiNusiz.Location = new System.Drawing.Point(19, 50);
+            this.deleteGalimiNusiz.Name = "deleteGalimiNusiz";
+            this.deleteGalimiNusiz.Size = new System.Drawing.Size(114, 33);
+            this.deleteGalimiNusiz.TabIndex = 14;
+            this.deleteGalimiNusiz.Text = "Delete";
+            this.deleteGalimiNusiz.UseVisualStyleBackColor = true;
+            this.deleteGalimiNusiz.Click += new System.EventHandler(this.deleteGalimiNusiz_Click);
+            // 
+            // deleteGalimiNusizNusizKodas
+            // 
+            this.deleteGalimiNusizNusizKodas.Location = new System.Drawing.Point(19, 26);
+            this.deleteGalimiNusizNusizKodas.Name = "deleteGalimiNusizNusizKodas";
+            this.deleteGalimiNusizNusizKodas.Size = new System.Drawing.Size(114, 20);
+            this.deleteGalimiNusizNusizKodas.TabIndex = 1;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(16, 10);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(63, 13);
+            this.label26.TabIndex = 0;
+            this.label26.Text = "NusizKodas";
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.deleteNusizengimai);
+            this.panel4.Controls.Add(this.deleteNusizengimaiNusizId);
+            this.panel4.Controls.Add(this.label27);
+            this.panel4.Location = new System.Drawing.Point(15, 548);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(178, 90);
+            this.panel4.TabIndex = 15;
+            // 
+            // deleteNusizengimai
+            // 
+            this.deleteNusizengimai.Location = new System.Drawing.Point(20, 46);
+            this.deleteNusizengimai.Name = "deleteNusizengimai";
+            this.deleteNusizengimai.Size = new System.Drawing.Size(126, 33);
+            this.deleteNusizengimai.TabIndex = 14;
+            this.deleteNusizengimai.Text = "Delete";
+            this.deleteNusizengimai.UseVisualStyleBackColor = true;
+            this.deleteNusizengimai.Click += new System.EventHandler(this.deleteNusizengimai_Click);
+            // 
+            // deleteNusizengimaiNusizId
+            // 
+            this.deleteNusizengimaiNusizId.Location = new System.Drawing.Point(20, 26);
+            this.deleteNusizengimaiNusizId.Name = "deleteNusizengimaiNusizId";
+            this.deleteNusizengimaiNusizId.Size = new System.Drawing.Size(126, 20);
+            this.deleteNusizengimaiNusizId.TabIndex = 1;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(17, 9);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(78, 13);
+            this.label27.TabIndex = 0;
+            this.label27.Text = "NusizengimaiId";
+            // 
+            // backButton
+            // 
+            this.backButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.backButton.Location = new System.Drawing.Point(12, 12);
+            this.backButton.Name = "backButton";
+            this.backButton.Size = new System.Drawing.Size(137, 28);
+            this.backButton.TabIndex = 21;
+            this.backButton.Text = "Back";
+            this.backButton.UseVisualStyleBackColor = true;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
+            // 
             // AdminKlientasForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1321, 654);
+            this.ClientSize = new System.Drawing.Size(1355, 654);
+            this.Controls.Add(this.backButton);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.TransportPanel);
@@ -831,6 +928,10 @@
             this.addGalimiNusizPanel.ResumeLayout(false);
             this.addGalimiNusizPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -909,5 +1010,14 @@
         private System.Windows.Forms.Button getGalimiNusiz;
         private System.Windows.Forms.DataGridView dataGridView5;
         private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button deleteGalimiNusiz;
+        private System.Windows.Forms.TextBox deleteGalimiNusizNusizKodas;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Button deleteNusizengimai;
+        private System.Windows.Forms.TextBox deleteNusizengimaiNusizId;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Button backButton;
     }
 }

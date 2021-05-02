@@ -268,8 +268,9 @@ namespace TransportoNuoma
             {
                 MessageBox.Show(ex.Message);
             }
-            getPakrovimasDisplay();
             MessageBox.Show("Succesfully inserted");
+            getPakrovimasDisplay();
+            
         }
 
         private void updatePakrovimas_Click(object sender, EventArgs e)
@@ -304,12 +305,69 @@ namespace TransportoNuoma
                 dataGridView6.DataSource = dta;
 
                 //FOR TRANSPORT
-                DataTable dta1 = transTestRep.displayTransTest();
+                DataTable dta1 = transportRep.displayTransportas();
                 dataGridView5.DataSource = dta1;
             }catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void deleteTransTest_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                TransportoTestai gl = new TransportoTestai();
+                gl.test_Id = int.Parse(deleteTransTestTestId.Text);
+                transTestRep.DeleteTransTest(gl);
+
+                deleteTransTestTestId.Clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            MessageBox.Show("Deleted succesfully");
+            getTransTest();
+            getGalimiTestDisplay();
+        }
+
+        private void deleteGalimTest_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                GalimiTestai gl = new GalimiTestai();
+                gl.testoKodas = int.Parse(deleteGalTestTestoKodas.Text);
+                galimiTestRep.DeleteGalimiTestai(gl);
+
+                deleteGalTestTestoKodas.Clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            MessageBox.Show("Deleted succesfully");
+            getGalimiTestDisplay();
+            getTransTest();
+            
+        }
+
+        private void DeletePakrovimas_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Pakrovimas gl = new Pakrovimas();
+                gl.pakrovimo_Nr = int.Parse(DeletePakrovimasPakrovNr.Text);
+                pakrovimasRep.DeletePakrovimas(gl);
+
+                DeletePakrovimasPakrovNr.Clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            MessageBox.Show("Deleted succesfully");
+            getPakrovimasDisplay();
         }
     }
 }

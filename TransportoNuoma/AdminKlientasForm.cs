@@ -186,6 +186,8 @@ namespace TransportoNuoma
 
 
 
+
+
         private void getNusizengimaiDisplay()
         {
             try
@@ -202,6 +204,25 @@ namespace TransportoNuoma
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void deleteNusizengimai_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Nusizengimai gl = new Nusizengimai();
+                gl.nusizengimai_Id = int.Parse(deleteNusizengimaiNusizId.Text);
+                nusizRep.DeleteNusiz(gl);
+
+                deleteNusizengimaiNusizId.Clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            MessageBox.Show("Deleted succesfully");
+            getGalimiNusizengimaiDisplay();
+            getNusizengimaiDisplay();
         }
 
         private void getGalimiNusiz_Click(object sender, EventArgs e)
@@ -286,7 +307,31 @@ namespace TransportoNuoma
             }
         }
 
+        private void deleteGalimiNusiz_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                GalimiNusizengimai gl = new GalimiNusizengimai();
+                gl.nusizengimo_Kodas = int.Parse(deleteGalimiNusizNusizKodas.Text);
+                galimiNuzRep.DeleteGalimiNusiz(gl);
 
 
+                deleteGalimiNusizNusizKodas.Clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            MessageBox.Show("Deleted succesfully");
+            getGalimiNusizengimaiDisplay();
+        }
+
+        private void backButton_Click(object sender, EventArgs e)
+        {
+            MainFormAdmin admin = new MainFormAdmin(klientas);
+            this.Hide();
+            admin.ShowDialog();
+            this.Close();
+        }
     }
 }

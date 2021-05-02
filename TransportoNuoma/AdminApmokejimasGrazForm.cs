@@ -70,6 +70,7 @@ namespace TransportoNuoma
                 MessageBox.Show(ex.Message);
             }
             MessageBox.Show("Succesfully inserted");
+            getApmokejimasDisplay();
         }
 
         private void updateApmokejimas_Click(object sender, EventArgs e)
@@ -91,6 +92,7 @@ namespace TransportoNuoma
                 MessageBox.Show(ex.Message);
             }
             MessageBox.Show("Succesfully updated");
+            getApmokejimasDisplay();
         }
 
         private void getApmokejimasDisplay()
@@ -110,6 +112,32 @@ namespace TransportoNuoma
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void deleteApmokejimas_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Apmokejimas gl = new Apmokejimas();
+                gl.apmok_Id = int.Parse(deleteApmokejimasApmokNr.Text);
+                apmokRep.DeleteApmokejimas(gl);
+
+                deleteApmokejimasApmokNr.Clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            MessageBox.Show("Deleted succesfully");
+            getApmokejimasDisplay();
+        }
+
+        private void backButton_Click(object sender, EventArgs e)
+        {
+            MainFormAdmin admin = new MainFormAdmin(klientas);
+            this.Hide();
+            admin.ShowDialog();
+            this.Close();
         }
     }
 }

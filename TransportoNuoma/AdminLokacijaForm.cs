@@ -229,6 +229,45 @@ namespace TransportoNuoma
 
         }
 
+        private void deleteKlientoLok_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                KlientoLokacija klok = new KlientoLokacija();
+                klok.kliento_Lok_Id = int.Parse(deleteKlientoLokLokId.Text);
 
+                klientoLokRep.DeleteKlientoLok(klok);
+
+
+                deleteKlientoLokLokId.Clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            MessageBox.Show("Deleted succesfully");
+            getKlientoLokDisplay();
+        }
+
+
+
+        private void deleteTransLok_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Lokacija klok = new Lokacija();
+                klok.lokacijos_Id = int.Parse(deleteTransLokLokId.Text);
+                transLokRep.DeleteLokacija(klok);
+
+
+                deleteTransLokLokId.Clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            MessageBox.Show("Deleted succesfully");
+            getTransLokDisplay();
+        }
     }
 }

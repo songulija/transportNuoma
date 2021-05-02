@@ -32,8 +32,16 @@
             this.label5 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.updateApmokejimasPanel = new System.Windows.Forms.Panel();
+            this.updateApmokejimasApmokNr = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.updateApmokejimasApData = new System.Windows.Forms.TextBox();
             this.updateApmokejimas = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.addApmokejimasPanel = new System.Windows.Forms.Panel();
+            this.addApmokejimasApData = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.addApmokejimasNuomosNr = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.addApmokejimas = new System.Windows.Forms.Button();
             this.addApmokejimasApmokSuma = new System.Windows.Forms.TextBox();
             this.sdsdsd = new System.Windows.Forms.Label();
@@ -44,23 +52,22 @@
             this.getApmokejimas = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.addApmokejimasNuomosNr = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.addApmokejimasApData = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.updateApmokejimasApData = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.updateApmokejimasApmokNr = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.deleteApmokejimas = new System.Windows.Forms.Button();
+            this.deleteApmokejimasApmokNr = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.backButton = new System.Windows.Forms.Button();
             this.TransportPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.updateApmokejimasPanel.SuspendLayout();
             this.addApmokejimasPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // TransportPanel
             // 
+            this.TransportPanel.Controls.Add(this.panel3);
             this.TransportPanel.Controls.Add(this.label5);
             this.TransportPanel.Controls.Add(this.dataGridView2);
             this.TransportPanel.Controls.Add(this.updateApmokejimasPanel);
@@ -70,9 +77,9 @@
             this.TransportPanel.Controls.Add(this.getApmokejimas);
             this.TransportPanel.Controls.Add(this.dataGridView1);
             this.TransportPanel.Controls.Add(this.label1);
-            this.TransportPanel.Location = new System.Drawing.Point(28, 31);
+            this.TransportPanel.Location = new System.Drawing.Point(28, 34);
             this.TransportPanel.Name = "TransportPanel";
-            this.TransportPanel.Size = new System.Drawing.Size(400, 614);
+            this.TransportPanel.Size = new System.Drawing.Size(400, 640);
             this.TransportPanel.TabIndex = 3;
             // 
             // label5
@@ -102,19 +109,51 @@
             this.updateApmokejimasPanel.Controls.Add(this.label3);
             this.updateApmokejimasPanel.Location = new System.Drawing.Point(204, 385);
             this.updateApmokejimasPanel.Name = "updateApmokejimasPanel";
-            this.updateApmokejimasPanel.Size = new System.Drawing.Size(178, 196);
+            this.updateApmokejimasPanel.Size = new System.Drawing.Size(178, 146);
             this.updateApmokejimasPanel.TabIndex = 17;
             this.updateApmokejimasPanel.Visible = false;
             // 
+            // updateApmokejimasApmokNr
+            // 
+            this.updateApmokejimasApmokNr.Location = new System.Drawing.Point(18, 67);
+            this.updateApmokejimasApmokNr.Name = "updateApmokejimasApmokNr";
+            this.updateApmokejimasApmokNr.Size = new System.Drawing.Size(126, 20);
+            this.updateApmokejimasApmokNr.TabIndex = 22;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(15, 50);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(54, 13);
+            this.label4.TabIndex = 21;
+            this.label4.Text = "apmok_nr";
+            // 
+            // updateApmokejimasApData
+            // 
+            this.updateApmokejimasApData.Location = new System.Drawing.Point(18, 27);
+            this.updateApmokejimasApData.Name = "updateApmokejimasApData";
+            this.updateApmokejimasApData.Size = new System.Drawing.Size(126, 20);
+            this.updateApmokejimasApData.TabIndex = 20;
+            // 
             // updateApmokejimas
             // 
-            this.updateApmokejimas.Location = new System.Drawing.Point(18, 143);
+            this.updateApmokejimas.Location = new System.Drawing.Point(18, 94);
             this.updateApmokejimas.Name = "updateApmokejimas";
             this.updateApmokejimas.Size = new System.Drawing.Size(126, 33);
             this.updateApmokejimas.TabIndex = 14;
             this.updateApmokejimas.Text = "Update";
             this.updateApmokejimas.UseVisualStyleBackColor = true;
             this.updateApmokejimas.Click += new System.EventHandler(this.updateApmokejimas_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(15, 10);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(67, 13);
+            this.label3.TabIndex = 19;
+            this.label3.Text = "Apmok_data";
             // 
             // addApmokejimasPanel
             // 
@@ -132,6 +171,38 @@
             this.addApmokejimasPanel.Size = new System.Drawing.Size(178, 225);
             this.addApmokejimasPanel.TabIndex = 5;
             this.addApmokejimasPanel.Visible = false;
+            // 
+            // addApmokejimasApData
+            // 
+            this.addApmokejimasApData.Location = new System.Drawing.Point(20, 106);
+            this.addApmokejimasApData.Name = "addApmokejimasApData";
+            this.addApmokejimasApData.Size = new System.Drawing.Size(126, 20);
+            this.addApmokejimasApData.TabIndex = 18;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(17, 89);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(67, 13);
+            this.label7.TabIndex = 17;
+            this.label7.Text = "Apmok_data";
+            // 
+            // addApmokejimasNuomosNr
+            // 
+            this.addApmokejimasNuomosNr.Location = new System.Drawing.Point(20, 149);
+            this.addApmokejimasNuomosNr.Name = "addApmokejimasNuomosNr";
+            this.addApmokejimasNuomosNr.Size = new System.Drawing.Size(126, 20);
+            this.addApmokejimasNuomosNr.TabIndex = 16;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(17, 132);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(61, 13);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "Nuomos_nr";
             // 
             // addApmokejimas
             // 
@@ -223,75 +294,59 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Apmokejimas";
             // 
-            // addApmokejimasNuomosNr
+            // panel3
             // 
-            this.addApmokejimasNuomosNr.Location = new System.Drawing.Point(20, 149);
-            this.addApmokejimasNuomosNr.Name = "addApmokejimasNuomosNr";
-            this.addApmokejimasNuomosNr.Size = new System.Drawing.Size(126, 20);
-            this.addApmokejimasNuomosNr.TabIndex = 16;
+            this.panel3.Controls.Add(this.deleteApmokejimas);
+            this.panel3.Controls.Add(this.deleteApmokejimasApmokNr);
+            this.panel3.Controls.Add(this.label26);
+            this.panel3.Location = new System.Drawing.Point(208, 537);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(161, 103);
+            this.panel3.TabIndex = 23;
             // 
-            // label6
+            // deleteApmokejimas
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(17, 132);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(61, 13);
-            this.label6.TabIndex = 15;
-            this.label6.Text = "Nuomos_nr";
+            this.deleteApmokejimas.Location = new System.Drawing.Point(19, 50);
+            this.deleteApmokejimas.Name = "deleteApmokejimas";
+            this.deleteApmokejimas.Size = new System.Drawing.Size(114, 33);
+            this.deleteApmokejimas.TabIndex = 14;
+            this.deleteApmokejimas.Text = "Delete";
+            this.deleteApmokejimas.UseVisualStyleBackColor = true;
+            this.deleteApmokejimas.Click += new System.EventHandler(this.deleteApmokejimas_Click);
             // 
-            // addApmokejimasApData
+            // deleteApmokejimasApmokNr
             // 
-            this.addApmokejimasApData.Location = new System.Drawing.Point(20, 106);
-            this.addApmokejimasApData.Name = "addApmokejimasApData";
-            this.addApmokejimasApData.Size = new System.Drawing.Size(126, 20);
-            this.addApmokejimasApData.TabIndex = 18;
+            this.deleteApmokejimasApmokNr.Location = new System.Drawing.Point(19, 26);
+            this.deleteApmokejimasApmokNr.Name = "deleteApmokejimasApmokNr";
+            this.deleteApmokejimasApmokNr.Size = new System.Drawing.Size(114, 20);
+            this.deleteApmokejimasApmokNr.TabIndex = 1;
             // 
-            // label7
+            // label26
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(17, 89);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(67, 13);
-            this.label7.TabIndex = 17;
-            this.label7.Text = "Apmok_data";
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(16, 10);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(54, 13);
+            this.label26.TabIndex = 0;
+            this.label26.Text = "apmok_nr";
             // 
-            // updateApmokejimasApData
+            // backButton
             // 
-            this.updateApmokejimasApData.Location = new System.Drawing.Point(18, 27);
-            this.updateApmokejimasApData.Name = "updateApmokejimasApData";
-            this.updateApmokejimasApData.Size = new System.Drawing.Size(126, 20);
-            this.updateApmokejimasApData.TabIndex = 20;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(15, 10);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 13);
-            this.label3.TabIndex = 19;
-            this.label3.Text = "Apmok_data";
-            // 
-            // updateApmokejimasApmokNr
-            // 
-            this.updateApmokejimasApmokNr.Location = new System.Drawing.Point(18, 67);
-            this.updateApmokejimasApmokNr.Name = "updateApmokejimasApmokNr";
-            this.updateApmokejimasApmokNr.Size = new System.Drawing.Size(126, 20);
-            this.updateApmokejimasApmokNr.TabIndex = 22;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(15, 50);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(54, 13);
-            this.label4.TabIndex = 21;
-            this.label4.Text = "apmok_nr";
+            this.backButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.backButton.Location = new System.Drawing.Point(28, 2);
+            this.backButton.Name = "backButton";
+            this.backButton.Size = new System.Drawing.Size(137, 26);
+            this.backButton.TabIndex = 4;
+            this.backButton.Text = "Back";
+            this.backButton.UseVisualStyleBackColor = true;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
             // AdminApmokejimasGrazForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1236, 657);
+            this.ClientSize = new System.Drawing.Size(1236, 686);
+            this.Controls.Add(this.backButton);
             this.Controls.Add(this.TransportPanel);
             this.Name = "AdminApmokejimasGrazForm";
             this.Text = "AdminApmokejimasGrazForm";
@@ -303,6 +358,8 @@
             this.addApmokejimasPanel.ResumeLayout(false);
             this.addApmokejimasPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -333,5 +390,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox addApmokejimasApData;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button deleteApmokejimas;
+        private System.Windows.Forms.TextBox deleteApmokejimasApmokNr;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Button backButton;
     }
 }

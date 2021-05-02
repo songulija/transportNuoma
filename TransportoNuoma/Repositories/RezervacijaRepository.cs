@@ -145,5 +145,33 @@ namespace TransportoNuoma.Repositories
             }
         }
 
+
+
+
+        public void DeleteRezervacija(Rezervacija rezervacija, int nuomosNr)
+        {
+            try
+            {
+                cnn = new MySqlConnection(connectionString);
+
+                string newSql = ("Delete from apmokejimas where apmokejimas.Nuomos_nr=@Nuomos_nr; ");
+                newSql += ("Delete from nuoma where nuoma.rezId=@rezId; ");
+                newSql += ("Delete from rezervacija where rezervacija.rezId=@rezId");
+
+                cnn.Open();//open connection. we use the Open method of the cnn variable to open a connection to the database.
+                MySqlCommand cmd = new MySqlCommand(newSql, cnn);//select all from newTestTable
+                cmd.Parameters.AddWithValue("@Nuomos_nr", nuomosNr);
+                cmd.Parameters.AddWithValue("@rezId", rezervacija.rezervacijos_Id);
+                cmd.ExecuteNonQuery();//execute function
+
+                cnn.Close();
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine(exc);
+            }
+
+        }
+
     }
 }

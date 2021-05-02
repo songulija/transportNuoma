@@ -225,5 +225,48 @@ namespace TransportoNuoma
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void deleteRezervacija_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Rezervacija rez = new Rezervacija();
+                rez.rezervacijos_Id = int.Parse(deleteRezervacijaRezId.Text);
+                int nuomosNr = int.Parse(deleteRezervacijaNuomosNr.Text);
+                //PASS NUOMOS NR
+                rezRep.DeleteRezervacija(rez, nuomosNr);
+
+
+                deleteRezervacijaRezId.Clear();
+                deleteRezervacijaNuomosNr.Clear();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            MessageBox.Show("Deleted succesfully");
+            getRezervacijaDisplay();
+            getNuomaDisplay();
+        }
+
+        private void DeleteNuoma_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Nuoma nuom = new Nuoma();
+                nuom.nuomos_Nr = int.Parse(DeleteNuomaNuomosNr.Text);
+                nuomaRep.DeleteNuoma(nuom);
+
+
+                DeleteNuomaNuomosNr.Clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            MessageBox.Show("Deleted succesfully");
+            getNuomaDisplay();
+        }
     }
 }

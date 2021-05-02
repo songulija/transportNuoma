@@ -30,6 +30,10 @@
         {
             this.backButton = new System.Windows.Forms.Button();
             this.TransportPanel = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.dataGridView6 = new System.Windows.Forms.DataGridView();
+            this.label17 = new System.Windows.Forms.Label();
+            this.dataGridView5 = new System.Windows.Forms.DataGridView();
             this.updateNuomaPanel = new System.Windows.Forms.Panel();
             this.updateNuomaNuomosNr = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -54,7 +58,11 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label18 = new System.Windows.Forms.Label();
+            this.dataGridView7 = new System.Windows.Forms.DataGridView();
             this.updateRezervacijaPanel = new System.Windows.Forms.Panel();
+            this.updateRezervacijaRezId = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
             this.updateRezervacijaKlientoNr = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.updateRezervacijaTransId = new System.Windows.Forms.TextBox();
@@ -75,27 +83,31 @@
             this.getRezervacija = new System.Windows.Forms.Button();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.label16 = new System.Windows.Forms.Label();
-            this.dataGridView5 = new System.Windows.Forms.DataGridView();
-            this.label17 = new System.Windows.Forms.Label();
-            this.dataGridView6 = new System.Windows.Forms.DataGridView();
-            this.label18 = new System.Windows.Forms.Label();
-            this.dataGridView7 = new System.Windows.Forms.DataGridView();
-            this.updateRezervacijaRezId = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.DeleteNuoma = new System.Windows.Forms.Button();
+            this.DeleteNuomaNuomosNr = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.deleteRezervacija = new System.Windows.Forms.Button();
+            this.deleteRezervacijaRezId = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.deleteRezervacijaNuomosNr = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
             this.TransportPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
             this.updateNuomaPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.addNuomaPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).BeginInit();
             this.updateRezervacijaPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.addRezervacijaPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).BeginInit();
+            this.panel5.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // backButton
@@ -111,6 +123,7 @@
             // 
             // TransportPanel
             // 
+            this.TransportPanel.Controls.Add(this.panel5);
             this.TransportPanel.Controls.Add(this.label6);
             this.TransportPanel.Controls.Add(this.dataGridView6);
             this.TransportPanel.Controls.Add(this.label17);
@@ -126,8 +139,44 @@
             this.TransportPanel.Controls.Add(this.label1);
             this.TransportPanel.Location = new System.Drawing.Point(12, 46);
             this.TransportPanel.Name = "TransportPanel";
-            this.TransportPanel.Size = new System.Drawing.Size(558, 688);
+            this.TransportPanel.Size = new System.Drawing.Size(592, 688);
             this.TransportPanel.TabIndex = 3;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(14, 312);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(107, 24);
+            this.label6.TabIndex = 27;
+            this.label6.Text = "Rezervacija";
+            // 
+            // dataGridView6
+            // 
+            this.dataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView6.Location = new System.Drawing.Point(18, 339);
+            this.dataGridView6.Name = "dataGridView6";
+            this.dataGridView6.Size = new System.Drawing.Size(537, 120);
+            this.dataGridView6.TabIndex = 26;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(309, 164);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(70, 24);
+            this.label17.TabIndex = 25;
+            this.label17.Text = "Klientai";
+            // 
+            // dataGridView5
+            // 
+            this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView5.Location = new System.Drawing.Point(290, 191);
+            this.dataGridView5.Name = "dataGridView5";
+            this.dataGridView5.Size = new System.Drawing.Size(265, 111);
+            this.dataGridView5.TabIndex = 24;
             // 
             // updateNuomaPanel
             // 
@@ -343,6 +392,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.label18);
             this.panel1.Controls.Add(this.dataGridView7);
             this.panel1.Controls.Add(this.updateRezervacijaPanel);
@@ -354,10 +404,28 @@
             this.panel1.Controls.Add(this.getRezervacija);
             this.panel1.Controls.Add(this.dataGridView4);
             this.panel1.Controls.Add(this.label16);
-            this.panel1.Location = new System.Drawing.Point(576, 46);
+            this.panel1.Location = new System.Drawing.Point(622, 46);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(672, 688);
+            this.panel1.Size = new System.Drawing.Size(626, 688);
             this.panel1.TabIndex = 24;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(14, 321);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(70, 24);
+            this.label18.TabIndex = 25;
+            this.label18.Text = "Klientai";
+            // 
+            // dataGridView7
+            // 
+            this.dataGridView7.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView7.Location = new System.Drawing.Point(18, 348);
+            this.dataGridView7.Name = "dataGridView7";
+            this.dataGridView7.Size = new System.Drawing.Size(586, 111);
+            this.dataGridView7.TabIndex = 24;
             // 
             // updateRezervacijaPanel
             // 
@@ -373,6 +441,22 @@
             this.updateRezervacijaPanel.Size = new System.Drawing.Size(200, 174);
             this.updateRezervacijaPanel.TabIndex = 23;
             this.updateRezervacijaPanel.Visible = false;
+            // 
+            // updateRezervacijaRezId
+            // 
+            this.updateRezervacijaRezId.Location = new System.Drawing.Point(20, 113);
+            this.updateRezervacijaRezId.Name = "updateRezervacijaRezId";
+            this.updateRezervacijaRezId.Size = new System.Drawing.Size(169, 20);
+            this.updateRezervacijaRezId.TabIndex = 26;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(17, 96);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(30, 13);
+            this.label19.TabIndex = 25;
+            this.label19.Text = "rezId";
             // 
             // updateRezervacijaKlientoNr
             // 
@@ -431,7 +515,7 @@
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView3.Location = new System.Drawing.Point(18, 206);
             this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(651, 111);
+            this.dataGridView3.Size = new System.Drawing.Size(586, 111);
             this.dataGridView3.TabIndex = 18;
             // 
             // addRezervacijaPanel
@@ -542,7 +626,7 @@
             this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView4.Location = new System.Drawing.Point(18, 42);
             this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.Size = new System.Drawing.Size(651, 134);
+            this.dataGridView4.Size = new System.Drawing.Size(586, 134);
             this.dataGridView4.TabIndex = 1;
             // 
             // label16
@@ -555,75 +639,95 @@
             this.label16.TabIndex = 0;
             this.label16.Text = "Rezervacija";
             // 
-            // dataGridView5
+            // panel5
             // 
-            this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView5.Location = new System.Drawing.Point(290, 191);
-            this.dataGridView5.Name = "dataGridView5";
-            this.dataGridView5.Size = new System.Drawing.Size(265, 111);
-            this.dataGridView5.TabIndex = 24;
+            this.panel5.Controls.Add(this.DeleteNuoma);
+            this.panel5.Controls.Add(this.DeleteNuomaNuomosNr);
+            this.panel5.Controls.Add(this.label21);
+            this.panel5.Location = new System.Drawing.Point(419, 498);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(161, 103);
+            this.panel5.TabIndex = 28;
             // 
-            // label17
+            // DeleteNuoma
             // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(309, 164);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(70, 24);
-            this.label17.TabIndex = 25;
-            this.label17.Text = "Klientai";
+            this.DeleteNuoma.Location = new System.Drawing.Point(19, 50);
+            this.DeleteNuoma.Name = "DeleteNuoma";
+            this.DeleteNuoma.Size = new System.Drawing.Size(114, 33);
+            this.DeleteNuoma.TabIndex = 14;
+            this.DeleteNuoma.Text = "Delete";
+            this.DeleteNuoma.UseVisualStyleBackColor = true;
+            this.DeleteNuoma.Click += new System.EventHandler(this.DeleteNuoma_Click);
             // 
-            // dataGridView6
+            // DeleteNuomaNuomosNr
             // 
-            this.dataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView6.Location = new System.Drawing.Point(18, 339);
-            this.dataGridView6.Name = "dataGridView6";
-            this.dataGridView6.Size = new System.Drawing.Size(537, 120);
-            this.dataGridView6.TabIndex = 26;
+            this.DeleteNuomaNuomosNr.Location = new System.Drawing.Point(19, 26);
+            this.DeleteNuomaNuomosNr.Name = "DeleteNuomaNuomosNr";
+            this.DeleteNuomaNuomosNr.Size = new System.Drawing.Size(114, 20);
+            this.DeleteNuomaNuomosNr.TabIndex = 1;
             // 
-            // label18
+            // label21
             // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(14, 321);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(70, 24);
-            this.label18.TabIndex = 25;
-            this.label18.Text = "Klientai";
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(16, 10);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(61, 13);
+            this.label21.TabIndex = 0;
+            this.label21.Text = "Nuomos_nr";
             // 
-            // dataGridView7
+            // panel2
             // 
-            this.dataGridView7.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView7.Location = new System.Drawing.Point(18, 348);
-            this.dataGridView7.Name = "dataGridView7";
-            this.dataGridView7.Size = new System.Drawing.Size(651, 111);
-            this.dataGridView7.TabIndex = 24;
+            this.panel2.Controls.Add(this.deleteRezervacijaNuomosNr);
+            this.panel2.Controls.Add(this.label22);
+            this.panel2.Controls.Add(this.deleteRezervacija);
+            this.panel2.Controls.Add(this.deleteRezervacijaRezId);
+            this.panel2.Controls.Add(this.label20);
+            this.panel2.Location = new System.Drawing.Point(419, 497);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(161, 131);
+            this.panel2.TabIndex = 29;
             // 
-            // updateRezervacijaRezId
+            // deleteRezervacija
             // 
-            this.updateRezervacijaRezId.Location = new System.Drawing.Point(20, 113);
-            this.updateRezervacijaRezId.Name = "updateRezervacijaRezId";
-            this.updateRezervacijaRezId.Size = new System.Drawing.Size(169, 20);
-            this.updateRezervacijaRezId.TabIndex = 26;
+            this.deleteRezervacija.Location = new System.Drawing.Point(19, 91);
+            this.deleteRezervacija.Name = "deleteRezervacija";
+            this.deleteRezervacija.Size = new System.Drawing.Size(114, 33);
+            this.deleteRezervacija.TabIndex = 14;
+            this.deleteRezervacija.Text = "Delete";
+            this.deleteRezervacija.UseVisualStyleBackColor = true;
+            this.deleteRezervacija.Click += new System.EventHandler(this.deleteRezervacija_Click);
             // 
-            // label19
+            // deleteRezervacijaRezId
             // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(17, 96);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(30, 13);
-            this.label19.TabIndex = 25;
-            this.label19.Text = "rezId";
+            this.deleteRezervacijaRezId.Location = new System.Drawing.Point(19, 26);
+            this.deleteRezervacijaRezId.Name = "deleteRezervacijaRezId";
+            this.deleteRezervacijaRezId.Size = new System.Drawing.Size(114, 20);
+            this.deleteRezervacijaRezId.TabIndex = 1;
             // 
-            // label6
+            // label20
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(14, 312);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(107, 24);
-            this.label6.TabIndex = 27;
-            this.label6.Text = "Rezervacija";
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(16, 10);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(36, 13);
+            this.label20.TabIndex = 0;
+            this.label20.Text = "rez_Id";
+            // 
+            // deleteRezervacijaNuomosNr
+            // 
+            this.deleteRezervacijaNuomosNr.Location = new System.Drawing.Point(19, 65);
+            this.deleteRezervacijaNuomosNr.Name = "deleteRezervacijaNuomosNr";
+            this.deleteRezervacijaNuomosNr.Size = new System.Drawing.Size(114, 20);
+            this.deleteRezervacijaNuomosNr.TabIndex = 16;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(16, 49);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(61, 13);
+            this.label22.TabIndex = 15;
+            this.label22.Text = "Nuomos_nr";
             // 
             // AdminNuomaForm
             // 
@@ -637,6 +741,8 @@
             this.Text = "AdminNuomaForm";
             this.TransportPanel.ResumeLayout(false);
             this.TransportPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
             this.updateNuomaPanel.ResumeLayout(false);
             this.updateNuomaPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
@@ -645,15 +751,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).EndInit();
             this.updateRezervacijaPanel.ResumeLayout(false);
             this.updateRezervacijaPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.addRezervacijaPanel.ResumeLayout(false);
             this.addRezervacijaPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).EndInit();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -715,5 +823,15 @@
         private System.Windows.Forms.TextBox updateRezervacijaRezId;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Button DeleteNuoma;
+        private System.Windows.Forms.TextBox DeleteNuomaNuomosNr;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TextBox deleteRezervacijaNuomosNr;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Button deleteRezervacija;
+        private System.Windows.Forms.TextBox deleteRezervacijaRezId;
+        private System.Windows.Forms.Label label20;
     }
 }
