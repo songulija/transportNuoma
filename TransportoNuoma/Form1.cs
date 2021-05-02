@@ -72,30 +72,6 @@ namespace TransportoNuoma
 
         private void registerButton_Click(object sender, EventArgs e)
         {
-            try
-            {   
-                if(repeatPassword.Text == registerPassword.Text)
-                {
-                    //create student object out of textbox values
-                    Klientas klientas = new Klientas();
-                    klientas.vardas = vardasRegister.Text;
-                    klientas.pavarde = pavardeRegister.Text;
-                    klientas.kodas = int.Parse(kodasRegister.Text);
-                    klientas.email = registerEmail.Text;
-                    klientas.slaptazodis = registerPassword.Text;
-                    klientas.isAdmin = 0;
-                    Klientas registerClient = usersRepository.RegisterClient(klientas);
-                    if (registerClient.vardas != null && registerClient.vardas != "")
-                    {
-                        MessageBox.Show("Registerer");
-                    }
-                }
-
-            }
-            catch (Exception exc)
-            {
-                MessageBox.Show(exc.ToString());
-            }
             
         }
 
@@ -105,6 +81,12 @@ namespace TransportoNuoma
         private void getClients_Click(object sender, EventArgs e)
         {
             usersRepository.displayClients();
+        }
+
+        private void registracionButton_Click(object sender, EventArgs e)
+        {
+            RegistrationForm registration = new RegistrationForm();
+            registration.ShowDialog();
         }
     }
 }
