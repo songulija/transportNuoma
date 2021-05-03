@@ -30,6 +30,10 @@
         {
             this.backButton = new System.Windows.Forms.Button();
             this.TransportPanel = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.deleteDraudTiek = new System.Windows.Forms.Button();
+            this.deleteDraudTiekTiekId = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.updateTiekDraudimasPanel = new System.Windows.Forms.Panel();
             this.updateTiekDraudTiekId = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -46,6 +50,10 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.deleteDraudimas = new System.Windows.Forms.Button();
+            this.deleteDraudimasDraudId = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
@@ -77,26 +85,18 @@
             this.getDraudimas = new System.Windows.Forms.Button();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.label9 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.deleteDraudimas = new System.Windows.Forms.Button();
-            this.deleteDraudimasDraudId = new System.Windows.Forms.TextBox();
-            this.label26 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.deleteDraudTiek = new System.Windows.Forms.Button();
-            this.deleteDraudTiekTiekId = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.TransportPanel.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.updateTiekDraudimasPanel.SuspendLayout();
             this.addTiekDraudimasPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.updateDraudimasPanel.SuspendLayout();
             this.addDraudimasPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            this.panel3.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // backButton
@@ -124,6 +124,42 @@
             this.TransportPanel.Name = "TransportPanel";
             this.TransportPanel.Size = new System.Drawing.Size(384, 584);
             this.TransportPanel.TabIndex = 3;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.deleteDraudTiek);
+            this.panel2.Controls.Add(this.deleteDraudTiekTiekId);
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Location = new System.Drawing.Point(18, 362);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(161, 103);
+            this.panel2.TabIndex = 23;
+            // 
+            // deleteDraudTiek
+            // 
+            this.deleteDraudTiek.Location = new System.Drawing.Point(19, 50);
+            this.deleteDraudTiek.Name = "deleteDraudTiek";
+            this.deleteDraudTiek.Size = new System.Drawing.Size(114, 33);
+            this.deleteDraudTiek.TabIndex = 14;
+            this.deleteDraudTiek.Text = "Delete";
+            this.deleteDraudTiek.UseVisualStyleBackColor = true;
+            this.deleteDraudTiek.Click += new System.EventHandler(this.deleteDraudTiek_Click);
+            // 
+            // deleteDraudTiekTiekId
+            // 
+            this.deleteDraudTiekTiekId.Location = new System.Drawing.Point(19, 26);
+            this.deleteDraudTiekTiekId.Name = "deleteDraudTiekTiekId";
+            this.deleteDraudTiekTiekId.Size = new System.Drawing.Size(114, 20);
+            this.deleteDraudTiekTiekId.TabIndex = 1;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(16, 10);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(47, 13);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "tiekejoId";
             // 
             // updateTiekDraudimasPanel
             // 
@@ -283,6 +319,42 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(630, 619);
             this.panel1.TabIndex = 4;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.deleteDraudimas);
+            this.panel3.Controls.Add(this.deleteDraudimasDraudId);
+            this.panel3.Controls.Add(this.label26);
+            this.panel3.Location = new System.Drawing.Point(424, 357);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(161, 103);
+            this.panel3.TabIndex = 22;
+            // 
+            // deleteDraudimas
+            // 
+            this.deleteDraudimas.Location = new System.Drawing.Point(19, 50);
+            this.deleteDraudimas.Name = "deleteDraudimas";
+            this.deleteDraudimas.Size = new System.Drawing.Size(114, 33);
+            this.deleteDraudimas.TabIndex = 14;
+            this.deleteDraudimas.Text = "Delete";
+            this.deleteDraudimas.UseVisualStyleBackColor = true;
+            this.deleteDraudimas.Click += new System.EventHandler(this.deleteDraudimas_Click);
+            // 
+            // deleteDraudimasDraudId
+            // 
+            this.deleteDraudimasDraudId.Location = new System.Drawing.Point(19, 26);
+            this.deleteDraudimasDraudId.Name = "deleteDraudimasDraudId";
+            this.deleteDraudimasDraudId.Size = new System.Drawing.Size(114, 20);
+            this.deleteDraudimasDraudId.TabIndex = 1;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(16, 10);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(43, 13);
+            this.label26.TabIndex = 0;
+            this.label26.Text = "draudId";
             // 
             // label6
             // 
@@ -568,83 +640,11 @@
             this.label9.TabIndex = 0;
             this.label9.Text = "Draudimas";
             // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.deleteDraudimas);
-            this.panel3.Controls.Add(this.deleteDraudimasDraudId);
-            this.panel3.Controls.Add(this.label26);
-            this.panel3.Location = new System.Drawing.Point(424, 357);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(161, 103);
-            this.panel3.TabIndex = 22;
-            // 
-            // deleteDraudimas
-            // 
-            this.deleteDraudimas.Location = new System.Drawing.Point(19, 50);
-            this.deleteDraudimas.Name = "deleteDraudimas";
-            this.deleteDraudimas.Size = new System.Drawing.Size(114, 33);
-            this.deleteDraudimas.TabIndex = 14;
-            this.deleteDraudimas.Text = "Delete";
-            this.deleteDraudimas.UseVisualStyleBackColor = true;
-            this.deleteDraudimas.Click += new System.EventHandler(this.deleteDraudimas_Click);
-            // 
-            // deleteDraudimasDraudId
-            // 
-            this.deleteDraudimasDraudId.Location = new System.Drawing.Point(19, 26);
-            this.deleteDraudimasDraudId.Name = "deleteDraudimasDraudId";
-            this.deleteDraudimasDraudId.Size = new System.Drawing.Size(114, 20);
-            this.deleteDraudimasDraudId.TabIndex = 1;
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(16, 10);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(43, 13);
-            this.label26.TabIndex = 0;
-            this.label26.Text = "draudId";
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.deleteDraudTiek);
-            this.panel2.Controls.Add(this.deleteDraudTiekTiekId);
-            this.panel2.Controls.Add(this.label7);
-            this.panel2.Location = new System.Drawing.Point(18, 362);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(161, 103);
-            this.panel2.TabIndex = 23;
-            // 
-            // deleteDraudTiek
-            // 
-            this.deleteDraudTiek.Location = new System.Drawing.Point(19, 50);
-            this.deleteDraudTiek.Name = "deleteDraudTiek";
-            this.deleteDraudTiek.Size = new System.Drawing.Size(114, 33);
-            this.deleteDraudTiek.TabIndex = 14;
-            this.deleteDraudTiek.Text = "Delete";
-            this.deleteDraudTiek.UseVisualStyleBackColor = true;
-            this.deleteDraudTiek.Click += new System.EventHandler(this.deleteDraudTiek_Click);
-            // 
-            // deleteDraudTiekTiekId
-            // 
-            this.deleteDraudTiekTiekId.Location = new System.Drawing.Point(19, 26);
-            this.deleteDraudTiekTiekId.Name = "deleteDraudTiekTiekId";
-            this.deleteDraudTiekTiekId.Size = new System.Drawing.Size(114, 20);
-            this.deleteDraudTiekTiekId.TabIndex = 1;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(16, 10);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(47, 13);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "tiekejoId";
-            // 
             // AdminDraudimasForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1104, 639);
+            this.ClientSize = new System.Drawing.Size(1071, 639);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.TransportPanel);
             this.Controls.Add(this.backButton);
@@ -652,6 +652,8 @@
             this.Text = "AdminDraudimasForm";
             this.TransportPanel.ResumeLayout(false);
             this.TransportPanel.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.updateTiekDraudimasPanel.ResumeLayout(false);
             this.updateTiekDraudimasPanel.PerformLayout();
             this.addTiekDraudimasPanel.ResumeLayout(false);
@@ -659,6 +661,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.updateDraudimasPanel.ResumeLayout(false);
@@ -666,10 +670,6 @@
             this.addDraudimasPanel.ResumeLayout(false);
             this.addDraudimasPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
