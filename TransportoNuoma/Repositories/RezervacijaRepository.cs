@@ -97,7 +97,56 @@ namespace TransportoNuoma.Repositories
         }
 
 
-        
+
+
+        //REGISTER STUDENT
+        public Rezervacija InsertRezervacijaAdmin(Rezervacija rezervacija)//provide transportas object when calling this function
+        {
+            try
+            {
+
+
+                //setting new SqlConnection, providing connectionString
+                cnn = new MySqlConnection(connectionString);
+                cnn.Open();//open database
+
+                //check if rezervacija exist
+                MySqlCommand cmd = new MySqlCommand("Select * from rezervacija where Trans_Id=@Trans_Id", cnn);//to check if username exist we have to select all items with username
+                cmd.Parameters.AddWithValue("@Trans_Id", rezervacija.Transporto_Id);
+
+                MySqlDataReader dataReader = cmd.ExecuteReader();//sends SQLCommand.CommandText to the SQLCommand.Connection and builds SqlDataReader
+                if ((dataReader.Read() == true) && TimeSpan.Parse(dataReader["rezPab"].ToString()) > DateTime.Now.TimeOfDay)
+                {
+                    Console.WriteLine("Transport is already under reservation");
+                    return null;
+                }
+                else
+                {
+                    Console.WriteLine("Transport is free so you can register");
+                }
+                dataReader.Close();//close data reader when it finishes work
+
+                MySqlCommand cmd1 = new MySqlCommand("Insert into rezervacija (rezData,rezPrad,rezPab,Kliento_nr,Trans_Id,lokacijosId) VALUES(@rezData,@rezPrad,@rezPab,@Kliento_nr,@Trans_Id,@lokacijosId)", cnn);
+                cmd1.Parameters.AddWithValue("@rezData", rezervacija.rezervacijos_Data);
+                cmd1.Parameters.AddWithValue("@rezPrad", rezervacija.rezervacijosPrad);
+                cmd1.Parameters.AddWithValue("@rezPab", rezervacija.rezervacijosPab);
+                cmd1.Parameters.AddWithValue("@Kliento_nr", rezervacija.kliento_Id);
+                cmd1.Parameters.AddWithValue("@Trans_Id", rezervacija.Transporto_Id);
+                cmd1.Parameters.AddWithValue("@lokacijosId", rezervacija.lokacijos_Id);
+                cmd1.ExecuteNonQuery();
+                cnn.Close();
+
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine(exc);
+            }
+            return rezervacija;//return 
+        }
+
+
+
+
         public void UpdateRezervacija(Rezervacija rezervacija)
         {
             try

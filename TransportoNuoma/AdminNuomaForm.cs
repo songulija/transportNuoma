@@ -167,7 +167,7 @@ namespace TransportoNuoma
                 rezervacija.lokacijos_Id = int.Parse(addRezervacijaLokId.Text);
                 rezervacija.Transporto_Id = int.Parse(addRezervacijaTransId.Text);
 
-                Rezervacija insertedRez = rezRep.InsertRezervacija(rezervacija);
+                Rezervacija insertedRez = rezRep.InsertRezervacijaAdmin(rezervacija);
 
                 addRezervacijaKlientoNr.Clear();
                 addRezervacijaLokId.Clear();
