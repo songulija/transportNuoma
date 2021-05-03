@@ -24,7 +24,7 @@ namespace TransportoNuoma.Repositories
                 cnn = new MySqlConnection(connectionString);//assign connection. The variable cnn, which is of type SqlConnection is used to establish the connection to the database.
                 cnn.Open();//open connection. we use the Open method of the cnn variable to open a connection to the database.
 
-                MySqlCommand cmd = new MySqlCommand("SELECT galimi_test.Test_pav, galimi_test.Testo_kodas, galimi_test.TestId, trans_test.Test_data, trans_test.Trans_Id, transportas.Trans_nr,transportas.Tipas FROM galimi_test INNER JOIN trans_test ON galimi_test.TestId=trans_test.TestId INNER JOIN transportas ON trans_test.Trans_Id=transportas.Trans_Id", cnn);//select all from newTestTable
+                MySqlCommand cmd = new MySqlCommand("SELECT galimi_test.Testo_kodas,galimi_test.Test_pav, galimi_test.TestId, trans_test.Test_data, trans_test.Trans_Id, transportas.Trans_nr,transportas.Tipas FROM galimi_test INNER JOIN trans_test ON galimi_test.TestId=trans_test.TestId INNER JOIN transportas ON trans_test.Trans_Id=transportas.Trans_Id", cnn);//select all from newTestTable
 
                 cmd.ExecuteNonQuery();
 
@@ -87,6 +87,29 @@ namespace TransportoNuoma.Repositories
             {
                 Console.WriteLine(ex);
             }
+        }
+
+
+        public void DeleteGalimiTestai(GalimiTestai galimiTestai)
+        {
+            try
+            {
+                cnn = new MySqlConnection(connectionString);
+
+                string newSql = ("Delete from galimi_test where galimi_test.Testo_kodas=@id ");
+
+                cnn.Open();//open connection. we use the Open method of the cnn variable to open a connection to the database.
+                MySqlCommand cmd = new MySqlCommand(newSql, cnn);//select all from newTestTable
+                cmd.Parameters.AddWithValue("@id", galimiTestai.testoKodas);
+                cmd.ExecuteNonQuery();//execute function
+
+                cnn.Close();
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine(exc);
+            }
+
         }
     }
 }

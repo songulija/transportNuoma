@@ -46,13 +46,27 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.updateDraudimasPanel = new System.Windows.Forms.Panel();
+            this.updateDraudTransId = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.updateDraudTiekId = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.updateDraudPabData = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.updateDraudPradData = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.updateDraudDraudId = new System.Windows.Forms.TextBox();
             this.sdsdsds = new System.Windows.Forms.Label();
             this.updateDraudimas = new System.Windows.Forms.Button();
             this.addDraudimasPanel = new System.Windows.Forms.Panel();
+            this.addDraudTransId = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.addDraudTiekId = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.addDraudimas = new System.Windows.Forms.Button();
             this.addDraudPabData = new System.Windows.Forms.TextBox();
             this.sdsdsd = new System.Windows.Forms.Label();
@@ -63,30 +77,26 @@
             this.getDraudimas = new System.Windows.Forms.Button();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.label9 = new System.Windows.Forms.Label();
-            this.addDraudTransId = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.addDraudTiekId = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.updateDraudTransId = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.updateDraudTiekId = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.updateDraudPabData = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.updateDraudPradData = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.deleteDraudimas = new System.Windows.Forms.Button();
+            this.deleteDraudimasDraudId = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.deleteDraudTiek = new System.Windows.Forms.Button();
+            this.deleteDraudTiekTiekId = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.TransportPanel.SuspendLayout();
             this.updateTiekDraudimasPanel.SuspendLayout();
             this.addTiekDraudimasPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.updateDraudimasPanel.SuspendLayout();
             this.addDraudimasPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // backButton
@@ -102,6 +112,7 @@
             // 
             // TransportPanel
             // 
+            this.TransportPanel.Controls.Add(this.panel2);
             this.TransportPanel.Controls.Add(this.updateTiekDraudimasPanel);
             this.TransportPanel.Controls.Add(this.addTiekDraudimasPanel);
             this.TransportPanel.Controls.Add(this.updateDraudTiekShow);
@@ -256,6 +267,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.dataGridView4);
             this.panel1.Controls.Add(this.label5);
@@ -271,6 +283,24 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(630, 619);
             this.panel1.TabIndex = 4;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(231, 177);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(109, 24);
+            this.label6.TabIndex = 21;
+            this.label6.Text = "Transportas";
+            // 
+            // dataGridView4
+            // 
+            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView4.Location = new System.Drawing.Point(235, 201);
+            this.dataGridView4.Name = "dataGridView4";
+            this.dataGridView4.Size = new System.Drawing.Size(378, 111);
+            this.dataGridView4.TabIndex = 20;
             // 
             // label5
             // 
@@ -305,9 +335,73 @@
             this.updateDraudimasPanel.Controls.Add(this.updateDraudimas);
             this.updateDraudimasPanel.Location = new System.Drawing.Point(247, 357);
             this.updateDraudimasPanel.Name = "updateDraudimasPanel";
-            this.updateDraudimasPanel.Size = new System.Drawing.Size(233, 258);
+            this.updateDraudimasPanel.Size = new System.Drawing.Size(171, 258);
             this.updateDraudimasPanel.TabIndex = 17;
             this.updateDraudimasPanel.Visible = false;
+            // 
+            // updateDraudTransId
+            // 
+            this.updateDraudTransId.Location = new System.Drawing.Point(26, 147);
+            this.updateDraudTransId.Name = "updateDraudTransId";
+            this.updateDraudTransId.Size = new System.Drawing.Size(126, 20);
+            this.updateDraudTransId.TabIndex = 28;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(23, 130);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(49, 13);
+            this.label12.TabIndex = 27;
+            this.label12.Text = "Trans_Id";
+            // 
+            // updateDraudTiekId
+            // 
+            this.updateDraudTiekId.Location = new System.Drawing.Point(26, 107);
+            this.updateDraudTiekId.Name = "updateDraudTiekId";
+            this.updateDraudTiekId.Size = new System.Drawing.Size(126, 20);
+            this.updateDraudTiekId.TabIndex = 26;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(23, 90);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(33, 13);
+            this.label13.TabIndex = 25;
+            this.label13.Text = "tiekId";
+            // 
+            // updateDraudPabData
+            // 
+            this.updateDraudPabData.Location = new System.Drawing.Point(26, 66);
+            this.updateDraudPabData.Name = "updateDraudPabData";
+            this.updateDraudPabData.Size = new System.Drawing.Size(126, 20);
+            this.updateDraudPabData.TabIndex = 24;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(23, 49);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(76, 13);
+            this.label14.TabIndex = 23;
+            this.label14.Text = "draudPabData";
+            // 
+            // updateDraudPradData
+            // 
+            this.updateDraudPradData.Location = new System.Drawing.Point(26, 26);
+            this.updateDraudPradData.Name = "updateDraudPradData";
+            this.updateDraudPradData.Size = new System.Drawing.Size(126, 20);
+            this.updateDraudPradData.TabIndex = 22;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(23, 9);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(79, 13);
+            this.label15.TabIndex = 21;
+            this.label15.Text = "draudPradData";
             // 
             // updateDraudDraudId
             // 
@@ -351,6 +445,38 @@
             this.addDraudimasPanel.Size = new System.Drawing.Size(223, 223);
             this.addDraudimasPanel.TabIndex = 5;
             this.addDraudimasPanel.Visible = false;
+            // 
+            // addDraudTransId
+            // 
+            this.addDraudTransId.Location = new System.Drawing.Point(20, 147);
+            this.addDraudTransId.Name = "addDraudTransId";
+            this.addDraudTransId.Size = new System.Drawing.Size(126, 20);
+            this.addDraudTransId.TabIndex = 18;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(17, 130);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(49, 13);
+            this.label10.TabIndex = 17;
+            this.label10.Text = "Trans_Id";
+            // 
+            // addDraudTiekId
+            // 
+            this.addDraudTiekId.Location = new System.Drawing.Point(20, 107);
+            this.addDraudTiekId.Name = "addDraudTiekId";
+            this.addDraudTiekId.Size = new System.Drawing.Size(126, 20);
+            this.addDraudTiekId.TabIndex = 16;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(17, 90);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(33, 13);
+            this.label11.TabIndex = 15;
+            this.label11.Text = "tiekId";
             // 
             // addDraudimas
             // 
@@ -442,119 +568,77 @@
             this.label9.TabIndex = 0;
             this.label9.Text = "Draudimas";
             // 
-            // addDraudTransId
+            // panel3
             // 
-            this.addDraudTransId.Location = new System.Drawing.Point(20, 147);
-            this.addDraudTransId.Name = "addDraudTransId";
-            this.addDraudTransId.Size = new System.Drawing.Size(126, 20);
-            this.addDraudTransId.TabIndex = 18;
+            this.panel3.Controls.Add(this.deleteDraudimas);
+            this.panel3.Controls.Add(this.deleteDraudimasDraudId);
+            this.panel3.Controls.Add(this.label26);
+            this.panel3.Location = new System.Drawing.Point(424, 357);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(161, 103);
+            this.panel3.TabIndex = 22;
             // 
-            // label10
+            // deleteDraudimas
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(17, 130);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(49, 13);
-            this.label10.TabIndex = 17;
-            this.label10.Text = "Trans_Id";
+            this.deleteDraudimas.Location = new System.Drawing.Point(19, 50);
+            this.deleteDraudimas.Name = "deleteDraudimas";
+            this.deleteDraudimas.Size = new System.Drawing.Size(114, 33);
+            this.deleteDraudimas.TabIndex = 14;
+            this.deleteDraudimas.Text = "Delete";
+            this.deleteDraudimas.UseVisualStyleBackColor = true;
+            this.deleteDraudimas.Click += new System.EventHandler(this.deleteDraudimas_Click);
             // 
-            // addDraudTiekId
+            // deleteDraudimasDraudId
             // 
-            this.addDraudTiekId.Location = new System.Drawing.Point(20, 107);
-            this.addDraudTiekId.Name = "addDraudTiekId";
-            this.addDraudTiekId.Size = new System.Drawing.Size(126, 20);
-            this.addDraudTiekId.TabIndex = 16;
+            this.deleteDraudimasDraudId.Location = new System.Drawing.Point(19, 26);
+            this.deleteDraudimasDraudId.Name = "deleteDraudimasDraudId";
+            this.deleteDraudimasDraudId.Size = new System.Drawing.Size(114, 20);
+            this.deleteDraudimasDraudId.TabIndex = 1;
             // 
-            // label11
+            // label26
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(17, 90);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(33, 13);
-            this.label11.TabIndex = 15;
-            this.label11.Text = "tiekId";
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(16, 10);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(43, 13);
+            this.label26.TabIndex = 0;
+            this.label26.Text = "draudId";
             // 
-            // updateDraudTransId
+            // panel2
             // 
-            this.updateDraudTransId.Location = new System.Drawing.Point(26, 147);
-            this.updateDraudTransId.Name = "updateDraudTransId";
-            this.updateDraudTransId.Size = new System.Drawing.Size(126, 20);
-            this.updateDraudTransId.TabIndex = 28;
+            this.panel2.Controls.Add(this.deleteDraudTiek);
+            this.panel2.Controls.Add(this.deleteDraudTiekTiekId);
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Location = new System.Drawing.Point(18, 362);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(161, 103);
+            this.panel2.TabIndex = 23;
             // 
-            // label12
+            // deleteDraudTiek
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(23, 130);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(49, 13);
-            this.label12.TabIndex = 27;
-            this.label12.Text = "Trans_Id";
+            this.deleteDraudTiek.Location = new System.Drawing.Point(19, 50);
+            this.deleteDraudTiek.Name = "deleteDraudTiek";
+            this.deleteDraudTiek.Size = new System.Drawing.Size(114, 33);
+            this.deleteDraudTiek.TabIndex = 14;
+            this.deleteDraudTiek.Text = "Delete";
+            this.deleteDraudTiek.UseVisualStyleBackColor = true;
+            this.deleteDraudTiek.Click += new System.EventHandler(this.deleteDraudTiek_Click);
             // 
-            // updateDraudTiekId
+            // deleteDraudTiekTiekId
             // 
-            this.updateDraudTiekId.Location = new System.Drawing.Point(26, 107);
-            this.updateDraudTiekId.Name = "updateDraudTiekId";
-            this.updateDraudTiekId.Size = new System.Drawing.Size(126, 20);
-            this.updateDraudTiekId.TabIndex = 26;
+            this.deleteDraudTiekTiekId.Location = new System.Drawing.Point(19, 26);
+            this.deleteDraudTiekTiekId.Name = "deleteDraudTiekTiekId";
+            this.deleteDraudTiekTiekId.Size = new System.Drawing.Size(114, 20);
+            this.deleteDraudTiekTiekId.TabIndex = 1;
             // 
-            // label13
+            // label7
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(23, 90);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(33, 13);
-            this.label13.TabIndex = 25;
-            this.label13.Text = "tiekId";
-            // 
-            // updateDraudPabData
-            // 
-            this.updateDraudPabData.Location = new System.Drawing.Point(26, 66);
-            this.updateDraudPabData.Name = "updateDraudPabData";
-            this.updateDraudPabData.Size = new System.Drawing.Size(126, 20);
-            this.updateDraudPabData.TabIndex = 24;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(23, 49);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(76, 13);
-            this.label14.TabIndex = 23;
-            this.label14.Text = "draudPabData";
-            // 
-            // updateDraudPradData
-            // 
-            this.updateDraudPradData.Location = new System.Drawing.Point(26, 26);
-            this.updateDraudPradData.Name = "updateDraudPradData";
-            this.updateDraudPradData.Size = new System.Drawing.Size(126, 20);
-            this.updateDraudPradData.TabIndex = 22;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(23, 9);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(79, 13);
-            this.label15.TabIndex = 21;
-            this.label15.Text = "draudPradData";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(231, 177);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(109, 24);
-            this.label6.TabIndex = 21;
-            this.label6.Text = "Transportas";
-            // 
-            // dataGridView4
-            // 
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Location = new System.Drawing.Point(235, 201);
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.Size = new System.Drawing.Size(378, 111);
-            this.dataGridView4.TabIndex = 20;
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(16, 10);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(47, 13);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "tiekejoId";
             // 
             // AdminDraudimasForm
             // 
@@ -575,13 +659,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.updateDraudimasPanel.ResumeLayout(false);
             this.updateDraudimasPanel.PerformLayout();
             this.addDraudimasPanel.ResumeLayout(false);
             this.addDraudimasPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -637,5 +725,13 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridView dataGridView4;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button deleteDraudTiek;
+        private System.Windows.Forms.TextBox deleteDraudTiekTiekId;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button deleteDraudimas;
+        private System.Windows.Forms.TextBox deleteDraudimasDraudId;
+        private System.Windows.Forms.Label label26;
     }
 }

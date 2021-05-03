@@ -16,18 +16,19 @@ namespace TransportoNuoma.Repositories
 
 
 
-        public void displayApmokejimas()
+        public DataTable displayApmokejimas()
         {
+            DataTable dta = new DataTable();
             try
             {
                 cnn = new MySqlConnection(connectionString);//assign connection. The variable cnn, which is of type SqlConnection is used to establish the connection to the database.
                 cnn.Open();//open connection. we use the Open method of the cnn variable to open a connection to the database.
 
-                MySqlCommand cmd = new MySqlCommand("Select * from apmokejimas", cnn);//select all from newTestTable
+                MySqlCommand cmd = new MySqlCommand("SELECT apmokejimas.apmok_nr,klientas.Kliento_nr,apmokejimas.Saskaitos_nr, apmokejimas.Apmokejimo_suma, apmokejimas.Apmok_data, nuoma.Nuomos_nr, nuoma.NuomosPrData, nuoma.NuomosPabData, klientas.Email FROM apmokejimas INNER JOIN nuoma ON apmokejimas.Nuomos_nr=nuoma.Nuomos_nr INNER JOIN klientas ON nuoma.Kliento_nr=klientas.Kliento_nr", cnn);//select all from newTestTable
 
                 cmd.ExecuteNonQuery();
 
-                DataTable dta = new DataTable();
+                
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                 adapter.Fill(dta);
             }
@@ -37,8 +38,7 @@ namespace TransportoNuoma.Repositories
             }
 
             cnn.Close();
-            Console.WriteLine("Connection Closed. Press any key to exit...");
-            Console.Read();
+            return dta;
         }
 
         //REGISTER STUDENT
@@ -71,11 +71,11 @@ namespace TransportoNuoma.Repositories
 
                 if(nuomaYra == true)
                 {
-                    MySqlCommand cmd2 = new MySqlCommand("Insert into apmokejimas (Saskaitos_nr,Apmokejimo_suma,Graz_nr,Nuomos_nr) VALUES(@Saskaitos_nr,@Apmokejimo_suma,@Graz_nr,@Nuomos_nr)", cnn);
+                    MySqlCommand cmd2 = new MySqlCommand("Insert into apmokejimas (Saskaitos_nr,Apmokejimo_suma,Nuomos_nr,Apmok_data) VALUES(@Saskaitos_nr,@Apmokejimo_suma,@Nuomos_nr,@Apmok_data)", cnn);
                     cmd2.Parameters.AddWithValue("@Saskaitos_nr", apmokejimas.saskaitos_Nr);
                     cmd2.Parameters.AddWithValue("@Apmokejimo_suma", apmokejimas.apmokejimo_Suma);
-                    cmd2.Parameters.AddWithValue("@Graz_nr", apmokejimas.graz_Nr);
                     cmd2.Parameters.AddWithValue("@Nuomos_nr", apmokejimas.nuomos_Nr);
+                    cmd2.Parameters.AddWithValue("@Apmok_data", apmokejimas.apmok_data);
                     cmd2.ExecuteNonQuery();
 
                     cnn.Close();
@@ -97,12 +97,10 @@ namespace TransportoNuoma.Repositories
             {
                 //setting new SqlConnection, providing connectionString
                 cnn = new MySqlConnection(connectionString);
-                cnn.Open();//open database
 
                 //check if user exist
-                MySqlCommand cmd = new MySqlCommand("Update apmokejimas SET Nuomos_nr=@Nuomos_nr,Graz_nr=@Graz_nr WHERE apmok_nr=@apmok_nr", cnn);//to check if username exist we have to select all items with username
-                cmd.Parameters.AddWithValue("@Nuomos_nr", apmokejimas.nuomos_Nr);
-                cmd.Parameters.AddWithValue("@Graz_nr", apmokejimas.graz_Nr);
+                MySqlCommand cmd = new MySqlCommand("Update apmokejimas SET Apmok_data=@Apmok_data WHERE apmok_nr=@apmok_nr", cnn);//to check if username exist we have to select all items with username
+                cmd.Parameters.AddWithValue("@Apmok_data", apmokejimas.apmok_data);
                 cmd.Parameters.AddWithValue("@apmok_nr", apmokejimas.apmok_Id);
                 cnn.Open();
                 cmd.ExecuteNonQuery();
@@ -112,6 +110,29 @@ namespace TransportoNuoma.Repositories
             {
                 Console.WriteLine(ex);
             }
+        }
+
+
+        public void DeleteApmokejimas(Apmokejimas apmokejima)
+        {
+            try
+            {
+                cnn = new MySqlConnection(connectionString);
+
+                string newSql = ("Delete from apmokejimas where apmokejimas.apmok_nr=@id;");
+
+                cnn.Open();//open connection. we use the Open method of the cnn variable to open a connection to the database.
+                MySqlCommand cmd = new MySqlCommand(newSql, cnn);//select all from newTestTable
+                cmd.Parameters.AddWithValue("@id", apmokejima.apmok_Id);
+                cmd.ExecuteNonQuery();//execute function
+
+                cnn.Close();
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine(exc);
+            }
+
         }
     }
 }

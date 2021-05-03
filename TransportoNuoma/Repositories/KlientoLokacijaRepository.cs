@@ -146,5 +146,28 @@ namespace TransportoNuoma.Repositories
             }
         }
 
+
+        public void DeleteKlientoLok(KlientoLokacija klientoLokacija)
+        {
+            try
+            {
+                cnn = new MySqlConnection(connectionString);
+
+                string newSql = ("Delete from kliento_lokacija where kliento_lokacija.KlientoLokId=@id;");
+
+                cnn.Open();//open connection. we use the Open method of the cnn variable to open a connection to the database.
+                MySqlCommand cmd = new MySqlCommand(newSql, cnn);//select all from newTestTable
+                cmd.Parameters.AddWithValue("@id", klientoLokacija.kliento_Lok_Id);
+                cmd.ExecuteNonQuery();//execute function
+
+                cnn.Close();
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine(exc);
+            }
+
+        }
+
     }
 }

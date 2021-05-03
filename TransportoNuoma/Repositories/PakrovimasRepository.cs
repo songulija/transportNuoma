@@ -46,34 +46,18 @@ namespace TransportoNuoma.Repositories
         {
             try
             {
-                bool transYra = false;
-
+                Console.WriteLine("TransId: " + pakrovimas.transporto_Id + "   PakrovDydis: " + pakrovimas.pakrovimo_Dydis);
+                
                 //setting new SqlConnection, providing connectionString
                 cnn = new MySqlConnection(connectionString);
-                cnn.Open();//open database
+                
 
-                //check if rezervacija exist
-                MySqlCommand cmd = new MySqlCommand("Select * from transportas where Trans_Id=@Trans_Id", cnn);//to check if username exist we have to select all items with username
+
+                MySqlCommand cmd = new MySqlCommand("Insert into pakrovimas(PakrovimoDydis,Trans_Id) VALUES(@PakrovimoDydis,@Trans_Id)", cnn);
+                cmd.Parameters.AddWithValue("@PakrovimoDydis", pakrovimas.pakrovimo_Dydis);
                 cmd.Parameters.AddWithValue("@Trans_Id", pakrovimas.transporto_Id);
-
-                MySqlDataReader dataReader = cmd.ExecuteReader();//sends SQLCommand.CommandText to the SQLCommand.Connection and builds SqlDataReader
-                if ((dataReader.Read() == true))
-                {
-                    transYra = true;
-                }
-                else
-                {
-                    return null;
-                }
-                dataReader.Close();//close data reader when it finishes work
-                if (transYra == true)
-                {
-                    MySqlCommand cmd1 = new MySqlCommand("Insert into pakrovimas (PakrovimoDydis,Trans_Id) VALUES(@PakrovimoDydis,@Trans_Id)", cnn);
-                    cmd1.Parameters.AddWithValue("@PakrovimoDydis", pakrovimas.pakrovimo_Dydis);
-                    cmd1.Parameters.AddWithValue("@Trans_Id", pakrovimas.transporto_Id);
-                    cmd1.ExecuteNonQuery();
-                }
-
+                cnn.Open();//open database
+                cmd.ExecuteNonQuery();
                 cnn.Close();
             }
             catch (Exception exc)
@@ -104,6 +88,29 @@ namespace TransportoNuoma.Repositories
             {
                 Console.WriteLine(ex);
             }
+        }
+
+
+        public void DeletePakrovimas(Pakrovimas pakrovimas)
+        {
+            try
+            {
+                cnn = new MySqlConnection(connectionString);
+
+                string newSql = ("Delete from pakrovimas where pakrovimas.pakrovimoNr=@id ");
+
+                cnn.Open();//open connection. we use the Open method of the cnn variable to open a connection to the database.
+                MySqlCommand cmd = new MySqlCommand(newSql, cnn);//select all from newTestTable
+                cmd.Parameters.AddWithValue("@id", pakrovimas.pakrovimo_Nr);
+                cmd.ExecuteNonQuery();//execute function
+
+                cnn.Close();
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine(exc);
+            }
+
         }
 
     }

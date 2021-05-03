@@ -80,6 +80,16 @@
             this.adminDraudimasShow = new System.Windows.Forms.Button();
             this.adminLokacijaShow = new System.Windows.Forms.Button();
             this.adminNuomaShow = new System.Windows.Forms.Button();
+            this.adminKlientasShow = new System.Windows.Forms.Button();
+            this.adminApmokejimasShow = new System.Windows.Forms.Button();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.deleteTrasnportas = new System.Windows.Forms.Button();
+            this.deleteTrasnportasTransId = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.DeleteMarke = new System.Windows.Forms.Button();
+            this.DeleteMarkeMarkesId = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.TransportPanel.SuspendLayout();
             this.updatePanel.SuspendLayout();
             this.addPanel.SuspendLayout();
@@ -88,10 +98,13 @@
             this.updateMarkePanel.SuspendLayout();
             this.addMarkePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.panel5.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // TransportPanel
             // 
+            this.TransportPanel.Controls.Add(this.panel5);
             this.TransportPanel.Controls.Add(this.updatePanel);
             this.TransportPanel.Controls.Add(this.addPanel);
             this.TransportPanel.Controls.Add(this.updateTransShow);
@@ -117,7 +130,7 @@
             this.updatePanel.Controls.Add(this.label16);
             this.updatePanel.Location = new System.Drawing.Point(204, 248);
             this.updatePanel.Name = "updatePanel";
-            this.updatePanel.Size = new System.Drawing.Size(178, 363);
+            this.updatePanel.Size = new System.Drawing.Size(178, 223);
             this.updatePanel.TabIndex = 17;
             this.updatePanel.Visible = false;
             // 
@@ -390,6 +403,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.updateMarkePanel);
             this.panel1.Controls.Add(this.addMarkePanel);
             this.panel1.Controls.Add(this.updateShowMarke);
@@ -399,7 +413,7 @@
             this.panel1.Controls.Add(this.label24);
             this.panel1.Location = new System.Drawing.Point(400, 28);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(267, 631);
+            this.panel1.Size = new System.Drawing.Size(406, 631);
             this.panel1.TabIndex = 18;
             // 
             // updateMarkePanel
@@ -582,11 +596,105 @@
             this.adminNuomaShow.UseVisualStyleBackColor = true;
             this.adminNuomaShow.Click += new System.EventHandler(this.adminNuomaShow_Click);
             // 
+            // adminKlientasShow
+            // 
+            this.adminKlientasShow.Location = new System.Drawing.Point(1036, 351);
+            this.adminKlientasShow.Name = "adminKlientasShow";
+            this.adminKlientasShow.Size = new System.Drawing.Size(170, 43);
+            this.adminKlientasShow.TabIndex = 24;
+            this.adminKlientasShow.Text = "Administrate Klientas";
+            this.adminKlientasShow.UseVisualStyleBackColor = true;
+            this.adminKlientasShow.Click += new System.EventHandler(this.adminKlientasShow_Click);
+            // 
+            // adminApmokejimasShow
+            // 
+            this.adminApmokejimasShow.Location = new System.Drawing.Point(1036, 406);
+            this.adminApmokejimasShow.Name = "adminApmokejimasShow";
+            this.adminApmokejimasShow.Size = new System.Drawing.Size(170, 43);
+            this.adminApmokejimasShow.TabIndex = 25;
+            this.adminApmokejimasShow.Text = "Administrate Grazinimas ir Apmokejimas";
+            this.adminApmokejimasShow.UseVisualStyleBackColor = true;
+            this.adminApmokejimasShow.Click += new System.EventHandler(this.adminApmokejimasShow_Click);
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.deleteTrasnportas);
+            this.panel5.Controls.Add(this.deleteTrasnportasTransId);
+            this.panel5.Controls.Add(this.label25);
+            this.panel5.Location = new System.Drawing.Point(204, 479);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(178, 97);
+            this.panel5.TabIndex = 18;
+            // 
+            // deleteTrasnportas
+            // 
+            this.deleteTrasnportas.Location = new System.Drawing.Point(20, 52);
+            this.deleteTrasnportas.Name = "deleteTrasnportas";
+            this.deleteTrasnportas.Size = new System.Drawing.Size(126, 22);
+            this.deleteTrasnportas.TabIndex = 14;
+            this.deleteTrasnportas.Text = "Delete";
+            this.deleteTrasnportas.UseVisualStyleBackColor = true;
+            this.deleteTrasnportas.Click += new System.EventHandler(this.deleteTrasnportas_Click);
+            // 
+            // deleteTrasnportasTransId
+            // 
+            this.deleteTrasnportasTransId.Location = new System.Drawing.Point(20, 26);
+            this.deleteTrasnportasTransId.Name = "deleteTrasnportasTransId";
+            this.deleteTrasnportasTransId.Size = new System.Drawing.Size(126, 20);
+            this.deleteTrasnportasTransId.TabIndex = 1;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(17, 9);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(43, 13);
+            this.label25.TabIndex = 0;
+            this.label25.Text = "TransId";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.DeleteMarke);
+            this.panel2.Controls.Add(this.DeleteMarkeMarkesId);
+            this.panel2.Controls.Add(this.label11);
+            this.panel2.Location = new System.Drawing.Point(202, 297);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(178, 97);
+            this.panel2.TabIndex = 19;
+            // 
+            // DeleteMarke
+            // 
+            this.DeleteMarke.Location = new System.Drawing.Point(20, 52);
+            this.DeleteMarke.Name = "DeleteMarke";
+            this.DeleteMarke.Size = new System.Drawing.Size(126, 22);
+            this.DeleteMarke.TabIndex = 14;
+            this.DeleteMarke.Text = "Delete";
+            this.DeleteMarke.UseVisualStyleBackColor = true;
+            this.DeleteMarke.Click += new System.EventHandler(this.DeleteMarke_Click);
+            // 
+            // DeleteMarkeMarkesId
+            // 
+            this.DeleteMarkeMarkesId.Location = new System.Drawing.Point(20, 26);
+            this.DeleteMarkeMarkesId.Name = "DeleteMarkeMarkesId";
+            this.DeleteMarkeMarkesId.Size = new System.Drawing.Size(126, 20);
+            this.DeleteMarkeMarkesId.TabIndex = 1;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(17, 9);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(51, 13);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "MarkesId";
+            // 
             // MainFormAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1297, 655);
+            this.Controls.Add(this.adminApmokejimasShow);
+            this.Controls.Add(this.adminKlientasShow);
             this.Controls.Add(this.adminNuomaShow);
             this.Controls.Add(this.adminLokacijaShow);
             this.Controls.Add(this.adminDraudimasShow);
@@ -609,6 +717,10 @@
             this.addMarkePanel.ResumeLayout(false);
             this.addMarkePanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -667,5 +779,15 @@
         private System.Windows.Forms.Button adminDraudimasShow;
         private System.Windows.Forms.Button adminLokacijaShow;
         private System.Windows.Forms.Button adminNuomaShow;
+        private System.Windows.Forms.Button adminKlientasShow;
+        private System.Windows.Forms.Button adminApmokejimasShow;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Button deleteTrasnportas;
+        private System.Windows.Forms.TextBox deleteTrasnportasTransId;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button DeleteMarke;
+        private System.Windows.Forms.TextBox DeleteMarkeMarkesId;
+        private System.Windows.Forms.Label label11;
     }
 }

@@ -16,18 +16,18 @@ namespace TransportoNuoma.Repositories
 
 
 
-        public void displayGalimiNusizengimai()
+        public DataTable displayGalimiNusizengimai()
         {
+            DataTable dta = new DataTable();
             try
             {
                 cnn = new MySqlConnection(connectionString);//assign connection. The variable cnn, which is of type SqlConnection is used to establish the connection to the database.
                 cnn.Open();//open connection. we use the Open method of the cnn variable to open a connection to the database.
 
-                MySqlCommand cmd = new MySqlCommand("Select * from galimi_nusiz", cnn);//select all from newTestTable
+                MySqlCommand cmd = new MySqlCommand("SELECT galimi_nusiz.NusizKodas,klientas.Kliento_nr, galimi_nusiz.NusPav, nusizengimai.NusizengimaiId, nusizengimai.NusizData,klientas.Vardas,klientas.Pavarde FROM galimi_nusiz INNER JOIN nusizengimai ON galimi_nusiz.NusizengimaiId=nusizengimai.NusizengimaiId INNER JOIN klientas ON nusizengimai.Kliento_nr=klientas.Kliento_nr", cnn);//select all from newTestTable
 
                 cmd.ExecuteNonQuery();
 
-                DataTable dta = new DataTable();
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                 adapter.Fill(dta);
             }
@@ -37,8 +37,7 @@ namespace TransportoNuoma.Repositories
             }
 
             cnn.Close();
-            Console.WriteLine("Connection Closed. Press any key to exit...");
-            Console.Read();
+            return dta;
         }
 
         //REGISTER STUDENT
@@ -71,7 +70,6 @@ namespace TransportoNuoma.Repositories
             {
                 //setting new SqlConnection, providing connectionString
                 cnn = new MySqlConnection(connectionString);
-                cnn.Open();//open database
 
                 //check if user exist
                 MySqlCommand cmd = new MySqlCommand("Update galimi_nusiz SET NusPav=@NusPav, NusizengimaiId=@NusizengimaiId  WHERE NusizKodas=@NusizKodas", cnn);//to check if username exist we have to select all items with username
@@ -86,6 +84,29 @@ namespace TransportoNuoma.Repositories
             {
                 Console.WriteLine(ex);
             }
+        }
+
+
+        public void DeleteGalimiNusiz(GalimiNusizengimai galimiNusiz)
+        {
+            try
+            {
+                cnn = new MySqlConnection(connectionString);
+
+                string newSql = ("Delete from galimi_nusiz where galimi_nusiz.NusizKodas=@id ");
+
+                cnn.Open();//open connection. we use the Open method of the cnn variable to open a connection to the database.
+                MySqlCommand cmd = new MySqlCommand(newSql, cnn);//select all from newTestTable
+                cmd.Parameters.AddWithValue("@id", galimiNusiz.nusizengimo_Kodas);
+                cmd.ExecuteNonQuery();//execute function
+
+                cnn.Close();
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine(exc);
+            }
+
         }
     }
 }

@@ -257,6 +257,30 @@ namespace TransportoNuoma.Repositories
             return (false, null);
         }
 
+        public void DeleteNuoma(Nuoma nuoma)
+        {
+            try
+            {
+                cnn = new MySqlConnection(connectionString);
+
+                string newSql = ("Delete from apmokejimas where apmokejimas.Nuomos_nr=@id; ");
+                newSql += ("Delete from nuoma where nuoma.Nuomos_nr=@id");
+
+                cnn.Open();//open connection. we use the Open method of the cnn variable to open a connection to the database.
+                MySqlCommand cmd = new MySqlCommand(newSql, cnn);//select all from newTestTable
+                cmd.Parameters.AddWithValue("@id", nuoma.nuomos_Nr);
+                cmd.ExecuteNonQuery();//execute function
+
+                cnn.Close();
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine(exc);
+            }
+
+        }
+
+
 
     }
 }

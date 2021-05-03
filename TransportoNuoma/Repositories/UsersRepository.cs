@@ -143,6 +143,51 @@ namespace TransportoNuoma.Repositories
 
 
 
+        public void UpdateKlientas(Klientas klientas)
+        {
+            try
+            {
+                //setting new SqlConnection, providing connectionString
+                cnn = new MySqlConnection(connectionString);
+
+                //check if user exist
+                MySqlCommand cmd = new MySqlCommand("Update klientas SET Email=@Email, Vardas=@Vardas,Pavarde=@Pavarde  WHERE Kliento_nr=@Kliento_nr", cnn);//to check if username exist we have to select all items with username
+                cmd.Parameters.AddWithValue("@Email", klientas.email);
+                cmd.Parameters.AddWithValue("@Vardas", klientas.vardas);
+                cmd.Parameters.AddWithValue("@Pavarde", klientas.pavarde);
+                cmd.Parameters.AddWithValue("@Kliento_nr", klientas.klientoNr);
+                cnn.Open();
+                cmd.ExecuteNonQuery();
+                cnn.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+        }
+
+
+        public void DeleteKlientas(Klientas klientas)
+        {
+            try
+            {
+                cnn = new MySqlConnection(connectionString);
+
+                string newSql = "DELETE FROM klientas WHERE klientas.Kliento_nr=@id;";
+
+                cnn.Open();//open connection. we use the Open method of the cnn variable to open a connection to the database.
+                MySqlCommand cmd = new MySqlCommand(newSql, cnn);//select all from newTestTable
+                cmd.Parameters.AddWithValue("@id", klientas.klientoNr);
+                cmd.ExecuteNonQuery();//execute function
+
+                cnn.Close();
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine(exc);
+            }
+
+        }
 
     }
 }

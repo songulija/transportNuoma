@@ -88,5 +88,29 @@ namespace TransportoNuoma.Repositories
                 Console.WriteLine(ex);
             }
         }
+
+
+        public void DeleteTransTest(TransportoTestai transTestai)
+        {
+            try
+            {
+                cnn = new MySqlConnection(connectionString);
+
+                string newSql = ("Delete from galimi_test where galimi_test.TestId=@id; ");
+                newSql += ("Delete from trans_test where trans_test.TestId=@id");
+
+                cnn.Open();//open connection. we use the Open method of the cnn variable to open a connection to the database.
+                MySqlCommand cmd = new MySqlCommand(newSql, cnn);//select all from newTestTable
+                cmd.Parameters.AddWithValue("@id", transTestai.test_Id);
+                cmd.ExecuteNonQuery();//execute function
+
+                cnn.Close();
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine(exc);
+            }
+
+        }
     }
 }

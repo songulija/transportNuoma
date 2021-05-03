@@ -149,5 +149,28 @@ namespace TransportoNuoma.Repositories
             }
         }
 
+
+        public void DeleteLokacija(Lokacija lokacija)
+        {
+            try
+            {
+                cnn = new MySqlConnection(connectionString);
+
+                string newSql = ("DELETE lokacija FROM lokacija LEFT JOIN rezervacija ON lokacija.lokacijosId=rezervacija.lokacijosId LEFT JOIN nuoma ON rezervacija.rezId=nuoma.rezId LEFT JOIN apmokejimas ON nuoma.Nuomos_nr=apmokejimas.Nuomos_nr WHERE lokacija.lokacijosId=@id");
+
+                cnn.Open();//open connection. we use the Open method of the cnn variable to open a connection to the database.
+                MySqlCommand cmd = new MySqlCommand(newSql, cnn);//select all from newTestTable
+                cmd.Parameters.AddWithValue("@id", lokacija.lokacijos_Id);
+                cmd.ExecuteNonQuery();//execute function
+
+                cnn.Close();
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine(exc);
+            }
+
+        }
+
     }
 }

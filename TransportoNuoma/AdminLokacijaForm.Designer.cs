@@ -33,8 +33,26 @@
             this.label5 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.updateTransLokPanel = new System.Windows.Forms.Panel();
+            this.updateTransLokLokacId = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.updateTransLokTransId = new System.Windows.Forms.TextBox();
             this.updateButton = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.updateTransLokKoordY = new System.Windows.Forms.TextBox();
+            this.updateTransLokSalis = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.updateTransLokKoordX = new System.Windows.Forms.TextBox();
+            this.updateTransLokMiestas = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.addTransLokPanel = new System.Windows.Forms.Panel();
+            this.addTransLokTransId = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.addTransLokKoordY = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.addTransLokKoordX = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.addTransTest = new System.Windows.Forms.Button();
             this.addTransLokMiestas = new System.Windows.Forms.TextBox();
             this.sdsdsd = new System.Windows.Forms.Label();
@@ -45,24 +63,6 @@
             this.getTransportLok = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.addTransLokKoordY = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.addTransLokKoordX = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.addTransLokTransId = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.updateTransLokTransId = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.updateTransLokKoordY = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.updateTransLokKoordX = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.updateTransLokMiestas = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.updateTransLokSalis = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.updateTransLokLokacId = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
@@ -97,6 +97,14 @@
             this.getKlientoLok = new System.Windows.Forms.Button();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.label25 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.deleteKlientoLok = new System.Windows.Forms.Button();
+            this.deleteKlientoLokLokId = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.deleteTransLok = new System.Windows.Forms.Button();
+            this.deleteTransLokLokId = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
             this.TransportPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.updateTransLokPanel.SuspendLayout();
@@ -107,6 +115,8 @@
             this.updateKlientoLokPanel.SuspendLayout();
             this.addKlientoLokPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // backButton
@@ -122,6 +132,7 @@
             // 
             // TransportPanel
             // 
+            this.TransportPanel.Controls.Add(this.panel2);
             this.TransportPanel.Controls.Add(this.label5);
             this.TransportPanel.Controls.Add(this.dataGridView2);
             this.TransportPanel.Controls.Add(this.updateTransLokPanel);
@@ -133,7 +144,7 @@
             this.TransportPanel.Controls.Add(this.label1);
             this.TransportPanel.Location = new System.Drawing.Point(12, 46);
             this.TransportPanel.Name = "TransportPanel";
-            this.TransportPanel.Size = new System.Drawing.Size(466, 605);
+            this.TransportPanel.Size = new System.Drawing.Size(590, 654);
             this.TransportPanel.TabIndex = 3;
             // 
             // label5
@@ -171,19 +182,115 @@
             this.updateTransLokPanel.Controls.Add(this.label9);
             this.updateTransLokPanel.Location = new System.Drawing.Point(202, 353);
             this.updateTransLokPanel.Name = "updateTransLokPanel";
-            this.updateTransLokPanel.Size = new System.Drawing.Size(244, 245);
+            this.updateTransLokPanel.Size = new System.Drawing.Size(159, 292);
             this.updateTransLokPanel.TabIndex = 17;
             this.updateTransLokPanel.Visible = false;
             // 
+            // updateTransLokLokacId
+            // 
+            this.updateTransLokLokacId.Location = new System.Drawing.Point(20, 226);
+            this.updateTransLokLokacId.Name = "updateTransLokLokacId";
+            this.updateTransLokLokacId.Size = new System.Drawing.Size(126, 20);
+            this.updateTransLokLokacId.TabIndex = 32;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(17, 209);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(57, 13);
+            this.label12.TabIndex = 31;
+            this.label12.Text = "lokacijosId";
+            // 
+            // updateTransLokTransId
+            // 
+            this.updateTransLokTransId.Location = new System.Drawing.Point(20, 187);
+            this.updateTransLokTransId.Name = "updateTransLokTransId";
+            this.updateTransLokTransId.Size = new System.Drawing.Size(126, 20);
+            this.updateTransLokTransId.TabIndex = 30;
+            // 
             // updateButton
             // 
-            this.updateButton.Location = new System.Drawing.Point(20, 209);
+            this.updateButton.Location = new System.Drawing.Point(20, 252);
             this.updateButton.Name = "updateButton";
             this.updateButton.Size = new System.Drawing.Size(126, 33);
             this.updateButton.TabIndex = 14;
             this.updateButton.Text = "Update";
             this.updateButton.UseVisualStyleBackColor = true;
             this.updateButton.Click += new System.EventHandler(this.updateButton_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(17, 170);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(49, 13);
+            this.label3.TabIndex = 29;
+            this.label3.Text = "Trans_Id";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(17, 9);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(29, 13);
+            this.label11.TabIndex = 21;
+            this.label11.Text = "Salis";
+            // 
+            // updateTransLokKoordY
+            // 
+            this.updateTransLokKoordY.Location = new System.Drawing.Point(20, 147);
+            this.updateTransLokKoordY.Name = "updateTransLokKoordY";
+            this.updateTransLokKoordY.Size = new System.Drawing.Size(126, 20);
+            this.updateTransLokKoordY.TabIndex = 28;
+            // 
+            // updateTransLokSalis
+            // 
+            this.updateTransLokSalis.Location = new System.Drawing.Point(20, 26);
+            this.updateTransLokSalis.Name = "updateTransLokSalis";
+            this.updateTransLokSalis.Size = new System.Drawing.Size(126, 20);
+            this.updateTransLokSalis.TabIndex = 22;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(17, 130);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(70, 13);
+            this.label4.TabIndex = 27;
+            this.label4.Text = "KoordinatesY";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(17, 49);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(43, 13);
+            this.label10.TabIndex = 23;
+            this.label10.Text = "Miestas";
+            // 
+            // updateTransLokKoordX
+            // 
+            this.updateTransLokKoordX.Location = new System.Drawing.Point(20, 107);
+            this.updateTransLokKoordX.Name = "updateTransLokKoordX";
+            this.updateTransLokKoordX.Size = new System.Drawing.Size(126, 20);
+            this.updateTransLokKoordX.TabIndex = 26;
+            // 
+            // updateTransLokMiestas
+            // 
+            this.updateTransLokMiestas.Location = new System.Drawing.Point(20, 66);
+            this.updateTransLokMiestas.Name = "updateTransLokMiestas";
+            this.updateTransLokMiestas.Size = new System.Drawing.Size(126, 20);
+            this.updateTransLokMiestas.TabIndex = 24;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(17, 90);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(70, 13);
+            this.label9.TabIndex = 25;
+            this.label9.Text = "KoordinatesX";
             // 
             // addTransLokPanel
             // 
@@ -203,6 +310,54 @@
             this.addTransLokPanel.Size = new System.Drawing.Size(178, 245);
             this.addTransLokPanel.TabIndex = 5;
             this.addTransLokPanel.Visible = false;
+            // 
+            // addTransLokTransId
+            // 
+            this.addTransLokTransId.Location = new System.Drawing.Point(20, 187);
+            this.addTransLokTransId.Name = "addTransLokTransId";
+            this.addTransLokTransId.Size = new System.Drawing.Size(126, 20);
+            this.addTransLokTransId.TabIndex = 20;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(17, 170);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(49, 13);
+            this.label8.TabIndex = 19;
+            this.label8.Text = "Trans_Id";
+            // 
+            // addTransLokKoordY
+            // 
+            this.addTransLokKoordY.Location = new System.Drawing.Point(20, 147);
+            this.addTransLokKoordY.Name = "addTransLokKoordY";
+            this.addTransLokKoordY.Size = new System.Drawing.Size(126, 20);
+            this.addTransLokKoordY.TabIndex = 18;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(17, 130);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(70, 13);
+            this.label6.TabIndex = 17;
+            this.label6.Text = "KoordinatesY";
+            // 
+            // addTransLokKoordX
+            // 
+            this.addTransLokKoordX.Location = new System.Drawing.Point(20, 107);
+            this.addTransLokKoordX.Name = "addTransLokKoordX";
+            this.addTransLokKoordX.Size = new System.Drawing.Size(126, 20);
+            this.addTransLokKoordX.TabIndex = 16;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(17, 90);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(70, 13);
+            this.label7.TabIndex = 15;
+            this.label7.Text = "KoordinatesX";
             // 
             // addTransTest
             // 
@@ -294,152 +449,9 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Transport Lokacija";
             // 
-            // addTransLokKoordY
-            // 
-            this.addTransLokKoordY.Location = new System.Drawing.Point(20, 147);
-            this.addTransLokKoordY.Name = "addTransLokKoordY";
-            this.addTransLokKoordY.Size = new System.Drawing.Size(126, 20);
-            this.addTransLokKoordY.TabIndex = 18;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(17, 130);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(70, 13);
-            this.label6.TabIndex = 17;
-            this.label6.Text = "KoordinatesY";
-            // 
-            // addTransLokKoordX
-            // 
-            this.addTransLokKoordX.Location = new System.Drawing.Point(20, 107);
-            this.addTransLokKoordX.Name = "addTransLokKoordX";
-            this.addTransLokKoordX.Size = new System.Drawing.Size(126, 20);
-            this.addTransLokKoordX.TabIndex = 16;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(17, 90);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(70, 13);
-            this.label7.TabIndex = 15;
-            this.label7.Text = "KoordinatesX";
-            // 
-            // addTransLokTransId
-            // 
-            this.addTransLokTransId.Location = new System.Drawing.Point(20, 187);
-            this.addTransLokTransId.Name = "addTransLokTransId";
-            this.addTransLokTransId.Size = new System.Drawing.Size(126, 20);
-            this.addTransLokTransId.TabIndex = 20;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(17, 170);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(49, 13);
-            this.label8.TabIndex = 19;
-            this.label8.Text = "Trans_Id";
-            // 
-            // updateTransLokTransId
-            // 
-            this.updateTransLokTransId.Location = new System.Drawing.Point(20, 187);
-            this.updateTransLokTransId.Name = "updateTransLokTransId";
-            this.updateTransLokTransId.Size = new System.Drawing.Size(126, 20);
-            this.updateTransLokTransId.TabIndex = 30;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(17, 170);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 13);
-            this.label3.TabIndex = 29;
-            this.label3.Text = "Trans_Id";
-            // 
-            // updateTransLokKoordY
-            // 
-            this.updateTransLokKoordY.Location = new System.Drawing.Point(20, 147);
-            this.updateTransLokKoordY.Name = "updateTransLokKoordY";
-            this.updateTransLokKoordY.Size = new System.Drawing.Size(126, 20);
-            this.updateTransLokKoordY.TabIndex = 28;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(17, 130);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(70, 13);
-            this.label4.TabIndex = 27;
-            this.label4.Text = "KoordinatesY";
-            // 
-            // updateTransLokKoordX
-            // 
-            this.updateTransLokKoordX.Location = new System.Drawing.Point(20, 107);
-            this.updateTransLokKoordX.Name = "updateTransLokKoordX";
-            this.updateTransLokKoordX.Size = new System.Drawing.Size(126, 20);
-            this.updateTransLokKoordX.TabIndex = 26;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(17, 90);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(70, 13);
-            this.label9.TabIndex = 25;
-            this.label9.Text = "KoordinatesX";
-            // 
-            // updateTransLokMiestas
-            // 
-            this.updateTransLokMiestas.Location = new System.Drawing.Point(20, 66);
-            this.updateTransLokMiestas.Name = "updateTransLokMiestas";
-            this.updateTransLokMiestas.Size = new System.Drawing.Size(126, 20);
-            this.updateTransLokMiestas.TabIndex = 24;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(17, 49);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(43, 13);
-            this.label10.TabIndex = 23;
-            this.label10.Text = "Miestas";
-            // 
-            // updateTransLokSalis
-            // 
-            this.updateTransLokSalis.Location = new System.Drawing.Point(20, 26);
-            this.updateTransLokSalis.Name = "updateTransLokSalis";
-            this.updateTransLokSalis.Size = new System.Drawing.Size(126, 20);
-            this.updateTransLokSalis.TabIndex = 22;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(17, 9);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(29, 13);
-            this.label11.TabIndex = 21;
-            this.label11.Text = "Salis";
-            // 
-            // updateTransLokLokacId
-            // 
-            this.updateTransLokLokacId.Location = new System.Drawing.Point(155, 187);
-            this.updateTransLokLokacId.Name = "updateTransLokLokacId";
-            this.updateTransLokLokacId.Size = new System.Drawing.Size(64, 20);
-            this.updateTransLokLokacId.TabIndex = 32;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(152, 170);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(57, 13);
-            this.label12.TabIndex = 31;
-            this.label12.Text = "lokacijosId";
-            // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.Add(this.dataGridView3);
             this.panel1.Controls.Add(this.updateKlientoLokPanel);
@@ -449,9 +461,9 @@
             this.panel1.Controls.Add(this.getKlientoLok);
             this.panel1.Controls.Add(this.dataGridView4);
             this.panel1.Controls.Add(this.label25);
-            this.panel1.Location = new System.Drawing.Point(484, 46);
+            this.panel1.Location = new System.Drawing.Point(679, 46);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(466, 605);
+            this.panel1.Size = new System.Drawing.Size(537, 654);
             this.panel1.TabIndex = 20;
             // 
             // label13
@@ -489,21 +501,21 @@
             this.updateKlientoLokPanel.Controls.Add(this.label19);
             this.updateKlientoLokPanel.Location = new System.Drawing.Point(202, 353);
             this.updateKlientoLokPanel.Name = "updateKlientoLokPanel";
-            this.updateKlientoLokPanel.Size = new System.Drawing.Size(244, 245);
+            this.updateKlientoLokPanel.Size = new System.Drawing.Size(160, 292);
             this.updateKlientoLokPanel.TabIndex = 17;
             this.updateKlientoLokPanel.Visible = false;
             // 
             // updateKlientoLokLokId
             // 
-            this.updateKlientoLokLokId.Location = new System.Drawing.Point(155, 187);
+            this.updateKlientoLokLokId.Location = new System.Drawing.Point(20, 227);
             this.updateKlientoLokLokId.Name = "updateKlientoLokLokId";
-            this.updateKlientoLokLokId.Size = new System.Drawing.Size(64, 20);
+            this.updateKlientoLokLokId.Size = new System.Drawing.Size(126, 20);
             this.updateKlientoLokLokId.TabIndex = 32;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(152, 170);
+            this.label14.Location = new System.Drawing.Point(17, 210);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(57, 13);
             this.label14.TabIndex = 31;
@@ -518,7 +530,7 @@
             // 
             // updateKlientoLok
             // 
-            this.updateKlientoLok.Location = new System.Drawing.Point(20, 209);
+            this.updateKlientoLok.Location = new System.Drawing.Point(20, 252);
             this.updateKlientoLok.Name = "updateKlientoLok";
             this.updateKlientoLok.Size = new System.Drawing.Size(126, 33);
             this.updateKlientoLok.TabIndex = 14;
@@ -757,11 +769,83 @@
             this.label25.TabIndex = 0;
             this.label25.Text = "Kliento Lokacija";
             // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.deleteKlientoLok);
+            this.panel3.Controls.Add(this.deleteKlientoLokLokId);
+            this.panel3.Controls.Add(this.label26);
+            this.panel3.Location = new System.Drawing.Point(368, 353);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(161, 103);
+            this.panel3.TabIndex = 20;
+            // 
+            // deleteKlientoLok
+            // 
+            this.deleteKlientoLok.Location = new System.Drawing.Point(19, 50);
+            this.deleteKlientoLok.Name = "deleteKlientoLok";
+            this.deleteKlientoLok.Size = new System.Drawing.Size(114, 33);
+            this.deleteKlientoLok.TabIndex = 14;
+            this.deleteKlientoLok.Text = "Delete";
+            this.deleteKlientoLok.UseVisualStyleBackColor = true;
+            this.deleteKlientoLok.Click += new System.EventHandler(this.deleteKlientoLok_Click);
+            // 
+            // deleteKlientoLokLokId
+            // 
+            this.deleteKlientoLokLokId.Location = new System.Drawing.Point(19, 26);
+            this.deleteKlientoLokLokId.Name = "deleteKlientoLokLokId";
+            this.deleteKlientoLokLokId.Size = new System.Drawing.Size(114, 20);
+            this.deleteKlientoLokLokId.TabIndex = 1;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(16, 10);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(57, 13);
+            this.label26.TabIndex = 0;
+            this.label26.Text = "lokacijosId";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.deleteTransLok);
+            this.panel2.Controls.Add(this.deleteTransLokLokId);
+            this.panel2.Controls.Add(this.label27);
+            this.panel2.Location = new System.Drawing.Point(367, 353);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(161, 103);
+            this.panel2.TabIndex = 21;
+            // 
+            // deleteTransLok
+            // 
+            this.deleteTransLok.Location = new System.Drawing.Point(19, 50);
+            this.deleteTransLok.Name = "deleteTransLok";
+            this.deleteTransLok.Size = new System.Drawing.Size(114, 33);
+            this.deleteTransLok.TabIndex = 14;
+            this.deleteTransLok.Text = "Delete";
+            this.deleteTransLok.UseVisualStyleBackColor = true;
+            this.deleteTransLok.Click += new System.EventHandler(this.deleteTransLok_Click);
+            // 
+            // deleteTransLokLokId
+            // 
+            this.deleteTransLokLokId.Location = new System.Drawing.Point(19, 26);
+            this.deleteTransLokLokId.Name = "deleteTransLokLokId";
+            this.deleteTransLokLokId.Size = new System.Drawing.Size(114, 20);
+            this.deleteTransLokLokId.TabIndex = 1;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(16, 10);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(57, 13);
+            this.label27.TabIndex = 0;
+            this.label27.Text = "lokacijosId";
+            // 
             // AdminLokacijaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1063, 656);
+            this.ClientSize = new System.Drawing.Size(1259, 703);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.TransportPanel);
             this.Controls.Add(this.backButton);
@@ -783,6 +867,10 @@
             this.addKlientoLokPanel.ResumeLayout(false);
             this.addKlientoLokPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -858,5 +946,13 @@
         private System.Windows.Forms.Button getKlientoLok;
         private System.Windows.Forms.DataGridView dataGridView4;
         private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button deleteKlientoLok;
+        private System.Windows.Forms.TextBox deleteKlientoLokLokId;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button deleteTransLok;
+        private System.Windows.Forms.TextBox deleteTransLokLokId;
+        private System.Windows.Forms.Label label27;
     }
 }
