@@ -115,7 +115,7 @@ namespace TransportoNuoma.Repositories
                 cmd.Parameters.AddWithValue("@Trans_Id", rezervacija.Transporto_Id);
 
                 MySqlDataReader dataReader = cmd.ExecuteReader();//sends SQLCommand.CommandText to the SQLCommand.Connection and builds SqlDataReader
-                if ((dataReader.Read() == true) && TimeSpan.Parse(dataReader["rezPab"].ToString()) > DateTime.Now.TimeOfDay)
+                if ((dataReader.Read() == true) && TimeSpan.Parse(dataReader["rezPab"].ToString()) > DateTime.Now.TimeOfDay && DateTime.Parse(dataReader["rezData"].ToString()) >= DateTime.Today)
                 {
                     Console.WriteLine("Transport is already under reservation");
                     return null;
